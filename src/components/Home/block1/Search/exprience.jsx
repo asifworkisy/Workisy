@@ -2,8 +2,10 @@ import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
+
 import Select from '@mui/material/Select';
+import { Box, Typography } from '@mui/material';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -16,18 +18,8 @@ const MenuProps = {
   },
 };
 
-const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder',
-];
+// Sample options for experiences
+const names = ["Fresher", "2023", "2022", "Below 2021"];
 
 function getStyles(name, personName, theme) {
   return {
@@ -46,14 +38,17 @@ export default function MultipleSelectPlaceholder() {
       target: { value },
     } = event;
     setPersonName(
-      // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
     );
   };
 
   return (
-    <div>
-      <FormControl sx={{ m: 1, width: 300, mt: 3 }}>
+    <Box sx={{
+      display:"flex",
+      alignItems:"center",
+      columnGap:".5rem"
+    }}>
+      <LocalMallIcon sx={{color:"gray"}}/>
         <Select
           multiple
           displayEmpty
@@ -62,16 +57,27 @@ export default function MultipleSelectPlaceholder() {
           input={<OutlinedInput />}
           renderValue={(selected) => {
             if (selected.length === 0) {
-              return <em>Placeholder</em>;
+              return <Typography color="text.secondary">Enter experience</Typography>;
             }
-
             return selected.join(', ');
           }}
           MenuProps={MenuProps}
           inputProps={{ 'aria-label': 'Without label' }}
+          sx={{
+            '& .MuiSelect-select': {
+              padding: '10px 14px', // Adjust padding as needed
+              border: 'none', // Remove default border
+            },
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: 'none',
+            },
+           
+            width:"200px",
+           
+          }}
         >
           <MenuItem disabled value="">
-            <em>Placeholder</em>
+            <Typography color="text.secondary">Enter experience</Typography> {/* Placeholder as MenuItem */}
           </MenuItem>
           {names.map((name) => (
             <MenuItem
@@ -83,7 +89,8 @@ export default function MultipleSelectPlaceholder() {
             </MenuItem>
           ))}
         </Select>
-      </FormControl>
-    </div>
+
+    </Box>
+     
   );
 }

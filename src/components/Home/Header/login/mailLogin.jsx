@@ -49,9 +49,11 @@ export default function MailLogin({ setShowPage}) {
             <button className='forget'>Forget password?</button>
           </div>
         </div>
-            <Link to="/adminProfile">Go to About Page</Link>
+            <Link to="/adminProfile">
+            <button className='login'> Login</button>
+            </Link>
 
-        <button className='login'> Login</button>
+       
         <button className='login m' onClick={()=>setShowPage(false)}> Use OTP to login</button>
       </form>
     </div>

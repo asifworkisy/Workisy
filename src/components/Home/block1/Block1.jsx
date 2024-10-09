@@ -14,10 +14,12 @@ import SearchBox from './Search/searchBox';
 
 
 let btn={
-  padding: '.4rem',
+  px:"1rem",
   borderRadius: '20px',
   outline: 'none',
   border: '1px solid rgb(210, 207, 207)',
+  textTransform:"capitalize",
+  color:"black"
  
 
 }
@@ -32,23 +34,31 @@ export default function Block1() {
         alignItems:"center",
         justifyContent:"flex-start",
         flexDirection:"column",
-        marginTop:'4rem',
+       
+      
        
       
         
         
         
     }}>
+      <Box sx={{display:"flex",
+        // flexDirection:"column",
+        justifyContent:"center",
+        alignItems:"center",
+        backgroundColor:"#096eb6",
+        width:"97%",
+        padding:"2rem",
+        borderRadius: '50px',
       
-        <Typography variant='h3' sx={{fontWeight:"bold",fontFamily:"inter" ,fontSize:{xs:"1.7rem",sm:"3rem"}}}>Find your dream job now</Typography>
-        <Typography variant='h5'
-        sx={{fontSize:{xs:".8rem",sm:"1.3rem"},marginTop:".2rem"}}
-        >7 lakh+ jobs for you to explore</Typography>
-
-       
-        
+    
+      }}>
+        <Typography variant='h3' sx={{fontWeight:"bold",fontFamily:"inter" ,fontSize:{xs:"1.7rem",sm:"1.5rem"},marginTop:"2rem",color:"white",width:"300px"}}>Over 7,00,000+jobs to explore</Typography>
        
         <SearchBox/>
+
+      </Box>
+      
        
         <Box sx={{marginTop:"1rem",display:'flex',columnGap:"1rem"}}>
           <Button sx={btn}><SlReload/> Java fullstack</Button>
