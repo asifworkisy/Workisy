@@ -5,6 +5,7 @@ import Resume from '../Resume'
 import Skills from '../Keyskills/skills'
 import Employment from '../Employment/employment'
 import Education from '../Education/education'
+import ItSkills from '../Itskills/itskills'
 import './home.css'
 const Home=()=>{
   return (
@@ -18,6 +19,7 @@ const Home=()=>{
           <Skills/>
           <Employment/>
           <Education/>
+          <ItSkills/>
         </div>
     </div>
   )
