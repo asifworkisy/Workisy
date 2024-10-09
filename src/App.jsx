@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Adminprofile from "../src/components/Adminprofile/Home/home"
 import Jobcontainer from './components/Jobdetailes/Jobcontainer';
 import Homepage from './components/Home/Homepage/Home';
+import "./App.css"
 export default function App() {
 
 

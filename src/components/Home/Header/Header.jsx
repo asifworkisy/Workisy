@@ -125,6 +125,7 @@
         alignItems:"center",
         justifyContent:"space-between",
         fontFamily:"inter",
+        
       }}>
        
           <Box sx={{

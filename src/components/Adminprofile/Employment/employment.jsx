@@ -42,7 +42,20 @@ const years = [
   ];
 
 
-
+  const customStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      borderRadius: '16px',             // Border-radius of 10px
+      border: '1px solid #aeb1b3', 
+                                         // 1px solid #121224 border
+      width: '100%',                    // 100% width
+      height: '29px',                   // Height of the dropdown box
+      boxShadow: 'none',                // Remove outline on focus
+      '&:hover': {
+        border: '1px solid #121224',    // Border color on hover
+      },
+    }),
+  };
 
 
 const Employment=()=>{
@@ -152,7 +165,7 @@ const Employment=()=>{
    
 
   return (
-    <div className='profile-admin-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt'>
         <div className='employment-cnt'>
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                 <h1 className='resume-heading'>Employment</h1>
@@ -187,7 +200,18 @@ const Employment=()=>{
                   </div>  
               ))}
             </div>)}
-            <Dialog open={openEmployee} onClose={()=>setOpenEmployee(false)} maxWidth="md" fullWidth sx={{ borderRadius:'20px'}}>
+            <Dialog open={openEmployee} onClose={()=>setOpenEmployee(false)} maxWidth="md" fullWidth sx={{ borderRadius:'20px'}}
+                PaperProps={{
+                    sx: {
+                    borderRadius: '20px',
+                    overflowY: 'auto', // To allow scrolling
+                    '::-webkit-scrollbar': {
+                        display: 'none', // Hide scrollbar for WebKit browsers
+                    },
+                    '-ms-overflow-style': 'none',  // Hide scrollbar for IE and Edge
+                    'scrollbar-width': 'none',     // Hide scrollbar for Firefox
+                    },
+                }}>
               <div style={{display:'flex', flexDirection:'column', padding:'50px'}}>
                  <h1 className="resume-modal-heading">Employement</h1>
                  <p className="resume-modal-para">Details like job title, company name, etc, help employers understand your work</p>
@@ -214,7 +238,7 @@ const Employment=()=>{
                                     options={years}
                                     isSearchable
                                     placeholder="Select or search for an option..."
-                                    
+                                    styles={ customStyles}
                                 />
                             </div>
                             <div style={{marginLeft:'20px', width:'100%'}}>
@@ -224,7 +248,7 @@ const Employment=()=>{
                                     options={Months}
                                     isSearchable
                                     placeholder="Select or search for an option..."
-                                    
+                                    styles={ customStyles}
                                 />
                             </div>
                             </div>
@@ -252,7 +276,7 @@ const Employment=()=>{
                                     options={joinYear}
                                     isSearchable
                                     placeholder="Select or search for an option..."
-                                    
+                                    styles={ customStyles}
                                 />
                             </div>
                             <div style={{marginLeft:'20px', width:'100%'}}>
@@ -262,7 +286,7 @@ const Employment=()=>{
                                     options={joinMonths}
                                     isSearchable
                                     placeholder="Select or search for an option..."
-                                    
+                                    styles={ customStyles}
                             />
                             </div>
                             </div>
@@ -277,7 +301,7 @@ const Employment=()=>{
                                     options={joinYear}
                                     isSearchable
                                     placeholder="Select or search for an option..."
-                                    
+                                    styles={ customStyles}
                                 />
                             </div>
                             <div style={{marginLeft:'20px', width:'100%'}}>
@@ -287,7 +311,7 @@ const Employment=()=>{
                                     options={joinMonths}
                                     isSearchable
                                     placeholder="Select or search for an option..."
-                                    
+                                    styles={ customStyles}
                             />
                             </div>
                             </div>
@@ -306,10 +330,12 @@ const Employment=()=>{
                             sx={{
                                 borderRadius: '8px',
                                 marginTop:'15px',
+                                outline:'none',
                                 '& .MuiOutlinedInput-root': {
                                 borderRadius: '8px', 
                                 },
                             }}
+                            styles={ customStyles}
                             />
                         </div>
                         <div style={{marginTop:'30px', display:'flex', flexDirection:'column',}}>
@@ -321,7 +347,7 @@ const Employment=()=>{
                                     options={noticeDays}
                                     isSearchable
                                     placeholder="choose notice period"
-                                    
+                                    styles={ customStyles}
                             />
                             </div>
                         </div>
@@ -345,7 +371,7 @@ const Employment=()=>{
                                     options={itCities}
                                     isSearchable
                                     placeholder="choose notice period"
-                                    
+                                    styles={ customStyles}
                                />
                             </div>
                         </div>
@@ -358,7 +384,7 @@ const Employment=()=>{
                                     options={departmentOptions}
                                     isSearchable
                                     placeholder="choose notice period"
-                                    
+                                    styles={ customStyles}
                                />
                             </div>
                         </div>
@@ -376,7 +402,7 @@ const Employment=()=>{
                                         options={joinYear}
                                         isSearchable
                                         placeholder="Select or search for an option..."
-                                        
+                                        styles={ customStyles}
                                     />
                                 </div>
                                 <div style={{marginLeft:'20px', width:'100%'}}>
@@ -386,7 +412,7 @@ const Employment=()=>{
                                         options={joinMonths}
                                         isSearchable
                                         placeholder="Select or search for an option..."
-                                        
+                                        styles={ customStyles}
                                 />
                                 </div>
                             </div>
@@ -401,7 +427,7 @@ const Employment=()=>{
                                         options={joinYear}
                                         isSearchable
                                         placeholder="Select or search for an option..."
-                                        
+                                        styles={ customStyles}
                                     />
                                 </div>
                                 <div style={{marginLeft:'20px', width:'100%'}}>
@@ -411,7 +437,7 @@ const Employment=()=>{
                                         options={joinMonths}
                                         isSearchable
                                         placeholder="Select or search for an option..."
-                                        
+                                        styles={ customStyles}
                                 />
                                 </div>
                             </div>

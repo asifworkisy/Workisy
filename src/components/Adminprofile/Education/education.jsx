@@ -12,7 +12,7 @@ const customStyles = {
     control: (provided, state) => ({
       ...provided,
       borderRadius: '16px',             // Border-radius of 10px
-      border: '1px solid #121224', 
+      border: '1px solid #aeb1b3', 
                                          // 1px solid #121224 border
       width: '100%',                    // 100% width
       height: '29px',                   // Height of the dropdown box
@@ -84,7 +84,7 @@ const Education=()=>{
         }
 
         const InterDetails={
-            educationType: educationType,
+            educationType: educationType.label,
             passoutYear:passoutYear.label,
             board:board.label,
             interMarks:interMarks,
@@ -125,7 +125,7 @@ const Education=()=>{
    
    
   return (
-    <div className='profile-admin-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt'>
         <div className='employment-cnt'>
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                 <h1 className='resume-heading'>Education</h1>
@@ -163,7 +163,17 @@ const Education=()=>{
                 </div>
                 ))}
             </div>
-            <Dialog open={opneEdu} onClose={()=>setEducation(false)} maxWidth="md" fullWidth sx={{ borderRadius:'20px'}}>
+            <Dialog open={opneEdu} onClose={()=>setEducation(false)} maxWidth="md" fullWidth  PaperProps={{
+                sx: {
+                borderRadius: '20px',
+                overflowY: 'auto', // To allow scrolling
+                '::-webkit-scrollbar': {
+                    display: 'none', // Hide scrollbar for WebKit browsers
+                },
+                '-ms-overflow-style': 'none',  // Hide scrollbar for IE and Edge
+                'scrollbar-width': 'none',     // Hide scrollbar for Firefox
+                },
+            }}>
             <div style={{display:'flex', flexDirection:'column', padding:'50px'}}>
                  <h1 className="resume-modal-heading">Education</h1>
                  <p className="resume-modal-para">Details like course, university, and more, help recruiters identify your educational background</p>

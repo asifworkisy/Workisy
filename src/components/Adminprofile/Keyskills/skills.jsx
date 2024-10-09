@@ -22,7 +22,7 @@ const Skills=()=>{
     setOpenskills(false)
    }
   return (
-    <div className="profile-admin-cnt">
+    <div className="profile-admin-cnt skills-co-cnt">
     <div className='keyskills-cnt'>
        <div style={{display:'flex', }}>
             <p className="resume-heading">Key Skills</p>
@@ -34,7 +34,7 @@ const Skills=()=>{
             ))}
         </ul>
         
-        <Dialog open={openskills} onClose={()=>setOpenskills(false)} maxWidth="md" fullWidth>
+        <Dialog open={openskills} onClose={()=>setOpenskills(false)} maxWidth="md" fullWidth PaperProps={{sx: { borderRadius: '20px' }}}>
            <div style={{display:'flex', flexDirection:'column',padding:'20px'}}>
              <h1 className="resume-modal-heading">Key Skills</h1>
              <p className="resume-modal-para">Add skills that best define your expertise, for e.g, Direct Marketing, Oracle, Java, etc. (Minimum 1)</p>

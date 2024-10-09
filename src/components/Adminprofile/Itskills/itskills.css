@@ -1,0 +1,16 @@
+.itskills-cnt{
+    padding:10px;
+    margin:15px 0px 16px;  
+    border-radius:20px;
+    width:82%;
+    border:1px solid #aeaeb9;
+    display:flex;
+    flex-direction:column;
+}
+.version-used-cnt{
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items:center;
+    margin-top:30px;
+}
