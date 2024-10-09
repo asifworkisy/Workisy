@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.sidebar-cnt{
+    display:flex;
+    flex-direction:column;
+    border:1px solid #b8afaf;
+    border-radius:10px;
+    width:300px;
+}
+.prfile-img-cnt{
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-start;
+    padding:15px;
+}
+.profile-name-cnt{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:10px;
+}
+.profile-cand-name{
+    font-size:16px;
+    font-weight: 600;
+    font-family:sans-serif,"Poppins";
+    color:#1D1934;
+   
+}
+.profile-role{
+    font-size:13px;
+    margin:4px 0px 0px;
+    font-family:sans-serif,"Poppins";
+    color:#777585;
+    padding:0;
+    margin:0;
+}
+.loc-cnt{
+    display:flex;
+    align-items:center;
+}
+.company-details-cnt{
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    
+}
+.com-details-cnt{
+    display:flex;
+
+    align-items:center;
+    margin-top:-18px;
+    padding-top:0;
+}
+.com-para{
+    
+        font-size:12px;
+        font-family:"Poppins";
+        color:#777585;
+        margin:0px 0px 0px 6px;
+}

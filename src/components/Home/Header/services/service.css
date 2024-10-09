@@ -1,0 +1,50 @@
+.service{
+    
+    width: 40vw;
+    height: auto;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: "inter";
+    div{
+     height: 100%;
+         display: flex;
+         /* justify-content: space-ev; */
+         flex-direction: column;
+         font-size: 1rem;
+         row-gap: .7rem;
+         .p{
+             text-decoration: none;
+             font-size: .9rem;
+             color: rgb(61, 61, 61);
+             font-weight: normal;
+             &:hover{
+                color:rgb(0, 123, 255);
+            }
+         }
+       
+    }
+    .s-one{
+        border-right: 1px solid rgb(221, 221, 221);
+            padding-right: 1.7rem;
+
+        }
+        .s-two{
+            position: relative;
+            &::after{
+                content: "";
+                height: 310px;
+                width: 1px;
+                background-color:  rgb(221, 221, 221);
+                position: absolute;
+                transform: translateX(-1.1rem);
+            
+            }
+           
+        }
+        
+        
+       
+ }

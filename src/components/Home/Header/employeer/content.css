@@ -1,0 +1,21 @@
+.content{
+    width: 180px;
+    height:120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: .8rem;
+    font-family: "inter";
+    
+    .link{
+        text-decoration: none;
+        font-size: .8rem;
+        color: rgb(49, 48, 48);
+    
+        &:hover{
+            color:rgb(0, 123, 255) ;
+        }
+    }
+   
+}

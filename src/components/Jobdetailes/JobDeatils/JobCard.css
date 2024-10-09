@@ -1,0 +1,77 @@
+/* JobCard.css */
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+} */
+
+.job-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between cards */
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #333;
+}
+
+.card p {
+    margin: 8px 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.card ul li {
+    margin-bottom: 5px;
+    font-size: 0.85em;
+}
+
+.card ul li:before {
+    content: "• ";
+    color: #555;
+}
+
+.card .posted {
+    color: #999;
+    font-size: 0.8em;
+}
+
+.job-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between cards */
+}
+
+.card {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc; /* Default border color */
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    cursor: pointer;
+}
+
+.card.selected {
+    border-color: #2557a7; /* Border color when selected */
+}

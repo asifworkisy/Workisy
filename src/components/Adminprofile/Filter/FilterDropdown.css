@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+  font-family: 'Nunito' !important;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.location-filter {
+  background-color: #fff;
+  border: 1px solid #f4f4f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.15), 0 2px 6px -2px rgba(0, 0, 0, 0.2);
+  min-width: 350px;
+  overflow-y: auto;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.filter-dropdown {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+}
+
+.location-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #d2d1d6;
+  border-radius: 16px;
+  color: #1d1934;
+  margin: 5px 0;
+  font-family: 'Nunito' !important;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  width: auto; /* Allow the button to grow as needed */
+}
+
+.location-button span {
+  margin-right: 5px;
+  display: inline-flex;
+  align-items: center; /* Keep the text and number on the same line */
+}
+
+.location-button .count {
+  font-size: 12px;
+  margin-left: 5px; /* Add some spacing between the title and the number */
+  color: #6200ea; /* Lighter color for the count */
+}
+
+.location-button:hover {
+  border-color: #6200ea;
+}
+.dropdown-body {
+  background-color: white;
+  z-index: 10;
+  width: 92%;
+  margin-top: 10px;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 10px 50px 10px 12px; /* Increased padding-right for the search icon */
+  margin-bottom: 10px;
+  width: 82%;
+  position: relative; /* Make sure it's positioned relative */
+}
+
+.search-icon {
+  position: absolute;
+  top: 40%;
+  right: 25px; /* Position the icon from the right side */
+  font-size: 20px;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+
+.checkbox-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkbox-list li {
+  display: flex;                  /* Use Flexbox for alignment */
+  justify-content: space-between; /* Space between checkbox/label and count */
+  align-items: center;           /* Center align vertically */
+  padding: 5px 0;               /* Padding for each item */
+  font-size: 13px;
+}
+
+.checkbox-list label {
+  display: flex;                 /* Use flex for label alignment */
+  align-items: center;           /* Center align checkbox and label */
+  flex-grow: 1;                  /* Allow label to take remaining space */
+}
+
+.checkbox-list input {
+  margin-right: 10px;            /* Space between checkbox and label */
+}
+
+.count {
+  font-weight: normal;           /* Optional: adjust weight of the count */
+  margin-left: auto;             /* Ensure count is pushed to the far right */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  border-top: 1px solid #f4f4f5;
+  position: sticky;
+  bottom: 0;
+}
+
+.apply-button, .reset-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button {
+  background-color: #6200ea;
+  color: white;
+}
+
+.apply-button:hover {
+  background-color: #4e00cc;
+}
+
+.reset-button {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.reset-button:hover {
+  background-color: #ddd;
+}
+/* Add this to your App.css or FilterDropdown.css */
+.wide-button {
+  min-width: 120px; /* Set your desired width here */
+  /* Optionally, you can add padding and margins to improve the appearance */
+  padding: 5px 10px;
+  margin: 5px 0;
+}
+.wide-button2 {
+  min-width: 163px; /* Set your desired width here */
+  /* Optionally, you can add padding and margins to improve the appearance */
+  padding: 5px 15px;
+  margin: 5px 0;
+}

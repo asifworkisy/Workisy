@@ -1,0 +1,21 @@
+.side-cnt{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:flex-start;
+    width:100vw;
+}
+.profile-left-cnt{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+   
+}
+.profile-right-cnt{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    
+}
