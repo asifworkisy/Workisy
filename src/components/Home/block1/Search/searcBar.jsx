@@ -59,7 +59,7 @@ export default function SearchInputg() {
           placeholder="Enter skills / designations / companies"
           value={`${selectedOptions.join(', ')}${inputValue ? `, ${inputValue}` : ''}`}
           sx={{
-            height:"56px",
+           
             '& .MuiOutlinedInput-root': {
               '& fieldset': {
                 borderColor: 'transparent',
@@ -80,7 +80,7 @@ export default function SearchInputg() {
       
         return i+","
       }}  
-      sx={{ width: 300 }}
+      sx={{ width: 350}}
     />
     </Box>
    

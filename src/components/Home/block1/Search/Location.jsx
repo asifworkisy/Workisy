@@ -2,18 +2,10 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
+import PlaceIcon from '@mui/icons-material/Place';
+import { Box } from '@mui/material';
 
-const jobSuggestions = [
-  'Java Developer',
-  'Java Architect',
-  'Java Full Stack Developer',
-  'Spring Developer',
-  'Java Back End Developer',
-  'Core Java Developer',
-  'Java Lead',
-  'AEM Developer',
-  'Application Developer',
-];
+const indianCities = ["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad", "Kolkata", "Pune", "Ahmedabad"];
 
 export default function Location() {
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -33,44 +25,51 @@ export default function Location() {
   };
 
   return (
-    <Autocomplete
-      freeSolo
-      multiple
-      id="multi-select-autocomplete"
-      options={jobSuggestions}
-      value={selectedOptions}
-      onChange={(event, newValue) => {
-        setSelectedOptions(newValue);
-      }}
-      inputValue={inputValue}
-      onInputChange={handleInputChange}
-      renderInput={(params) => (
-        <TextField
-          {...params}
-          variant="outlined"
-         
-          placeholder="Enter Location"
-          value={`${selectedOptions.join(', ')}${inputValue ? `, ${inputValue}` : ''}`}
-          sx={{
-            '& .MuiOutlinedInput-root': {
-              '& fieldset': {
-                borderColor: 'transparent',
+    <Box sx={{
+      display:"flex",
+      alignItems:"center"
+    }}>
+      <PlaceIcon sx={{color:"gray"}}/>
+      <Autocomplete
+        freeSolo
+        multiple
+        id="multi-select-autocomplete"
+        options={indianCities}
+        value={selectedOptions}
+        onChange={(event, newValue) => {
+          setSelectedOptions(newValue);
+        }}
+        inputValue={inputValue}
+        onInputChange={handleInputChange}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            variant="outlined"
+           
+            placeholder="Enter Location"
+            value={`${selectedOptions.join(', ')}${inputValue ? `, ${inputValue}` : ''}`}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: 'transparent',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'transparent', 
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'transparent', 
+                },
               },
-              '&:hover fieldset': {
-                borderColor: 'transparent', 
-              },
-              '&.Mui-focused fieldset': {
-                borderColor: 'transparent', 
-              },
-            },
-          }}
-        />
-      )}
-      renderTags={(i) => {
-      
-        return i+","
-      }}  
-      sx={{ width: 300 }}
-    />
+            }}
+          />
+        )}
+        renderTags={(i) => {
+        
+          return i+","
+        }}  
+        sx={{ width: 200 }}
+      />
+
+    </Box>
   );
 }
