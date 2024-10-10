@@ -1,7 +1,7 @@
 
 
 import React, { useState } from 'react';
-import { FaSuitcase, FaMoneyBillAlt, FaCheckCircle, FaClock, FaDotCircle } from 'react-icons/fa';
+import { FaSuitcase, FaMoneyBillAlt, FaClock, FaDotCircle, FaRegLightbulb, FaBookOpen } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 
 import './JobDescription.css';
@@ -23,7 +23,7 @@ const JobDescription = ({ jobData }) => {
                 <h1>{jobData.title}</h1>
                 <h2>{jobData.company}</h2>
                 <p><FaLocationDot style={{ marginRight: '8px' }} /> {jobData.location}</p>
-                <p><FaMoneyBillAlt /> {jobData.salary}</p>
+                <p><FaMoneyBillAlt style={{ marginRight: '8px' }} /> {jobData.salary}</p>
                 <button className="apply-button">Apply now</button>
             </div>
 
@@ -33,22 +33,24 @@ const JobDescription = ({ jobData }) => {
                     <p className="profile-insights-text">Here's how the job qualifications align with your profile.</p>
                     
                     <div className="skills">
-                        <h4>Skills</h4>
+                    <h4 className='skills-title'> <FaRegLightbulb style={{marginRight: '8px'}}/>  Skills</h4>
                         <div className="skills-list-container">
                             {skillsToShow.map((skill, index) => (
                                 <div className="skills-list" key={index}>
                                     {skill}
                                 </div>
                             ))}
-                        </div>
-                        <button className="toggle-button" onClick={toggleSkills}>
+                            <button className="toggle-button" onClick={toggleSkills}>
                             {showMore ? '- Show Less' : '+ Show More'}
                         </button>
+                        </div>
+                        
                     </div>
 
                     <div className="education">
-                        <h4>Education</h4>
-                        <p><FaCheckCircle style={{ marginRight: '8px', color: '#2557a7' }} /> {jobData.education}</p>
+                        <h4 className='eduction-title'> <FaBookOpen style={{marginRight: '8px'}}/> Education</h4>
+                        <p> {jobData.education}</p>
+                            {/* <FaCheckCircle style={{ marginRight: '8px', color: '#2557a7' }} />  */}
                     </div>
 
                     <div className="location">
