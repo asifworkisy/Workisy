@@ -1,4 +1,4 @@
-import airtal from "../../../../assets/Topcompanies/airtal.gif"
+import airtal from "../../../../assets/Tophiring/airtal.gif"
 export const topCompaines=[
       
         {

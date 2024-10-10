@@ -1,55 +1,94 @@
 import { Box,Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { PiBuildingOfficeLight } from "react-icons/pi";
+import React from 'react';
+import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import HomeWorkIcon from '@mui/icons-material/HomeWork';
 
-import { SiSimpleanalytics } from "react-icons/si";
-import { FaProjectDiagram } from "react-icons/fa";
-import { FiCheckCircle, FiCode } from "react-icons/fi";
 
-import HomeIcon from '@mui/icons-material/Home';
 const data = [
     {
-        name:"remote",
-        icon:FiCode
+        name:"Remote",
+       icon:ImportantDevicesIcon,
+       colors:{
+        background:"rgb(209, 209, 250)",
+        circle:"rgb(231, 231, 248)",
+        text:"purple",
+        icon:"purple"
+       }
     },
     {
-        name:"freelance",
-        icon:SiSimpleanalytics,
+        name:"Freelance",
+        icon:AccountCircleIcon,
+        colors:{
+            background:"rgb(245, 242, 235)",
+            circle:"rgb(244, 234, 217)",
+            text:"rgb(249, 107, 56)",
+            icon:"rgb(249, 107, 56)",
+           }
+        
+        
     },
+    
     {
         name:"Full time",
-        icon:FaProjectDiagram
+        icon:WorkOutlineIcon,
+        colors:{
+            background:"rgb(249, 236, 238)",
+            circle:"rgb(253, 225, 230)",
+            text:"orangered",
+            icon:"red",
+           }
+        
     },
     {
         name:"Part time",
-        icon:FiCheckCircle
+        icon:AccessTimeIcon,
+        colors:{
+            background:"rgb(234, 249, 234)",
+            circle:"rgb(216, 249, 216)",
+            text:"rgb(25, 101, 25)",
+            icon:"green",
+           }
     },
-    {
-        name:"Contract",
-        icon:PiBuildingOfficeLight
+    // {
+    //     name:"Contract",
+    //     icon:ImportantDevicesIcon,
+    //     colors:{
+    //         background:"rgb(242, 251, 253)",
+    //         circle:"rgb(212, 243, 249)",
+    //         text:"rgb(119, 119, 246)",
+    //         icon:"rgb(119, 119, 246)",
+    //        }
 
-    },
+    // },
     {
         name:"Work from home",
-        icon:HomeIcon
+        icon:HomeWorkIcon,
+        colors:{
+            background:"rgb(232, 245, 239)",
+            circle:"rgb(212, 246, 230)",
+            text:"rgb(5, 89, 102)",
+            icon:"rgb(5, 89, 102)",
+           }
     }
 
 ]
 
-const BackgroundStyle=()=>{
+const BackgroundStyle=({backgroundColor,circle})=>{
     return(
         <Box sx={{
             height:"100px",
             width:"200px",
-            backgroundColor:"blue",
-            borderRadius:'10px',
+            backgroundColor:backgroundColor,
             padding:"1rem",
-            zIndex:-30
+            zIndex:-1
            
         }}>
-            <Box sx={{height:"50px",width:"50px",backgroundColor:"red",borderRadius:"50%",transform:"translateX(-2rem)"}}></Box>
-            <Box sx={{height:"50px",width:"50px",backgroundColor:"red",borderRadius:"50%",transform:"scale(3) translateX(100%)"}}></Box>
-            <Box sx={{height:"50px",width:"50px",backgroundColor:"red",borderRadius:"50%"}}></Box>
+            <Box sx={{height:"50px",width:"50px",backgroundColor:circle,borderRadius:"50%",transform:"translateX(-2rem)"}}></Box>
+            <Box sx={{height:"50px",width:"50px",backgroundColor:circle,borderRadius:"50%",transform:"scale(3) translateX(100%)"}}></Box>
+            <Box sx={{height:"50px",width:"50px",backgroundColor:circle,borderRadius:"50%"}}></Box>
     
 
         </Box>
@@ -60,71 +99,61 @@ const BackgroundStyle=()=>{
 export default function Category() {
 
    
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        setIsVisible(true);
-    }, []);
 
     return (
-        <Box sx={{ width: "70%", maxHeight: "400px", display: "flex",marginTop:"2rem",justifyContent:"center"}}>
-          
+        <Box sx={{ width: "100%", maxHeight: "400px", display: "flex",flexDirection:"column",marginTop:"2rem",justifyContent:"center",alignItems:"center"}}>
+          <Typography variant='h4' sx={{fontWeight:"600",letterSpacing:"1px"}}>Find the perfect job for YOU</Typography>
             <Box
                 sx={{
-                    width: "80%",
+                    width: "100%",
                     height: "auto",
                     display: "flex",
                     marginTop: "2rem",
-                    gap: "3rem",
+                    gap: "1.5rem",
                     flexWrap: "wrap",
                     alignItems: "center",
                     justifyContent: "center",
                 }}
             >
-                {data.map((job, id) => (
+                {data.map((card, id) => (
                     <Box sx={{
-                        height: "150px",
-                            width: "200px",
-                            borderRadius:"20px",
-                            // overflow:"hidden"
+                        height: "120x",
+                            width: "227px",
+                            borderRadius:"10px",
+                            overflow:"hidden",
+                            // transform:"scale(1.1)"
                     }}>
                             <Box
                                 key={id}
                                 sx={{
                                     height: "100px",
-                                    width: "200px",
+                                    width: "195px",
                                     padding: "1rem",
                                     
-                                    borderRadius: "10px",
+                                  
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
                                     flexDirection: "column",
-                                    border: "1px solid rgb(213, 213, 213)",
+                                   
                                     rowGap: ".5rem",
-                                    animation: `${isVisible ? "slideIn 1s ease forwards" : ""}`,
-                                    animationDelay: `${id * 0.2}s`,
+                                    borderRadius:"10px",
+                                   
                                     transition: "box-shadow 0.3s ease-in-out",
                                     "&:hover": {
                                         boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.3)",
                                     },
                                     position:"absolute",
-                                    // display:"none"s
+                                    zIndex:"2"
                                 }}
                             >
-                                <job.icon
-                                    style={{
-                                        fontSize: "1.2rem",
-                                        backgroundColor: "#f6f4f4",
-                                        borderRadius: "50%",
-                                        padding: ".5rem"
-                                    }}
-                                />
-                                <Typography variant="h6" sx={{ fontFamily: "Inter", fontSize: "1rem" }}>
-                                    {job.name}
+                                <card.icon sx={{fontSize:"3rem",color:card.colors.icon}}/>
+                              
+                                <Typography variant="h6" sx={{ fontFamily: "Inter", fontSize: "1rem" ,color:card.colors.text}}>
+                                    {card.name}
                                 </Typography>
                             </Box>
-                            <BackgroundStyle/>
+                            <BackgroundStyle backgroundColor={card.colors.background} circle={card.colors.circle}/>
                     </Box>
                     
                 ))}

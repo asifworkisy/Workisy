@@ -13,7 +13,7 @@ export default function SearchBox() {
         
        
         borderRadius:"50px",
-        padding:"1rem",
+        px:"1rem",
         marginTop:"2rem",
         transform:"scale(.9)",
         backgroundColor:"white",

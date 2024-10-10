@@ -71,6 +71,7 @@ export default function SearchInputg() {
                 borderColor: 'transparent', 
               },
             },
+           
           
             
           }}
