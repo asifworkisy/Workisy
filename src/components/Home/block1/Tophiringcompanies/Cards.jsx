@@ -1,64 +1,51 @@
-import React, { useState } from "react";
-import { Grid, Card, CardContent, Typography, Button, Box } from "@mui/material";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
-import './ftrComp.css';  // For custom transitions
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { Box, Link } from '@mui/material'
+import React, { useRef } from 'react'
+import { Card, CardContent, Typography,IconButton} from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
-import {Link} from "@mui/material";
-import { topCompaines } from "./data";
+import { topCompaines } from './data';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
-const Slide = ({companies}) => {
-  const [page, setPage] = useState(0);
-  const [direction, setDirection] = useState("next");
+export default function Cards({companyIds}) {
+  const scrollCard=useRef(null);
+  const companiesData=topCompaines.filter(company=>companyIds.includes(company.id));
 
-
-  const cardData=topCompaines.filter((company)=>companies.includes(company.id))
- 
   
-
-  const itemsPerPage = 4;
-  const totalPages = Math.ceil(cardData.length / itemsPerPage);
-
-  const handleNext = () => {
-    if (page < totalPages - 1) {
-      setDirection("next");
-      setPage((prevPage) => prevPage + 1);
-    }
-  };
-
-  const handlePrev = () => {
-    if (page > 0) {
-      setDirection("prev");
-      setPage((prevPage) => prevPage - 1);
-    }
-  };
-
- 
-  const currentPageData = cardData.slice(
-    page * itemsPerPage,
-    page * itemsPerPage + itemsPerPage
-  );
-
   return (
-    <div>
-      <SwitchTransition >
-        <CSSTransition
-          key={page}
-          timeout={500}
-          classNames={direction === "next" ? "slide-next" : "slide-prev"}
-        
-        >
-          <Grid container spacing={12} justifyContent="center">
-            {currentPageData.map((card, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index} >
-                <Card sx={{borderRadius:"10px",width:"230px",
+    <>
+    <Box ref={scrollCard}
+     sx={{
+      display: "flex",
+      columnGap: "1.5rem",
+      width: "100%",
+      overflowX: "auto",
+      // whiteSpace: "nowrap",
+      scrollbarWidth: "thin",
+      scrollbarColor: "blue transparent",
+      '&::-webkit-scrollbar': {
+        height: '8px',
+      },
+      '&::-webkit-scrollbar-thumb': {
+        backgroundColor: 'blue',
+        borderRadius: '10px',
+      },
+      '&::-webkit-scrollbar-track': {
+        backgroundColor: 'transparent',
+      },
+    }}
+    >
+       {companiesData.map((card, index) =>(
+            
+                <Card key={index} sx={{borderRadius:"10px",width:"250px",
                 
                    transition: "box-shadow 0.3s ease-in-out", 
-                   transform:"scale(.9)",
+                   flexShrink:0,
+                  
                    "&:hover": {
                      boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.3)", // Larger shadow on hover
-                     transform:"scale(.95)",
-                   },
+                  
+                   }
+                   
                 }}>
                   <CardContent sx={{
 
@@ -68,7 +55,7 @@ const Slide = ({companies}) => {
                         // justifyContent:"center",
                         flexDirection:"column",
                         rowGap:"1rem",
-                        padding:"2rem",
+                        px:"2rem",
                         
                        
                         
@@ -78,16 +65,17 @@ const Slide = ({companies}) => {
                     <Box component="img" src={card.img} alt="." sx={{
                       height:"50px",
                       width:"100px",
-                      marginRight:"2rem"
+                      
                     }}/>
                     <Box sx={
                       {
                         padding:"1rem",
                         display:"flex",
                         alignItems:"center",
+                        
                         flexDirection:"column",
-                        justifyContent:"center",
-                        backgroundColor:"rgba(237, 29, 37, 0.03)",
+                        justifyContent:"space-evenly",
+                        backgroundColor:card.color,
                         rowGap:"1rem"
                         
                       }
@@ -134,41 +122,27 @@ const Slide = ({companies}) => {
                     
                   </CardContent>
                 </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </CSSTransition>
-      </SwitchTransition>
+          
+       ))
+          }
 
-    
-      <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "20px"}}>
-        <Button variant="contained" disabled={page === 0} onClick={handlePrev} sx={{
-            backgroundColor:"white",color:"black",
-            borderRadius:"10px",
-            transform:"scale(.7)"
-           
-           
-        }}
-        >
-          <FaAngleLeft style={{fontSize:"1.5rem"}}/>
-        </Button>
-        <Button
-          variant="contained"
-          disabled={page === totalPages - 1}
-          onClick={handleNext}
-          sx={{
-            backgroundColor:"white",color:"black",
-            borderRadius:"10px",
-            transform:"scale(.7)"
-           
-           
-        }}
-        >
-          <FaAngleRight style={{fontSize:"1.5rem"}}/>
-        </Button>
-      </div>
-    </div>
-  );
-};
-
-export default Slide;
+    </Box>
+    <Box sx={{
+        position:"absolute",
+        right:"15%",
+        marginTop:"2rem",
+        display:"flex",
+        columnGap:"1rem"
+        
+      }}>
+        <IconButton sx={{color:"blue",backgroundColor:"white","&:hover":{backgroundColor:"rgb(175, 186, 250)",color:"white"}}} onClick={()=>scrollCard.current.scrollBy({left:"-320",behavior:"smooth"})}>
+          <KeyboardArrowLeftIcon/>
+        </IconButton>
+        <IconButton  sx={{color:"blue",backgroundColor:"white","&:hover":{backgroundColor:"rgb(175, 186, 250)",color:"white"}}} onClick={()=>scrollCard.current.scrollBy({left:"320",behavior:"smooth"})}>
+          <KeyboardArrowRightIcon/>
+        </IconButton>
+      </Box>
+          
+    </>
+  )
+}

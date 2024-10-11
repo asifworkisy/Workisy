@@ -4,12 +4,11 @@ import { Box,keyframes,Typography } from '@mui/material'
 
 
 import PageSlider from './topcompnies/Topcompanies';
-import FtrComp from './featuredcompanies/FtrComp';
+
 
 import Category from './categories/Category';
 import SearchBox from './Search/searchBox';
-
-
+import FtrComp from './Tophiringcompanies/TopComp';
 
 
 
@@ -91,6 +90,7 @@ export default function Block1() {
        
       <PageSlider/>
       <FtrComp/>
+     
 
       </Box>
 
