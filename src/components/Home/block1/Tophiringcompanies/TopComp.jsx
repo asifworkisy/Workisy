@@ -48,7 +48,9 @@ let [data,setData]=useState([1,2,3,4,5,6,7]);
       
 
         <Box sx={{ display: 'flex', justifyContent: 'center',  }}>
-        <Button variant='outlined'>View all companies</Button>
+        <Button variant='outlined' sx={{
+          backgroundColor:"white"
+        }}>View all companies</Button>
       </Box>
               
     

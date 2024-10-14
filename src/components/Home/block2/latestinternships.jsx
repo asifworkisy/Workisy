@@ -8,6 +8,7 @@ import BoltIcon from '@mui/icons-material/Bolt';
 
 import ArrowForwardIos from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIos from '@mui/icons-material/ArrowBackIos';
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 
 export default function LatestIntertships() {
     const categoriesInfo = [
@@ -60,18 +61,20 @@ export default function LatestIntertships() {
                     </Box>
                     <Box sx={{display:"flex",columnGap:".2rem",color:"rgb(84, 82, 82)"}}>
                         <LocationOnIcon sx={{fontSize:"1.1rem"}}/>
-                        <Typography variant='h6' sx={{fontWeight:"550",fontFamily:"inter",fontSize:".9rem",marginTop:"-1px"}}>Pune</Typography>
+                        <Typography variant='h6' sx={{fontWeight:"300",fontFamily:"inter",fontSize:".85rem",marginTop:"-1px"}}>Pune</Typography>
                     </Box>
                     <Box sx={{display:"flex",columnGap:".2rem",color:"rgb(84, 82, 82)"}}>
                         <CalendarTodayIcon sx={{fontSize:"1.1rem"}}/>
-                        <Typography variant='h6' sx={{fontWeight:"550",fontFamily:"inter",fontSize:".9rem",marginTop:"-1px"}}>1day ago</Typography>
+                        <Typography variant='h6' sx={{fontWeight:"300",fontFamily:"inter",fontSize:".85rem",marginTop:"-1px"}}>1day ago</Typography>
                     </Box>
                     <Box sx={{display:"flex",columnGap:".1rem",color:"rgb(84, 82, 82)"}}>
-                       <Typography variant='h6' sx={{fontWeight:"550",fontFamily:"inter",fontSize:".9rem",marginTop:"-1px"}}>Experience: 10+ Years</Typography>
+                    <HomeRepairServiceIcon sx={{fontSize:"1.1rem"}}/>
+                    <Typography variant='h6' sx={{fontWeight:"300",fontFamily:"inter",fontSize:".85rem",marginTop:"-1px"}}>10+ Years</Typography>
+                      
                     </Box>
                     
                 </Box>
-                <Box sx={{display:"flex",color:"black",columnGap:"2px"}}>
+                <Box sx={{display:"flex",color:"black",columnGap:"1rem"}}>
                     <Typography sx={{fontSize:".9rem"}}>Skills:</Typography>
                     <Box sx={{display:"flex",columnGap:".6rem"}}>
                        
@@ -88,7 +91,7 @@ export default function LatestIntertships() {
                                 color:"white",
                                 border:"none"
                             }
-                        }}>SQL</Typography>
+                        }}>Mysql</Typography>
                         <Typography sx={{fontSize:".8rem",
                             padding:".2rem",
                             borderRadius:"10px",
@@ -109,8 +112,8 @@ export default function LatestIntertships() {
                 </Box>
                 <Box sx={{display:"flex",justifyContent:"space-between",fontFamily:"santoshi"}}>
                     <Box sx={{display:"flex",alignItems:"center"}}>
-                    <Typography variant='h6' sx={{fontSize:"1rem"}}>15Lacs-26Lacs</Typography>
-                    <Typography sx={{color:"rgb(91, 90, 90)"}}>/year</Typography>
+                    <Typography variant='h6' sx={{fontSize:".9rem"}}>15Lacs-26Lacs</Typography>
+                    <Typography sx={{color:"rgb(91, 90, 90)",fontSize:".8rem"}}>/year</Typography>
                     
 
                     </Box>

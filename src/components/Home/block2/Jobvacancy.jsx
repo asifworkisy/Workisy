@@ -40,10 +40,10 @@ const courses=[
 
   return (
     <Box sx={{ width: "80%"}}>
-      <Typography variant='h4' sx={{fontFamily:"inter",fontWeight:"600" }}>
+      <Typography variant='h5' sx={{fontFamily:"inter",fontWeight:"600" }}>
         Find Job Vacancies By
       </Typography>
-      <Box sx={{ width: '100%', typography: 'body1' ,marginTop:"1rem"}}>
+      <Box sx={{ width: '100%', typography: 'body1' }}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -92,7 +92,8 @@ const courses=[
                                 border:"1px solid gray",
                                 fontFamily:"inter",
                                 borderRadius:"20px",
-                                padding:".6rem",
+                                p:".6rem",
+                                fontSize:"12px",
                                 transition:"all .5s",
                                 cursor:"pointer",
                                 "&:hover":{

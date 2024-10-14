@@ -3,12 +3,14 @@ import React from 'react'
 import { Box,keyframes,Typography } from '@mui/material'
 
 
-import PageSlider from './topcompnies/Topcompanies';
+
 
 
 import Category from './categories/Category';
 import SearchBox from './Search/searchBox';
 import FtrComp from './Tophiringcompanies/TopComp';
+import PopularCategories from './popularcategories/PopularCategories';
+import Topcompanies from './Topcompanies/Topcompanies';
 
 
 
@@ -53,7 +55,8 @@ export default function Block1() {
     }}>
       <Box sx={{
         display:"flex",
-        
+
+        flexDirection:{xs:"column",md:"row"},
         justifyContent:"center",
         
         
@@ -62,12 +65,13 @@ export default function Block1() {
         width:"97%",
         padding:"2rem",
         animation:`${animate} 2s linear infinite`
+
         
       
     
       }}>
         
-        <Typography sx={{fontWeight:"600",fontFamily:"inter" ,fontSize:{xs:"1.7rem",sm:"1.5rem"},marginTop:"2rem",color:"white",width:"226px"}}>Over 7,00,000+ jobs to explore</Typography>
+        <Typography sx={{fontWeight:"600",fontFamily:"inter" ,fontSize:{xs:"1.7rem",sm:"1.5rem"},marginTop:"2rem",color:"white",width:{xs:"auto",md:"226px"}}}>Over 7,00,000+ jobs to explore</Typography>
        
         <SearchBox/>
 
@@ -86,9 +90,11 @@ export default function Block1() {
       
        
 
-      <Box sx={{width:"80%",marginTop:"2.5rem"}}>
+      <Box sx={{width:"80%",marginTop:{sm:"8vh",md:"5vh"}}}>
        
-      <PageSlider/>
+     
+      <Topcompanies/>
+      <PopularCategories/>
       <FtrComp/>
      
 

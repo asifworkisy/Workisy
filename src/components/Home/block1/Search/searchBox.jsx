@@ -17,6 +17,7 @@ export default function SearchBox() {
         marginTop:"2rem",
         transform:"scale(.9)",
         backgroundColor:"white",
+       
       
     }}>
         <SearchInput/>
@@ -27,10 +28,11 @@ export default function SearchBox() {
         <Button sx={{
           color:"white",
           backgroundColor:"#096eb6",
-          borderRadius:"20px",
+          borderRadius:"2vw",
           textTransform:"capitalize",
-          padding:".5rem",
-         px:"1.5rem"
+          p:".vw",
+         px:"1.5vw",
+         fontSize:"1vw"
         }}>Search</Button>
     </Box>
   )
