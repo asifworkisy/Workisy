@@ -86,7 +86,7 @@ export default function Premiumservices() {
                     padding:".7rem",
                     fontFamily:"santhosi",
                     borderRadius:"20px",
-                    width:"100px"
+                    width:"120px"
                     
                 }}>Learn more</Link>
                 <Typography sx={{fontSize:".7rem",color:"rgb(65, 64, 64)",fontFamily:"santoshi"}}>include paid services</Typography>

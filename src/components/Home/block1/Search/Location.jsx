@@ -59,6 +59,7 @@ export default function Location() {
                 '&.Mui-focused fieldset': {
                   borderColor: 'transparent', 
                 },
+                fontSize:"1.1vw"
               },
             }}
           />
@@ -67,7 +68,7 @@ export default function Location() {
         
           return i+","
         }}  
-        sx={{ width: 200 }}
+        sx={{ width:"12vw"}}
       />
 
     </Box>
