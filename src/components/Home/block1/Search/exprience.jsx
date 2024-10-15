@@ -44,9 +44,10 @@ export default function MultipleSelectPlaceholder() {
 
   return (
     <Box sx={{
-      display:"flex",
+      display:{xs:"none",sm:"flex"},
       alignItems:"center",
-      columnGap:".5rem"
+      columnGap:".5rem",
+
     }}>
       <LocalMallIcon sx={{color:"gray"}}/>
         <Select
@@ -57,7 +58,10 @@ export default function MultipleSelectPlaceholder() {
           input={<OutlinedInput />}
           renderValue={(selected) => {
             if (selected.length === 0) {
-              return <Typography color="text.secondary" sx={{fontSize:"1.1vw"}}>Enter experience</Typography>;
+              return <Typography color="text.secondary" sx={{
+                fontSize:{md:"1.1vw",sm:"1.5vw"}
+
+                }}>Enter experience</Typography>;
             }
             return selected.join(', ');
           }}
@@ -72,7 +76,7 @@ export default function MultipleSelectPlaceholder() {
               border: 'none',
             },
            
-            width:"15vw",
+            width:{md:"15vw",sm:"18vw"},
            
           }}
         >

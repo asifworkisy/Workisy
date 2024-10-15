@@ -21,10 +21,16 @@ const iconsList=[
 const ButtonType=({Icon,info})=>{
    
     return(
-        <Stack direction="row" spacing={1} alignItems="center" sx={{border:"1px solid rgb(212, 212, 212)",width:"27%",borderRadius:"20px",padding:".2rem"}} justifyContent="center" >
-            <Icon sx={{fontSize:"1.1rem",color:"#096eb6"}}/>
-            <Typography variant='h6' sx={{fontSize:".8rem",fontWeight:"600",color:"black"}}>{info}</Typography>
-           <ArrowForwardIos sx={{fontSize:".8rem",color:"rgb(65, 64, 64)",fontFamily:"inter"}}/>
+        <Stack direction="row" spacing={1} alignItems="center" sx={{
+            border:"1px solid rgb(212, 212, 212)",
+            width:{xs:"40vw",sm:"12vw",md:"auto"},
+            borderRadius:"20px",p:".2rem",
+            
+        }}
+             justifyContent="center" >
+            <Icon sx={{fontSize:{xs:"5vw",sm:"1.1vw"},color:"#096eb6"}}/>
+            <Typography variant='h6' sx={{fontSize:{xs:"3vw",sm:".8vw"},fontWeight:"600",color:"black"}}>{info}</Typography>
+           <ArrowForwardIos sx={{fontSize:".8vw",color:"rgb(65, 64, 64)",fontFamily:"inter"}}/>
         </Stack>
     )
 }
@@ -44,25 +50,27 @@ export default function Premiumservices() {
             paddingRight:"5rem",
             border:"1px solid   rgb(204, 204, 204)",
             marginTop:"2rem"
+            ,flexDirection:{xs:"column",sm:"row"}
         }}>
 
             <Box sx={{
                 display:'flex',
-                columnGap:"1rem"
+                columnGap:"1rem",
+                flexDirection:{xs:"column",sm:"row"}
             }}>
                  <Box component="img" src={pimg1} alt="." sx={{
                 height:"7rem",
                 width:"7rem",
                 
-            }}/>
+                     }}/>
 
-            <Box sx={{width:"60%",display:"flex",flexDirection:"column",rowGap:"1rem"}}>
-                <Typography variant='h5' sx={{fontWeight:"bold",fontFamily:"inter"}}>Accelerate your job search with premium services</Typography>
-                <Typography sx={{fontFamily:"inter"}}>Services to help you get hired, faster: from preparing your CV, getting recruiter attention, finding the right jobs, and more!</Typography>
-                <Box sx={{display:"flex",columnGap:"1rem"}}>
+            <Box sx={{width:{xs:"100%",sm:"70%"},display:"flex",flexDirection:"column",rowGap:"1rem"}}>
+                <Typography variant='h5' sx={{fontWeight:"bold",fontFamily:"inter",fontSize:{sm:"18px",md:"1.5vw"}}}>Accelerate your job search with premium services</Typography>
+                <Typography sx={{fontFamily:"inter",fontSize:{sm:"10px",md:"1vw"}}}>Services to help you get hired, faster: from preparing your CV, getting recruiter attention, finding the right jobs, and more!</Typography>
+                <Box sx={{display:"flex",gap:"1rem",flexDirection:{xs:"column",sm:"row"}}}>
                     {
                         iconsList.map((i,index)=>(
-                            <ButtonType Icon={i.icon} info={i.desc} key={index}/>
+                            <ButtonType Icon={i.icon} info={i.desc} key={index} />
                         ))
                     }
 
@@ -76,7 +84,8 @@ export default function Premiumservices() {
                 display:"flex",
                 flexDirection:"column",
                 alignItems:"center",
-                justifyContent:"center"
+                justifyContent:"center",
+                marginTop:{xs:"1rem",sm:0}
             }}>
                 <Link sx={{
                     fontSize:"1.2rem",
