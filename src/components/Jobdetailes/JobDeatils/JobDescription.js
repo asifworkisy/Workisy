@@ -1,17 +1,28 @@
 
-
 import React, { useState } from 'react';
-import { FaSuitcase, FaMoneyBillAlt, FaClock, FaDotCircle, FaRegLightbulb, FaBookOpen } from 'react-icons/fa';
+import { FaSuitcase, FaMoneyBillAlt, FaClock, FaDotCircle, FaRegLightbulb, FaBookOpen  } from 'react-icons/fa';
+import { FiBookmark } from "react-icons/fi";
 import { FaLocationDot } from 'react-icons/fa6';
-
-import './JobDescription.css';
+import Modal from './Modal'; // Import the Modal component
+import './JobDescription.css'; // Import JobDescription styles
 
 const JobDescription = ({ jobData }) => {
     const [showMore, setShowMore] = useState(false);
+    const [showModal, setShowModal] = useState(false); // State to handle modal visibility
 
     // Toggle function to show more or less skills
     const toggleSkills = () => {
         setShowMore(!showMore);
+    };
+
+    // Function to open the modal
+    const openModal = () => {
+        setShowModal(true);
+    };
+
+    // Function to close the modal
+    const closeModal = () => {
+        setShowModal(false);
     };
 
     // Determine which skills to show
@@ -24,7 +35,10 @@ const JobDescription = ({ jobData }) => {
                 <h2>{jobData.company}</h2>
                 <p><FaLocationDot style={{ marginRight: '8px' }} /> {jobData.location}</p>
                 <p><FaMoneyBillAlt style={{ marginRight: '8px' }} /> {jobData.salary}</p>
-                <button className="apply-button">Apply now</button>
+                <div className='button-section'>
+                    <button className="apply-button" onClick={openModal}>Apply now</button> {/* Show modal on click */}
+                    <button className='save-button'><FiBookmark style={{ fontSize: '25px' }}/></button>
+                </div>
             </div>
 
             <div className="job-scrollbar">
@@ -41,16 +55,14 @@ const JobDescription = ({ jobData }) => {
                                 </div>
                             ))}
                             <button className="toggle-button" onClick={toggleSkills}>
-                            {showMore ? '- Show Less' : '+ Show More'}
-                        </button>
+                                {showMore ? '- Show Less' : '+ Show More'}
+                            </button>
                         </div>
-                        
                     </div>
 
                     <div className="education">
-                        <h4 className='eduction-title'> <FaBookOpen style={{marginRight: '8px'}}/> Education</h4>
-                        <p> {jobData.education}</p>
-                            {/* <FaCheckCircle style={{ marginRight: '8px', color: '#2557a7' }} />  */}
+                        <h4 className='education-title'> <FaBookOpen style={{marginRight: '8px'}}/> Education</h4>
+                        <p>{jobData.education}</p>
                     </div>
 
                     <div className="location">
@@ -93,6 +105,9 @@ const JobDescription = ({ jobData }) => {
                     <p>Job Types: {jobData.jobTypes}</p>
                 </div>
             </div>
+
+            {/* Pass jobData.skills as a prop to the Modal component */}
+            <Modal show={showModal} onClose={closeModal} skills={jobData.skills} />
         </div>
     );
 };
