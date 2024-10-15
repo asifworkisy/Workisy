@@ -40,11 +40,12 @@ body {
   font-size: 14px;
   cursor: pointer;
   transition: border-color 0.3s ease;
-  width: auto; /* Allow the button to grow as needed */
+  width: max-content;
+  /* width: auto; Allow the button to grow as needed */
 }
 
 .location-button span {
-  margin-right: 5px;
+  margin-right: 2px;
   display: inline-flex;
   align-items: center; /* Keep the text and number on the same line */
 }
@@ -52,11 +53,11 @@ body {
 .location-button .count {
   font-size: 12px;
   margin-left: 5px; 
-  color: #6200ea; 
+  color: white; 
 }
 
 .location-button:hover {
-  border-color: #6200ea;
+  border-color: #2557a7;
 }
 .dropdown-body {
   background-color: white;
@@ -162,13 +163,15 @@ body {
 }
 /* Add this to your App.css or FilterDropdown.css */
 .wide-button {
-  min-width: 120px; /* Set your desired width here */
+  width: max-content;
+  /* min-width: 120px; Set your desired width here */
   /* Optionally, you can add padding and margins to improve the appearance */
   padding: 5px 10px;
   margin: 5px 0;
 }
 .wide-button2 {
-  min-width: 163px; /* Set your desired width here */
+  width: max-content;
+  /* min-width: 163px; Set your desired width here */
   /* Optionally, you can add padding and margins to improve the appearance */
   padding: 5px 15px;
   margin: 5px 0px;
