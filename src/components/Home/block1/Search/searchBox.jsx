@@ -17,22 +17,23 @@ export default function SearchBox() {
         marginTop:"2rem",
         transform:"scale(.9)",
         backgroundColor:"white",
+        width:"auto"
        
       
     }}>
         <SearchInput/>
-        <Divider  orientation="vertical" flexItem sx={{ margin: '0 16px' }}/>
+        <Divider  orientation="vertical" flexItem sx={{ margin: '0 16px',display:{xs:"none",sm:"block"}}}/>
         <Experience/>
-        <Divider  orientation="vertical" flexItem sx={{ margin: '0 16px' }}/>
+        <Divider  orientation="vertical" flexItem sx={{ margin: '0 16px',display:{xs:"none",sm:"block"}}}/>
         <Location/>
         <Button sx={{
           color:"white",
           backgroundColor:"#096eb6",
           borderRadius:"2vw",
           textTransform:"capitalize",
-          p:".vw",
+          
          px:"1.5vw",
-         fontSize:"1vw"
+         fontSize:{xs:"2vw",sm:"1vw"}
         }}>Search</Button>
     </Box>
   )

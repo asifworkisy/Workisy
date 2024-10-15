@@ -19,18 +19,15 @@ export default function Cards({companyIds}) {
       columnGap: "1.5rem",
       width: "100%",
       overflowX: "auto",
-      // whiteSpace: "nowrap",
-      scrollbarWidth: "thin",
-      scrollbarColor: "blue transparent",
-      '&::-webkit-scrollbar': {
-        height: '8px',
+      "&::-webkit-scrollbar": {
+        height: "3px", 
       },
-      '&::-webkit-scrollbar-thumb': {
-        backgroundColor: 'blue',
-        borderRadius: '10px',
+      "&::-webkit-scrollbar-thumb": {
+        backgroundColor: "#096eb6", 
+        borderRadius: "10px", 
       },
-      '&::-webkit-scrollbar-track': {
-        backgroundColor: 'transparent',
+      "&::-webkit-scrollbar-track": {
+        backgroundColor: "transparent", 
       },
     }}
     >

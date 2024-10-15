@@ -14,7 +14,11 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
+<<<<<<< HEAD
     "react-phone-input-2": "^2.15.1",
+=======
+    "react-modal": "^3.16.1",
+>>>>>>> 57df4af36c0521108882cfb0c4c199b8c0b12dd5
     "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
     "react-select": "^5.8.1",

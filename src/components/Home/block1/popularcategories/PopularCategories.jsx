@@ -58,7 +58,7 @@ export default function PopularCategories() {
                     outline:"none",
                     columnGap:"1rem",
                     border:"1px solid rgb(223, 221, 221)",
-                    width:"10rem",
+                    width:{xs:"7rem",sm:"10rem"},
                     alignItems:"center",
                     pl:"1rem"
                     // justifyContent:"C"
