@@ -162,9 +162,18 @@ export default function LatestIntertships() {
     return (
         <Box sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", rowGap: "1rem", marginTop: "1.5rem" }}>
             <Typography variant='h4' sx={{ fontFamily: "inter", fontWeight: "600" }}>Latest internships on Workisy</Typography>
-            <Box sx={{ display: "flex", columnGap: "1rem" }}>
-                <Typography variant='h6' sx={{ fontFamily: "inter", color: "rgb(52, 51, 51)" }}>Popular categories :</Typography>
-                <Box sx={{ display: 'flex', columnGap: "1rem" }}>
+            <Box sx={{ display: "flex", columnGap: "1rem",justifyContent:"center"}}>
+                <Typography variant='h6' sx={{ fontFamily: "inter", color: "rgb(52, 51, 51)" ,fontSize:{sm:"1.9vw",md:"1.3vw"}}}>Popular categories :</Typography>
+                <Box sx={{
+                     display: 'flex', columnGap: "1rem" ,
+                    
+                    
+                     overflowX: 'auto',
+                     scrollBehavior: 'smooth',
+                     width:{xs:"20%",sm:"50%",md:"70%",lg:"auto"},
+                   
+                     
+                     }}>
                     {categoriesInfo.map((data, idx) => (
                         <Button
                             key={idx}
@@ -179,13 +188,19 @@ export default function LatestIntertships() {
                                 textTransform: "capitalize",
                                 border: "1px solid rgb(193, 193, 193)",
                                 borderRadius: "20px",
-                                outline: "none"
+                                outline: "none",
+                                width:"auto",
+                               
+                                flexShrink:0,
+                                height:{sm:"4vw",md:"2.5vw"},
+                                
                             }}
                         >{data.category}</Button>
                     ))}
                 </Box>
             </Box>
-            <Box ref={cardsContainer} sx={{
+            <Box ref={cardsContainer}
+            sx={{
                 display: "flex",
                 width: "84%",
                 overflowX: 'auto',
@@ -193,24 +208,20 @@ export default function LatestIntertships() {
                 marginTop: "2rem",
                 position: "relative",
                 columnGap: ".5rem",
-                // justifyContent:"center",
-
-                '&::-webkit-scrollbar': {
-                    height: '8px',
+              
+                
+                "&::-webkit-scrollbar": {
+                  height: "3px", 
                 },
-                '&::-webkit-scrollbar-track': {
-                    background: 'transparent',
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: "#096eb6", 
+                  borderRadius: "10px", 
                 },
-                '&::-webkit-scrollbar-thumb': {
-                    backgroundColor: 'blue',
-                    borderRadius: '10px',
+                "&::-webkit-scrollbar-track": {
+                  backgroundColor: "transparent", 
                 },
-                '&::-webkit-scrollbar-thumb:hover': {
-                    backgroundColor: 'darkblue',
-                },
-                scrollbarWidth: 'thin',
-                scrollbarColor: 'blue transparent',
-            }}>
+              }}
+              >
                 {categoriesInfo[id].info.map((card, index) => <Card key={index} card={card} />)}
             </Box>
 

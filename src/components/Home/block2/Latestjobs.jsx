@@ -154,9 +154,17 @@ export default function Latestjobs() {
     return (
         <Box sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", rowGap: "1rem", marginTop: "1.5rem" }}>
             <Typography variant='h4' sx={{ fontFamily: "inter", fontWeight: "600" }}>Latest jobs on Workisy</Typography>
-            <Box sx={{ display: "flex", columnGap: "1rem" }}>
-                <Typography variant='h6' sx={{ fontFamily: "inter", color: "rgb(52, 51, 51)" }}>Popular categories :</Typography>
-                <Box sx={{ display: 'flex', columnGap: "1rem" }}>
+            <Box sx={{ display: "flex", columnGap: "1rem",justifyContent:"center"
+               
+              
+             }}>
+                <Typography variant='h6' sx={{ fontFamily: "inter", color: "rgb(52, 51, 51)",fontSize:{sm:"1.9vw",md:"1.3vw"} }}>Popular categories :</Typography>
+                <Box sx={{ display: 'flex', columnGap: "1rem",
+                     
+                     overflowX: 'auto',
+                     scrollBehavior: 'smooth',
+                     width:{xs:"20%",sm:"50%",md:"70%",lg:"auto"},
+                 }}>
                     {categoriesInfo.map((data, idx) => (
                         <Button
                             key={idx}
@@ -171,7 +179,10 @@ export default function Latestjobs() {
                                 textTransform: "capitalize",
                                 border: "1px solid rgb(193, 193, 193)",
                                 borderRadius: "20px",
-                                outline: "none"
+                                outline: "none",
+                                
+                                flexShrink:0,
+                                height:{sm:"4vw",md:"2.5vw"},
                             }}
                         >{data.category}</Button>
                     ))}
@@ -185,7 +196,8 @@ export default function Latestjobs() {
                 marginTop: "2rem",
                 position: "relative",
                 columnGap: ".5rem",
-                scrollbarWidth: "none"
+                scrollbarWidth: "none",
+               
             }}>
                 {categoriesInfo[id].info.map((card, index) => <Card key={index} card={card} />)}
             </Box>
