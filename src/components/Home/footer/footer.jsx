@@ -5,7 +5,10 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import playstore from "../../../assets/playstore.jpg"
 import workisy from "../../../assets/logo.png"
-import ibm from "../../../assets/ibm.webp"
+
+
+const images = require.context("../../../assets/footer", false, /\.(gif|webp)$/);
+const companyLogos = images.keys().map(images);
 let data=[
     {
         title:"COMPANY",
@@ -61,14 +64,14 @@ export default function Footer() {
         }
     }
     let imgStyle={
-        height:"50px",
+        height:"40px",
         width:"100px",
         flexShrink:0,
         animation: "moveImages 2s linear infinite",
       
 
     }
-    let items=Array.from({length:10},(i,j)=>j+1)
+   
   return (
         <Box sx={{
             width:"100%",
@@ -133,10 +136,10 @@ export default function Footer() {
               
                 <Box sx={{width:"40%",alignItems:"center",display:"flex",justifyContent:"center",columnGap:"1rem"}}>
                     <Typography variant='h6' sx={{fontSize:"1rem",borderRight:"1px solid gray",paddingRight:"1rem",width:"7rem"}}>Our business</Typography>
-                    <Box sx={{width:"90%",display:"flex",overflow:"hidden",columnGap:"1rem"}}>
+                    <Box sx={{width:"90%",display:"flex",overflow:"hidden",columnGap:"1rem",backgroundColor:"white",py:".7rem"}}>
                         {
-                            items.map((i,j)=>(
-                                <img style={imgStyle} key={j} src={ibm} alt='.'/>
+                           [...companyLogos,...companyLogos].map((i,j)=>(
+                                <img style={imgStyle} key={j} src={i} alt='.'/>
                             ))
                             
                         }

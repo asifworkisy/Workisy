@@ -142,7 +142,7 @@
             src={title}
             sx={
               {
-              height:{xs:"3rem",sm:"4rem"},
+              height:{xs:"3rem",sm:"3rem"},
               width:{xs:"8rem",sm:"9rem"}
             }}
             />

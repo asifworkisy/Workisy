@@ -70,6 +70,7 @@ export default function SearchInputg() {
               '&.Mui-focused fieldset': {
                 borderColor: 'transparent', 
               },
+              fontSize:"1.1vw"
             },
            
           
@@ -81,7 +82,9 @@ export default function SearchInputg() {
       
         return i+","
       }}  
-      sx={{ width: 350}}
+      sx={{
+         width:"22vw"
+        }}
     />
     </Box>
    

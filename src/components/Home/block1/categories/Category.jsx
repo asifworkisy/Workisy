@@ -101,7 +101,9 @@ export default function Category() {
    
 
     return (
-        <Box sx={{ width: "100%", maxHeight: "400px", display: "flex",flexDirection:"column",marginTop:"2rem",justifyContent:"center",alignItems:"center"}}>
+        <Box sx={{ width: "100%", maxHeight: "400px", display: "flex",flexDirection:"column",
+        marginTop:{sm:"9vh",md:"5vh"},
+        justifyContent:"center",alignItems:"center"}}>
           <Typography variant='h4' sx={{fontWeight:"600",letterSpacing:"1px"}}>Find the perfect job for YOU</Typography>
             <Box
                 sx={{

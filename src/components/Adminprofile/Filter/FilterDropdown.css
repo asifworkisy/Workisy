@@ -52,11 +52,11 @@ body {
 .location-button .count {
   font-size: 12px;
   margin-left: 5px; /* Add some spacing between the title and the number */
-  color: #6200ea; /* Lighter color for the count */
+  color: #2557a7; /* Lighter color for the count */
 }
 
 .location-button:hover {
-  border-color: #6200ea;
+  border-color: #2557a7;
 }
 .dropdown-body {
   background-color: white;
@@ -144,7 +144,7 @@ body {
 }
 
 .apply-button {
-  background-color: #6200ea;
+  background-color: #2557a7;
   color: white;
 }
 
