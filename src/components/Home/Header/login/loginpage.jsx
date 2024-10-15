@@ -283,7 +283,7 @@ const modalBackgroundStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  height: "100vh", // Full height for better centering
+  height: "100vh",
 };
 
 export default function Loginpage() {
@@ -291,41 +291,41 @@ export default function Loginpage() {
   const [showPage, setShowPage] = React.useState("input");
   const [inputValue, setInputValue] = React.useState("");
   const [otpValue, setOtpValue] = React.useState("");
-  const [errorMessage, setErrorMessage] = React.useState(""); // Error message state
+  const [errorMessage, setErrorMessage] = React.useState("");
 
   const handleOpen = () => {
-    setOpen(true); // Open modal
+    setOpen(true);
   };
 
   const handleClose = () => {
-    setOpen(false); // Close modal
-    resetFields(); // Reset fields on close
+    setOpen(false);
+    resetFields();
   };
 
   const resetFields = () => {
     setInputValue("");
     setOtpValue("");
     setShowPage("input");
-    setErrorMessage(""); // Reset error message
+    setErrorMessage("");
   };
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
-    setErrorMessage(""); // Clear error on input change
+    setErrorMessage("");
   };
 
   const handleOtpChange = (e) => {
     setOtpValue(e.target.value);
-    setErrorMessage(""); // Clear error on OTP change
+    setErrorMessage("");
   };
 
   const handleSendOtp = () => {
     if (inputValue.trim()) {
       console.log(`Sending OTP to: ${inputValue}`);
-      setShowPage("otp"); // Switch to OTP verification screen
-      setErrorMessage(""); // Clear error message
+      setShowPage("otp");
+      setErrorMessage("");
     } else {
-      setErrorMessage("Please enter a valid email or phone number."); // Set error message
+      setErrorMessage("Please enter a valid email or phone number.");
     }
   };
 
@@ -334,7 +334,7 @@ export default function Loginpage() {
       console.log(`Verifying OTP: ${otpValue}`);
       handleClose();
     } else {
-      setErrorMessage("Please enter a valid OTP."); // Set error message
+      setErrorMessage("Please enter a valid OTP.");
     }
   };
 
@@ -379,13 +379,17 @@ export default function Loginpage() {
                 fontWeight: "1000",
                 color: "#007BFF",
                 marginBottom: "1rem",
+                marginTop: "-2rem",
               }}
             >
               {showPage === "input" ? "Login" : "Verify OTP"}
             </Typography>
             {showPage === "input" ? (
               <Box>
-                <Typography variant="body1" sx={{ fontWeight: "700" }}>
+                <Typography
+                  variant="body1"
+                  sx={{ fontWeight: "700", marginBottom: "0.7rem" }}
+                >
                   Enter your email or phone number:
                 </Typography>
                 <input
@@ -402,7 +406,13 @@ export default function Loginpage() {
                   }}
                 />
                 {errorMessage && (
-                  <Typography sx={{ color: "red", fontSize: "0.875rem", marginBottom: "1rem" }}>
+                  <Typography
+                    sx={{
+                      color: "red",
+                      fontSize: "0.875rem",
+                      marginBottom: "1rem",
+                    }}
+                  >
                     {errorMessage}
                   </Typography>
                 )}
@@ -416,7 +426,7 @@ export default function Loginpage() {
               </Box>
             ) : (
               <Box>
-                <Typography variant="body1" sx={{ fontWeight: "700" }}>
+                <Typography variant="body1" sx={{ fontWeight: "700", marginBottom: "0.7rem"  }}>
                   Enter OTP:
                 </Typography>
                 <input
@@ -433,7 +443,13 @@ export default function Loginpage() {
                   }}
                 />
                 {errorMessage && (
-                  <Typography sx={{ color: "red", fontSize: "0.875rem", marginBottom: "1rem" }}>
+                  <Typography
+                    sx={{
+                      color: "red",
+                      fontSize: "0.875rem",
+                      marginBottom: "1rem",
+                    }}
+                  >
                     {errorMessage}
                   </Typography>
                 )}

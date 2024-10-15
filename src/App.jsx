@@ -1,9 +1,11 @@
 import React from 'react'
+import "./App.css"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Adminprofile from "../src/components/Adminprofile/Home/home"
 import Jobcontainer from './components/Jobdetailes/Jobcontainer';
 import Homepage from './components/Home/Homepage/Home';
-import "./App.css"
+import EmployeLogin from './components/EmployerSide/EmployeLogin/EmployeLogin';
+import EmployeSignup from './components/EmployerSide/EmployeSignup/EmployeSignup';
 
 
 export default function App() {
@@ -15,6 +17,8 @@ export default function App() {
       <Route path="/" element={<Homepage />} />
       <Route path='/adminProfile' element={<Adminprofile/>}/>
       <Route path='/jobDetailes' element={<Jobcontainer/>}/> 
+      <Route path='/employee-login' element={<EmployeLogin/>}/> 
+      <Route path='/employee-signup' element={<EmployeSignup/>}/> 
      
       
     </Routes>
