@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./EmployeLogin.css";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+// import PhoneInput from "react-phone-input-2";
+// import "react-phone-input-2/lib/style.css";
 import Header from "../../Home/Header/Header";
 import { useNavigate } from "react-router-dom"; // Use the hook here
 
 const EmployeLogin = () => {
   const [fullName, setFullName] = useState("");
-  const [contactNumber, setContactNumber] = useState("");
+  // const [contactNumber, setContactNumber] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [emailId, setEmailId] = useState("");
   const [showLoginForm, setShowLoginForm] = useState(true);
@@ -18,12 +18,12 @@ const EmployeLogin = () => {
     e.preventDefault();
     console.log({
       fullName,
-      contactNumber,
+      // contactNumber,
       companyName,
       emailId,
     });
     setFullName("");
-    setContactNumber("");
+    // setContactNumber("");
     setCompanyName("");
     setEmailId("");
   };
@@ -118,7 +118,7 @@ const EmployeLogin = () => {
                 >
                   Contact Number*
                 </label>
-                <PhoneInput
+                {/* <PhoneInput
                   className="employee-login-form-phone-input"
                   country={"in"}
                   value={contactNumber}
@@ -129,7 +129,7 @@ const EmployeLogin = () => {
                     required: true,
                   }}
                   inputStyle={{ width: "100%" }}
-                />
+                /> */}
                 <label
                   className="employee-login-form-label"
                   htmlFor="company-name"
