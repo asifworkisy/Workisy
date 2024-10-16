@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Box, Button, Divider, Typography } from '@mui/material';
+import { Box,Divider, Typography } from '@mui/material';
 
 const jobData = {
   popularCategories: {
