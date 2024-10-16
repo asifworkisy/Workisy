@@ -199,7 +199,6 @@ export default function LatestIntertships() {
                     ))}
                 </Box>
             </Box>
-<<<<<<< HEAD
             <Box ref={cardsContainer} sx={{
     display: "flex",
     width: "84%",
@@ -236,7 +235,6 @@ export default function LatestIntertships() {
     ))}
 </Box>
 
-=======
             <Box ref={cardsContainer}
             sx={{
                 display: "flex",
@@ -262,7 +260,6 @@ export default function LatestIntertships() {
               >
                 {categoriesInfo[id].info.map((card, index) => <Card key={index} card={card} />)}
             </Box>
->>>>>>> 57df4af36c0521108882cfb0c4c199b8c0b12dd5
 
             <Box sx={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end", width: "70%" }}>
                 <Button onClick={() => handleScroll('left')} disabled={isLeftDisabled} sx={{
