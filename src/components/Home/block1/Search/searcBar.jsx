@@ -83,7 +83,7 @@ export default function SearchInputg() {
         return i+","
       }}  
       sx={{
-         width:{xs:"60vw",sm:"30vw",md:"22vw"}
+         width:{xs:"68vw",sm:"30vw",md:"22vw"}
         }}
     />
     </Box>

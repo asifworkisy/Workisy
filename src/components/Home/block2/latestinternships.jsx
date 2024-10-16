@@ -161,7 +161,7 @@ export default function LatestIntertships() {
 
     return (
         <Box sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", rowGap: "1rem", marginTop: "1.5rem" }}>
-            <Typography variant='h4' sx={{ fontFamily: "inter", fontWeight: "600" }}>Latest internships on Workisy</Typography>
+            <Typography variant='h4' sx={{ fontFamily: "inter", fontWeight: "600",fontSize:{xs:"25px",sm:"30px"} }}>Latest internships on Workisy</Typography>
             <Box sx={{ display: "flex", columnGap: "1rem",justifyContent:"center"}}>
                 <Typography variant='h6' sx={{ fontFamily: "inter", color: "rgb(52, 51, 51)" ,fontSize:{sm:"1.9vw",md:"1.3vw"}}}>Popular categories :</Typography>
                 <Box sx={{

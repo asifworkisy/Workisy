@@ -29,7 +29,7 @@ export default function Topcompanies() {
     }, []);
 
     return (
-        <Box sx={{marginTop:{xs:"3  0vh",sm:0}}}>
+        <Box sx={{marginTop:{xs:"30vh",sm:0}}}>
             <Typography variant='h6' sx={{textAlign:"center",fontSize:"1rem",letterSpacing:"1px"}}>Featured Companies</Typography>
         <Box
             ref={scrollRef}

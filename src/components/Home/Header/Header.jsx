@@ -170,10 +170,11 @@
                     border:".1px solid rgb(241,241,241)",
                     outline:"none",
                     maxWidth:"none"  ,
-                    padding:"1rem"
-
+                    padding:"1rem",
+                    
                   },
-                }
+                },
+                
               }}
 
               >
