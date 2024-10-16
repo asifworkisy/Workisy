@@ -43,7 +43,8 @@ export default function Job()
   return(
     <Box sx={{
       display:"flex",
-      columnGap:"1rem"
+      columnGap:"1rem",
+      px:"1rem"
        
     }}>
 

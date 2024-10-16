@@ -39,7 +39,8 @@ export default function Companies() {
   return(
     <Box sx={{
       display:"flex",
-      columnGap:"1rem"
+      columnGap:"1rem",
+      px:"1rem"
        
     }}>
 

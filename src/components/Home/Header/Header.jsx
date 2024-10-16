@@ -152,7 +152,7 @@ export default function Header() {
               tooltip: {
                 sx: {
                   backgroundColor: "white",
-                  boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.7)",
+                 
                   borderRadius: "20px",
                   border: ".1px solid rgb(241,241,241)",
                   outline: "none",
@@ -161,163 +161,6 @@ export default function Header() {
                 },
               },
             }}
-<<<<<<< HEAD
-            />
-
-          
-              <Box sx={{
-               
-                width:"400px",
-                justifyContent:"space-evenly",
-                alignItems:"center",
-                display:{xs:"none",lg:"flex"}
-              }}>
-              <Tooltip  
-              open={openJob} 
-              onClose={()=>setOpenJob(false)}
-              onOpen={() =>setOpenJob(true)} 
-              title={<Job/>}
-              
-              componentsProps={{
-                tooltip: {
-                  sx: {
-                    backgroundColor:  'white'
-                    ,
-                    borderRadius:"20px",
-                    border:".1px solid rgb(241,241,241)",
-                    outline:"none",
-                    maxWidth:"none"  ,
-                    padding:"1rem",
-                    
-                  },
-                },
-                
-              }}
-
-              >
-                
-              
-              <Button sx={btnStyle}>Job</Button>
-              
-              </Tooltip>
-              <Tooltip  
-              open={openComData} 
-              onClose={()=>setOpenComData(false)}
-              onOpen={() =>setOpenComData(true)} 
-              title={<Companies/>}
-              
-              componentsProps={{
-                tooltip: {
-                  sx: {
-                    backgroundColor:  'white'
-                    ,
-                    borderRadius:"20px",
-                    border:".1px solid rgb(241,241,241)",
-                    outline:"none",
-                    maxWidth:"none"  ,
-                    padding:"1rem"
-
-                  },
-                }
-              }}
-
-              >
-              
-              <Button sx={btnStyle}>Companies</Button>
-              
-              </Tooltip>
-              <Tooltip  
-              open={openSerData} 
-              onClose={()=>setOpenSerData(false)}
-              onOpen={() =>setOpenSerData(true)} 
-              title={<Service/>}
-              
-              componentsProps={{
-                tooltip: {
-                  sx: {
-                    backgroundColor:  'white'
-                    ,
-                    borderRadius:"10px",
-                    border:".1px solid rgb(241,241,241)",
-                    outline:"none",
-                    maxWidth:"none"  ,
-                    padding:"1rem",
-                    height:"auto"
-
-                  },
-                }
-              }}
-
-              >
-                <Button sx={btnStyle}>Services</Button>
-            
-              </Tooltip>
-                      
-                
-                </Box>
-
-          </Box>
-        
-          <Box sx={{
-            
-            width:{sm:"70%",md:"40%"},
-            
-            display:{sm:"flex",xs:"none"},
-            alignItems:"center",
-            justifyContent:"center",
-            columnGap:"1rem"
-          }}>
-              <Loginpage/>
-              <Tooltip 
-              open={open} 
-              onClose={()=>setOpen(false)}
-                onOpen={() => { setTimeout(() =>   setOpen(true), 200); }}
-                title="Job seeker Register"
-                componentsProps={popUp}
-                >
-            
-              <Button sx={register}>Register</Button>
-
-              </Tooltip>
-              <Tooltip  open={open1} onClose={()=>setOpen1(false)} onOpen={() => setOpen1(true)} title={<Content/>}
-                  componentsProps={{
-                    tooltip: {
-                      sx: {
-                        backgroundColor:  'white'
-                        ,
-                        borderRadius:"10px",
-                        border:".1px solid rgb(241,241,241)",
-                        outline:"none"
-                      
-                      },
-                    }
-                  }}
-              >
-                <Box>
-                  
-                </Box>
-                <Box sx={{display:"flex",alignItems:"center"}}>
-
-              <Button sx={employerStyle}>For employers</Button><IoIosArrowDown/>
-                </Box>
-            
-              </Tooltip>
-            
-            
-          </Box>
-          <Box sx={{flexGrow:1,display: { xs: 'flex', sm: 'none',width:"70%",justifyContent:"flex-end" } }}>
-        <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              // onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-        </Box >
-=======
           >
             <Button sx={btnStyle}>Job</Button>
           </Tooltip>
@@ -330,7 +173,7 @@ export default function Header() {
               tooltip: {
                 sx: {
                   backgroundColor: "white",
-                  boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.7)",
+                 
                   borderRadius: "20px",
                   border: ".1px solid rgb(241,241,241)",
                   outline: "none",
@@ -351,7 +194,7 @@ export default function Header() {
               tooltip: {
                 sx: {
                   backgroundColor: "white",
-                  boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.7)",
+  
                   borderRadius: "10px",
                   border: ".1px solid rgb(241,241,241)",
                   outline: "none",
@@ -365,7 +208,6 @@ export default function Header() {
             <Button sx={btnStyle}>Services</Button>
           </Tooltip>
         </Box>
->>>>>>> a3bd2504ba40551038c2e9f5a1eb145eb38dea3a
       </Box>
 
       <Box
@@ -401,7 +243,7 @@ export default function Header() {
             tooltip: {
               sx: {
                 backgroundColor: "white",
-                boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.7)",
+               
                 borderRadius: "10px",
                 border: ".1px solid rgb(241,241,241)",
                 outline: "none",

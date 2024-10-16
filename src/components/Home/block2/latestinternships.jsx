@@ -208,58 +208,24 @@ export default function LatestIntertships() {
     position: "relative",
     columnGap: ".5rem",
 
-    // Scrollbar styling for Chrome, Edge, and other Webkit-based browsers
-    '&::-webkit-scrollbar': {
-        height: '8px',
-    },
-    '&::-webkit-scrollbar-track': {
-        backgroundColor: 'transparent',
-    },
-    '&::-webkit-scrollbar-thumb': {
-        backgroundColor: 'blue',
-        borderRadius: '10px',
-    },
-    '&::-webkit-scrollbar-thumb:hover': {
-        backgroundColor: 'darkblue',
-    },
-
-    // Scrollbar styling for Firefox
-    '@-moz-document url-prefix()': {
-        scrollbarWidth: 'thin',
-        scrollbarColor: 'blue transparent',
-    },
-
+  
+      "&::-webkit-scrollbar": {
+        height: "3px", 
+      },
+      "&::-webkit-scrollbar-thumb": {
+        backgroundColor: "#096eb6", 
+        borderRadius: "10px", 
+      },
+      "&::-webkit-scrollbar-track": {
+        backgroundColor: "transparent", 
+      },
 }}>
     {categoriesInfo[id].info.map((card, index) => (
         <Card key={index} card={card} />
     ))}
 </Box>
 
-            <Box ref={cardsContainer}
-            sx={{
-                display: "flex",
-                width: "84%",
-                overflowX: 'auto',
-                scrollBehavior: 'smooth',
-                marginTop: "2rem",
-                position: "relative",
-                columnGap: ".5rem",
-              
-                
-                "&::-webkit-scrollbar": {
-                  height: "3px", 
-                },
-                "&::-webkit-scrollbar-thumb": {
-                  backgroundColor: "#096eb6", 
-                  borderRadius: "10px", 
-                },
-                "&::-webkit-scrollbar-track": {
-                  backgroundColor: "transparent", 
-                },
-              }}
-              >
-                {categoriesInfo[id].info.map((card, index) => <Card key={index} card={card} />)}
-            </Box>
+            
 
             <Box sx={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end", width: "70%" }}>
                 <Button onClick={() => handleScroll('left')} disabled={isLeftDisabled} sx={{
