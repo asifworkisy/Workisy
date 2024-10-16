@@ -5,7 +5,10 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import playstore from "../../../assets/playstore.jpg"
 import workisy from "../../../assets/logo.png"
-import ibm from "../../../assets/ibm.webp"
+
+
+const images = require.context("../../../assets/footer", false, /\.(gif|webp)$/);
+const companyLogos = images.keys().map(images);
 let data=[
     {
         title:"COMPANY",
@@ -26,8 +29,11 @@ let data=[
 ]
 const Company=({set})=>{
     return(
-        <Box>
-            <Typography variant='h6' sx={{fontSize:".9rem",fontWeight:"550",textTransform:"capitalize",fontFamily:"inter"}}>{set.title}</Typography>
+        <Box sx={{
+            ml:{xs:"50px",sm:0}
+           
+        }}>
+            <Typography variant='h6' sx={{textTransform:"capitalize",fontFamily:"inter",fontSize:{xs:"18px",sm:"15px"}}}>{set.title}</Typography>
             <Box>
                 {
                     set.info.map((i,id)=>(
@@ -61,14 +67,14 @@ export default function Footer() {
         }
     }
     let imgStyle={
-        height:"50px",
+        height:"40px",
         width:"100px",
         flexShrink:0,
         animation: "moveImages 2s linear infinite",
       
 
     }
-    let items=Array.from({length:10},(i,j)=>j+1)
+   
   return (
         <Box sx={{
             width:"100%",
@@ -81,6 +87,10 @@ export default function Footer() {
                 display:"flex",
                 justifyContent:"space-evenly",
                 padding:"1rem",
+                columnGap:{sm:"2vw",md:0},
+                flexDirection:{xs:"column",sm:"row"},
+               rowGap:{xs:"2rem",sm:0},
+              
                 
               
             }}>
@@ -88,7 +98,9 @@ export default function Footer() {
           {
             data.map((set,id)=> <Company key={id} set={set}/>)
           }
-          <Box>
+          <Box sx={{
+            ml:{xs:"50px",sm:0}
+          }}>
             <Typography variant='h6' sx={{fontFamily:".8rem",fontWeight:"600"}}>Follow us</Typography>
             <Box sx={{display:"flex",columnGap:"1rem"}}>
                 <IconButton sx={icon}>
@@ -111,17 +123,19 @@ export default function Footer() {
 
 
             </Box>
-          <Divider/>
+                <Divider/>
             <Box sx={{
                 width:"100%",
-                height:"100px",
+                height:"auto",
                 display:"flex",
                 justifyContent:"center",
-                alignItems:"center"
+                alignItems:"center",
+                flexDirection:{xs:"column",sm:"row"},
+                mt:{xs:"1rem",sm:0}
 
                
             }}>
-                <Box sx={{width:"50%",display:"flex",justifyContent:"center",alignItems:"center",columnGap:"1rem"}}>
+                <Box sx={{width:{xs:"100%",sm:"50%"},display:"flex",justifyContent:"center",alignItems:"center",columnGap:"1rem",flexDirection:{xs:"column",sm:"row"}}}>
                     <img  src={workisy} alt='.' style={{height:"50px",width:"150px"}}/>
                     <Box>
                     <Typography variant='h6' sx={{fontSize:".7rem"}}>All trademarks are the property of their respective owners</Typography>
@@ -131,12 +145,12 @@ export default function Footer() {
 
                 </Box>
               
-                <Box sx={{width:"40%",alignItems:"center",display:"flex",justifyContent:"center",columnGap:"1rem"}}>
+                <Box sx={{width:{xs:"90%",sm:"40%"},alignItems:"center",display:"flex",justifyContent:"center",columnGap:"1rem"}}>
                     <Typography variant='h6' sx={{fontSize:"1rem",borderRight:"1px solid gray",paddingRight:"1rem",width:"7rem"}}>Our business</Typography>
-                    <Box sx={{width:"90%",display:"flex",overflow:"hidden",columnGap:"1rem"}}>
+                    <Box sx={{width:"90%",display:"flex",overflow:"hidden",columnGap:"1rem",backgroundColor:"white",py:".7rem"}}>
                         {
-                            items.map((i,j)=>(
-                                <img style={imgStyle} key={j} src={ibm} alt='.'/>
+                           [...companyLogos,...companyLogos].map((i,j)=>(
+                                <img style={imgStyle} key={j} src={i} alt='.'/>
                             ))
                             
                         }

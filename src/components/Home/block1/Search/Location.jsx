@@ -26,7 +26,7 @@ export default function Location() {
 
   return (
     <Box sx={{
-      display:"flex",
+      display:{xs:"none",sm:"flex"},
       alignItems:"center"
     }}>
       <PlaceIcon sx={{color:"gray"}}/>
@@ -59,6 +59,7 @@ export default function Location() {
                 '&.Mui-focused fieldset': {
                   borderColor: 'transparent', 
                 },
+                fontSize:{sm:"1.5vw",md:"1.1vw"}
               },
             }}
           />
@@ -67,7 +68,7 @@ export default function Location() {
         
           return i+","
         }}  
-        sx={{ width: 200 }}
+        sx={{ width:{sm:"16vw",md:"12vw"}}}
       />
 
     </Box>

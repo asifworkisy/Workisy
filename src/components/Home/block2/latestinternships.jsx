@@ -8,6 +8,7 @@ import BoltIcon from '@mui/icons-material/Bolt';
 
 import ArrowForwardIos from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIos from '@mui/icons-material/ArrowBackIos';
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 
 export default function LatestIntertships() {
     const categoriesInfo = [
@@ -60,18 +61,20 @@ export default function LatestIntertships() {
                     </Box>
                     <Box sx={{display:"flex",columnGap:".2rem",color:"rgb(84, 82, 82)"}}>
                         <LocationOnIcon sx={{fontSize:"1.1rem"}}/>
-                        <Typography variant='h6' sx={{fontWeight:"550",fontFamily:"inter",fontSize:".9rem",marginTop:"-1px"}}>Pune</Typography>
+                        <Typography variant='h6' sx={{fontWeight:"300",fontFamily:"inter",fontSize:".85rem",marginTop:"-1px"}}>Pune</Typography>
                     </Box>
                     <Box sx={{display:"flex",columnGap:".2rem",color:"rgb(84, 82, 82)"}}>
                         <CalendarTodayIcon sx={{fontSize:"1.1rem"}}/>
-                        <Typography variant='h6' sx={{fontWeight:"550",fontFamily:"inter",fontSize:".9rem",marginTop:"-1px"}}>1day ago</Typography>
+                        <Typography variant='h6' sx={{fontWeight:"300",fontFamily:"inter",fontSize:".85rem",marginTop:"-1px"}}>1day ago</Typography>
                     </Box>
                     <Box sx={{display:"flex",columnGap:".1rem",color:"rgb(84, 82, 82)"}}>
-                       <Typography variant='h6' sx={{fontWeight:"550",fontFamily:"inter",fontSize:".9rem",marginTop:"-1px"}}>Experience: 10+ Years</Typography>
+                    <HomeRepairServiceIcon sx={{fontSize:"1.1rem"}}/>
+                    <Typography variant='h6' sx={{fontWeight:"300",fontFamily:"inter",fontSize:".85rem",marginTop:"-1px"}}>10+ Years</Typography>
+                      
                     </Box>
                     
                 </Box>
-                <Box sx={{display:"flex",color:"black",columnGap:"2px"}}>
+                <Box sx={{display:"flex",color:"black",columnGap:"1rem"}}>
                     <Typography sx={{fontSize:".9rem"}}>Skills:</Typography>
                     <Box sx={{display:"flex",columnGap:".6rem"}}>
                        
@@ -88,7 +91,7 @@ export default function LatestIntertships() {
                                 color:"white",
                                 border:"none"
                             }
-                        }}>SQL</Typography>
+                        }}>Mysql</Typography>
                         <Typography sx={{fontSize:".8rem",
                             padding:".2rem",
                             borderRadius:"10px",
@@ -109,8 +112,8 @@ export default function LatestIntertships() {
                 </Box>
                 <Box sx={{display:"flex",justifyContent:"space-between",fontFamily:"santoshi"}}>
                     <Box sx={{display:"flex",alignItems:"center"}}>
-                    <Typography variant='h6' sx={{fontSize:"1rem"}}>15Lacs-26Lacs</Typography>
-                    <Typography sx={{color:"rgb(91, 90, 90)"}}>/year</Typography>
+                    <Typography variant='h6' sx={{fontSize:".9rem"}}>15Lacs-26Lacs</Typography>
+                    <Typography sx={{color:"rgb(91, 90, 90)",fontSize:".8rem"}}>/year</Typography>
                     
 
                     </Box>
@@ -158,10 +161,19 @@ export default function LatestIntertships() {
 
     return (
         <Box sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", rowGap: "1rem", marginTop: "1.5rem" }}>
-            <Typography variant='h4' sx={{ fontFamily: "inter", fontWeight: "600" }}>Latest internships on Workisy</Typography>
-            <Box sx={{ display: "flex", columnGap: "1rem" }}>
-                <Typography variant='h6' sx={{ fontFamily: "inter", color: "rgb(52, 51, 51)" }}>Popular categories :</Typography>
-                <Box sx={{ display: 'flex', columnGap: "1rem" }}>
+            <Typography variant='h4' sx={{ fontFamily: "inter", fontWeight: "600",fontSize:{xs:"25px",sm:"30px"} }}>Latest internships on Workisy</Typography>
+            <Box sx={{ display: "flex", columnGap: "1rem",justifyContent:"center"}}>
+                <Typography variant='h6' sx={{ fontFamily: "inter", color: "rgb(52, 51, 51)" ,fontSize:{sm:"1.9vw",md:"1.3vw"}}}>Popular categories :</Typography>
+                <Box sx={{
+                     display: 'flex', columnGap: "1rem" ,
+                    
+                    
+                     overflowX: 'auto',
+                     scrollBehavior: 'smooth',
+                     width:{xs:"20%",sm:"50%",md:"70%",lg:"auto"},
+                   
+                     
+                     }}>
                     {categoriesInfo.map((data, idx) => (
                         <Button
                             key={idx}
@@ -176,40 +188,44 @@ export default function LatestIntertships() {
                                 textTransform: "capitalize",
                                 border: "1px solid rgb(193, 193, 193)",
                                 borderRadius: "20px",
-                                outline: "none"
+                                outline: "none",
+                                width:"auto",
+                               
+                                flexShrink:0,
+                                height:{sm:"4vw",md:"2.5vw"},
+                                
                             }}
                         >{data.category}</Button>
                     ))}
                 </Box>
             </Box>
             <Box ref={cardsContainer} sx={{
-                display: "flex",
-                width: "84%",
-                overflowX: 'auto',
-                scrollBehavior: 'smooth',
-                marginTop: "2rem",
-                position: "relative",
-                columnGap: ".5rem",
-                // justifyContent:"center",
+    display: "flex",
+    width: "84%",
+    overflowX: 'auto',
+    scrollBehavior: 'smooth',
+    marginTop: "2rem",
+    position: "relative",
+    columnGap: ".5rem",
 
-                '&::-webkit-scrollbar': {
-                    height: '8px',
-                },
-                '&::-webkit-scrollbar-track': {
-                    background: 'transparent',
-                },
-                '&::-webkit-scrollbar-thumb': {
-                    backgroundColor: 'blue',
-                    borderRadius: '10px',
-                },
-                '&::-webkit-scrollbar-thumb:hover': {
-                    backgroundColor: 'darkblue',
-                },
-                scrollbarWidth: 'thin',
-                scrollbarColor: 'blue transparent',
-            }}>
-                {categoriesInfo[id].info.map((card, index) => <Card key={index} card={card} />)}
-            </Box>
+  
+      "&::-webkit-scrollbar": {
+        height: "3px", 
+      },
+      "&::-webkit-scrollbar-thumb": {
+        backgroundColor: "#096eb6", 
+        borderRadius: "10px", 
+      },
+      "&::-webkit-scrollbar-track": {
+        backgroundColor: "transparent", 
+      },
+}}>
+    {categoriesInfo[id].info.map((card, index) => (
+        <Card key={index} card={card} />
+    ))}
+</Box>
+
+            
 
             <Box sx={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end", width: "70%" }}>
                 <Button onClick={() => handleScroll('left')} disabled={isLeftDisabled} sx={{
