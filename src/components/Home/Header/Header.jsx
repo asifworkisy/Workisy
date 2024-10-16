@@ -161,8 +161,7 @@ export default function Header() {
                 },
               },
             }}
-<<<<<<< HEAD
-          >
+
             <Button sx={btnStyle}>Job</Button>
           </Tooltip>
           <Tooltip
@@ -209,8 +208,7 @@ export default function Header() {
             <Button sx={btnStyle}>Services</Button>
           </Tooltip>
         </Box>
-=======
-            />
+
 
           
               <Box sx={{
@@ -364,7 +362,6 @@ export default function Header() {
               <MenuIcon />
             </IconButton>
         </Box >
->>>>>>> 57df4af36c0521108882cfb0c4c199b8c0b12dd5
       </Box>
 
       <Box
