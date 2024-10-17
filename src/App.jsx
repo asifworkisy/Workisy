@@ -6,8 +6,6 @@ import Homepage from './components/Home/Homepage/Home';
 import "./App.css";
 import EmployeLogin from './components/EmployerSide/EmployeLogin/EmployeLogin';
 import EmployeSignup from './components/EmployerSide/EmployeSignup/EmployeSignup';
-import ImageUpload from './components/EmployerSide/ImageUpload/ImageUpload';
-
 export default function App() {
   return (
     <BrowserRouter>
@@ -17,7 +15,6 @@ export default function App() {
         <Route path="/jobDetailes" element={<Jobcontainer />} />
         <Route path="/employee-login" element={<EmployeLogin />} />
         <Route path="/employee-signup" element={<EmployeSignup />} />
-        <Route path="/image-upload" element={<ImageUpload />} />
       </Routes>
     </BrowserRouter>
   );
