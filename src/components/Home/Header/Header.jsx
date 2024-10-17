@@ -152,7 +152,7 @@ export default function Header() {
               tooltip: {
                 sx: {
                   backgroundColor: "white",
-                  boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.7)",
+                 
                   borderRadius: "20px",
                   border: ".1px solid rgb(241,241,241)",
                   outline: "none",
@@ -173,7 +173,7 @@ export default function Header() {
               tooltip: {
                 sx: {
                   backgroundColor: "white",
-                  boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.7)",
+                 
                   borderRadius: "20px",
                   border: ".1px solid rgb(241,241,241)",
                   outline: "none",
@@ -194,7 +194,7 @@ export default function Header() {
               tooltip: {
                 sx: {
                   backgroundColor: "white",
-                  boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.7)",
+  
                   borderRadius: "10px",
                   border: ".1px solid rgb(241,241,241)",
                   outline: "none",
@@ -243,7 +243,7 @@ export default function Header() {
             tooltip: {
               sx: {
                 backgroundColor: "white",
-                boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.7)",
+               
                 borderRadius: "10px",
                 border: ".1px solid rgb(241,241,241)",
                 outline: "none",

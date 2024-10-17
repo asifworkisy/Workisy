@@ -59,7 +59,7 @@ const Profile=()=>{
       </div>
       <Divider/>
       <div className='company-details-cnt'>
-        <div className='com-details-cnt' style={{marginTop:'10px'}}>
+        <div className='com-details-cnt' >
           <p><PiBuildingOfficeThin/></p>
           <p className='com-para'>Appit</p>
         </div>

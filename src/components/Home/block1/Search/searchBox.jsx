@@ -29,7 +29,7 @@ export default function SearchBox() {
         <Button sx={{
           color:"white",
           backgroundColor:"#096eb6",
-          borderRadius:"2vw",
+          borderRadius:{xs:"10vw",sm:"2vw"},
           textTransform:"capitalize",
           
          px:"1.5vw",

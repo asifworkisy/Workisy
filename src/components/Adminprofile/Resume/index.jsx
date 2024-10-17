@@ -35,7 +35,7 @@ const Resume=()=>{
               <p className="resume-heading">Resume Headlines</p>
               <button className='edit-button' onClick={handleOpen}><CiEdit style={{outline:'none'}}/></button>
            </div>
-           <p style={{alignSelf:'flex-start'}}>{savedHeadline}</p>
+           <p style={{alignSelf:'flex-start', marginTop:'14px'}}>{savedHeadline}</p>
            <Dialog open={open}  onClose={()=>setOpen(false)} maxWidth="md" fullWidth> 
                 <div className="resume-modal-cnt">
                   <h1 className="resume-modal-heading">Resume Headlines</h1>
