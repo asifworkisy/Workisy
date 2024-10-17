@@ -1,31 +1,37 @@
 import React, { useState } from "react";
 import "./EmployeLogin.css";
-// import PhoneInput from "react-phone-input-2";
-// import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import Header from "../../Home/Header/Header";
-import { useNavigate } from "react-router-dom"; // Use the hook here
-
+import { useNavigate } from "react-router-dom"; 
 const EmployeLogin = () => {
   const [fullName, setFullName] = useState("");
-  // const [contactNumber, setContactNumber] = useState("");
+  const [contactNumber, setContactNumber] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [emailId, setEmailId] = useState("");
+  const [formError, setFormError] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
 
-  const navigate = useNavigate(); // Use the navigate function
+  const navigate = useNavigate(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({
-      fullName,
-      // contactNumber,
-      companyName,
-      emailId,
-    });
-    setFullName("");
-    // setContactNumber("");
-    setCompanyName("");
-    setEmailId("");
+   
+    if (!fullName || !contactNumber || !companyName || !emailId) {
+      setFormError(true);
+    } else {
+      setFormError(false); 
+      console.log({
+        fullName,
+        contactNumber,
+        companyName,
+        emailId,
+      });
+      setFullName("");
+      setContactNumber("");
+      setCompanyName("");
+      setEmailId("");
+    }
   };
 
   return (
@@ -101,7 +107,16 @@ const EmployeLogin = () => {
               </form>
             ) : (
               <form className="talk-to-sales-form" onSubmit={handleSubmit}>
-                <label className="employee-login-form-label" htmlFor="full-name">
+                {/* Show error message if validation fails */}
+                {formError && (
+                  <p className="error-message">
+                    Please Fill in the mandatory fields
+                  </p>
+                )}
+                <label
+                  className="employee-login-form-label"
+                  htmlFor="full-name"
+                >
                   Full Name*
                 </label>
                 <input
@@ -118,7 +133,7 @@ const EmployeLogin = () => {
                 >
                   Contact Number*
                 </label>
-                {/* <PhoneInput
+                <PhoneInput
                   className="employee-login-form-phone-input"
                   country={"in"}
                   value={contactNumber}
@@ -129,7 +144,7 @@ const EmployeLogin = () => {
                     required: true,
                   }}
                   inputStyle={{ width: "100%" }}
-                /> */}
+                />
                 <label
                   className="employee-login-form-label"
                   htmlFor="company-name"

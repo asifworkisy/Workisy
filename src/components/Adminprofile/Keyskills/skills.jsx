@@ -28,7 +28,7 @@ const Skills=()=>{
             <p className="resume-heading">Key Skills</p>
             <button className='edit-button' onClick={()=>setOpenskills(!openskills)}><CiEdit style={{outline:'none'}}/></button>
         </div>
-        <ul style={{display:'flex', flexWrap:'wrap', justifyContent:'flex-start'}}>
+        <ul style={{display:'flex', flexWrap:'wrap', justifyContent:'flex-start', marginTop:'20px'}}>
             {saveSkills.map(each=>(
               <li key={each.value} className='skill-list-item' >{each.label}</li>
             ))}

@@ -1,0 +1,52 @@
+.employee-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+  
+.employee-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+  
+.employee-modal-header {
+    margin-bottom: 20px;
+}
+  
+.employee-modal-file-message,
+.employee-modal-guidelines {
+    margin: 10px 0;
+}
+
+.employee-modal-file-input {
+    margin-bottom: 10px; /* Space between input and messages */
+}
+
+.employee-modal-upload-button,
+.employee-modal-close-button {
+    background-color: #6200ea;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%; /* Full width for buttons */
+}
+
+.employee-modal-upload-button:hover,
+.employee-modal-close-button:hover {
+    background-color: #5400d4;
+}

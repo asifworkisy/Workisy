@@ -131,7 +131,7 @@ const Education=()=>{
                 <h1 className='resume-heading'>Education</h1>
                 <p className='add-emplo-para' onClick={()=>setEducation(!opneEdu)}>Add Education</p>
             </div>
-            <div>
+            <div className='data-cnt'>
                 {eduData.map((edu, index)=>(
                 <div style={{display:'flex', flexDirection:'column',justifyContent:'flex-start', alignItems:'flex-start'}}>
                 <h3 style={{fontSize:'15px', color:'#121224', padding:'0px', margin:'0px'}}>{edu.courseName}</h3>
@@ -145,7 +145,7 @@ const Education=()=>{
                 ))}
             </div>
 
-            <div>
+            <div className='data-cnt'>
                 {interData.map((inter, index)=>(
                 <div style={{display:'flex', flexDirection:'column',justifyContent:'flex-start', alignItems:'flex-start'}}>
                     <h3 style={{fontSize:'15px', color:'#121224', padding:'0px', margin:'0px'}}>{inter.educationType}</h3>
@@ -154,7 +154,7 @@ const Education=()=>{
                 </div>
                 ))}
             </div>
-            <div>
+            <div className='data-cnt'>
                 {sscData.map((ssc, index)=>(
                 <div style={{display:'flex', flexDirection:'column',justifyContent:'flex-start', alignItems:'flex-start'}}>
                     <h3 style={{fontSize:'15px', color:'#121224', padding:'0px', margin:'0px'}}>{ssc.educationType}</h3>
