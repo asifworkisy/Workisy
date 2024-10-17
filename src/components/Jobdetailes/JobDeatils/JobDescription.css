@@ -4,9 +4,11 @@
   border: 1px solid #ddd;
   border-radius: 10px;
   background-color: #fff;
-  /* margin: 0 auto; Center the container */
-  /* padding: 20px; */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 30%;
+  z-index: 10; /* Change this to a positive value */
+  bottom: 10px;
 }
 
 /* Job Header */
@@ -18,8 +20,6 @@
   border-radius: 10px 10px 0px 0px;
   border-bottom: 1px solid #e0e0e0;
   /* margin-bottom: 20px; */
-  position: sticky;
-  top: 0px;
 }
 
 .job-header h1 {
