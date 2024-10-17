@@ -1,41 +1,94 @@
 import React from 'react'
-
-import "./job.css"
 import { Link } from 'react-router-dom'
-export default function Job() {
-  return (
-    <div className='jobs'>
-        <div>
-            <p>Popular categories</p>
-           
-            <Link className='p' to="/jobDetailes">It jobs</Link>
-            <Link className='p'>Sales jobs</Link>
-            <Link className='p'>Marketing jobs</Link>
-            <Link className='p'>Data Science jobs</Link>
-            <Link className='p'>HR jobs</Link>
-            <Link className='p'>Engineering jobs</Link>
+import { Box,Divider, Typography } from '@mui/material';
 
-        </div>
-        <div>
-            <p>Jobs in demand</p>
+const jobData = {
+  popularCategories: {
+    title: "Popular categories",
+    jobs: [
+      "IT jobs",
+      "Sales jobs",
+      "Marketing jobs",
+      "Data Science jobs",
+      "HR jobs",
+      "Engineering jobs"
+    ]
+  },
+  jobsInDemand: {
+    title: "Jobs in demand",
+    jobs: [
+      "Fresher jobs",
+      "MNC jobs",
+      "Remote jobs",
+      "Work from home jobs",
+      "Walk-in jobs",
+      "Part-time jobs"
+    ]
+  },
+  jobsByLocation: {
+    title: "Jobs by location",
+    jobs: [
+      "Jobs in Delhi",
+      "Jobs in Mumbai",
+      "Jobs in Bangalore",
+      "Jobs in Hyderabad",
+      "Jobs in Chennai",
+      "Jobs in Pune"
+    ]
+  }
+};
+export default function Job()
+{
+ 
+  return(
+    <Box sx={{
+      display:"flex",
+      columnGap:"1rem",
+      px:"1rem"
+       
+    }}>
+
+      {
         
-            <Link className='p'>Frehser jobs</Link>
-            <Link className='p'>MNC jobs</Link>
-            <Link className='p'>Remote jobs</Link>
-            <Link className='p'>Work from home jobs</Link>
-            <Link className='p'>Walk-in jobs</Link>
-            <Link className='p'>Part-time jobs</Link>
-        </div>
-        <div>
-            <p>Jobs by location</p>
-            <Link className='p'>Jobs in Delhi</Link>
-            <Link className='p'>Jobs in Mumbai</Link>
-            <Link className='p'>Jobs in Bangalore</Link>
-            <Link className='p'>Jobs in Hyderabad</Link>
-            <Link className='p'>Jobs in Chennai</Link>
-            <Link className='p'>Jobs in Pune</Link>
-        </div>
-
-    </div>
+        Object.values(jobData).map((category,id)=>(
+          <>
+          <Box key={id} sx={{
+            display:"flex",
+            flexDirection:"column",
+            mt:"0rem",
+            rowGap:".9rem"
+           
+           
+          }}>
+            <Typography sx={{fontWeight:"550",color:"black"}}>{category.title}</Typography>
+            {
+              category.jobs.map((job,i)=>(
+              
+                  <Link 
+                    key={i}
+                    style={{
+                            textDecoration:"none",
+                            fontSize:".9rem",
+                            color:" rgb(61, 61, 61)",
+                           
+              
+                          }}
+                    to="/jobDetailes">{job}</Link>
+                  
+    
+              ))
+            }
+          </Box>
+          <Divider
+        orientation="vertical"
+        flexItem
+        sx={{ margin: '0 16px', backgroundColor: 'rgba(0, 0, 0, 0.1)',display:id===2?"none":"block" }}
+      />  
+          </>
+        ))
+      }
+     
+      
+    </Box>
   )
 }

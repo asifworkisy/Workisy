@@ -10,6 +10,7 @@
     align-items:flex-start;
     width:100vw;
     padding:40px;
+    min-height:100vh;
 }
 .profile-left-cnt{
     display:flex;

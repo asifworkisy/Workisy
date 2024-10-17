@@ -171,7 +171,7 @@ const Employment=()=>{
                 <h1 className='resume-heading'>Employment</h1>
                 <p className='add-emplo-para' onClick={()=>setOpenEmployee(!openEmployee)}>Add Employment</p>
             </div>
-            {radiovalue==="internship" &&(<div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start', alignItems:'flex-start', marginTop:'5px'}}>
+            {radiovalue==="internship" &&(<div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start', alignItems:'flex-start',  marginTop:'25px'}}>
                 {internData.map((intern, index)=>(
                   <div style={{display:'flex', flexDirection:'column',justifyContent:'flex-start', alignItems:'flex-start'}}>  
                     <h3 style={{fontSize:'15px', color:'#121224', padding:'0px', margin:'0px'}}>{intern.internRole}</h3>
@@ -184,7 +184,7 @@ const Employment=()=>{
                   </div>  
               ))}
             </div>)}
-            {radiovalue==='fulltime' &&(<div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start', alignItems:'flex-start',marginTop:'5px'}}>
+            {radiovalue==='fulltime' &&(<div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start', alignItems:'flex-start', marginTop:'25px'}}>
                 {FulltimeData.map((fulltime, index)=>(
                   <div style={{display:'flex', flexDirection:'column',justifyContent:'flex-start', alignItems:'flex-start'}}>  
                     <h3 style={{fontSize:'15px', color:'#121224', padding:'0px', margin:'0px'}}>{fulltime.currentRole}</h3>

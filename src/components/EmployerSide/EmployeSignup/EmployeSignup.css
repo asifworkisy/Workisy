@@ -1,0 +1,166 @@
+.employee-signup-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap; /* Allow the container to wrap for smaller screens */
+}
+.employee-signup-heading{
+    font-size: 24px;
+    /* text-align: left; */
+}
+
+.personal-details-container {
+    flex: 0 0 20%;
+    padding: 20px;
+    background-color: #cad1f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-signup-flex-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+}
+.personal-details-form-button button{
+    height: 5rem;
+    width: 4rem;
+}
+
+.personal-details-form-name {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px; /* Add margin to separate from other elements */
+}
+
+.personal-details-form-name label {
+    flex: 1;
+    margin-bottom: 5px;
+}
+
+.personal-details-form-name input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.personal-details-form-group input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%; 
+}
+
+.personal-details-header,
+.achievements-header {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.personal-details-form-group {
+    margin-bottom: 15px;
+}
+
+.personal-details-form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.personal-details-form-group input,
+.personal-details-form-group select,
+.personal-details-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none; /* Maintain no resize for textareas */
+    width: 100%;
+}
+
+.add-more-button {
+    background-color: #6200ea;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.add-more-button:hover {
+    background-color: #5400d4;
+}
+
+
+.employee-signup-form-container {
+    flex: 0 0 50%; 
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid black;
+    /* background-color: #f9f3ff;    */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.employee-signup-header {
+    text-align: center;
+    color: #333;
+}
+
+.employee-signup-section {
+    margin-bottom: 30px;
+}
+
+.employee-signup-section-header {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.employee-signup-form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.employee-signup-form-group input,
+.employee-signup-form-group select,
+.employee-signup-form-group textarea {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.employee-signup-submit-button {
+    background-color: #6200ea;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.employee-signup-submit-button:hover {
+    background-color: #5400d4;
+}
+
+.employee-signup-checkbox-label {
+    margin-right: 10px;
+}
+

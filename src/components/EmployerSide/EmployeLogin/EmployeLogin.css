@@ -83,7 +83,7 @@
     border-top-left-radius:10px ;
     border-top-right-radius:10px ;
 
-    background-color: #9492ed;
+    background-color: #096eb6d6;
     color: #fff;
     border-bottom: 5px solid black;
 }
@@ -209,3 +209,9 @@
     margin-left: 6rem;
     width: 40%;
 }
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
