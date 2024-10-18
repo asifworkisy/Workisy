@@ -159,19 +159,6 @@ function FilterDropdowndata() {
         onToggle={() => handleDropdownToggle("Education")}
       />
       
-      {/* Conditionally render the "All Filters" button only if filters are not shown
-      {!showAllFilters && (
-        <button className="all-filters-button" onClick={handleAllFiltersToggle}>
-          All Filters
-        </button>
-      )}
-
-      {/* Conditionally render the filters when the button is clicked */}
-      {/* {showAllFilters && (
-        <div ref={filterRef}>
-          <Filter />
-        </div> */}
-      {/* )} */}
     </div>
   )
 }

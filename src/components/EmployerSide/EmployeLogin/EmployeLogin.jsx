@@ -145,6 +145,7 @@ const EmployeLogin = () => {
                   }}
                   inputStyle={{ width: "100%" }}
                 /> */}
+               
                 <label
                   className="employee-login-form-label"
                   htmlFor="company-name"
