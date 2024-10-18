@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./EmployeLogin.css";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+// import PhoneInput from "react-phone-input-2";
+// import "react-phone-input-2/lib/style.css";
 import Header from "../../Home/Header/Header";
 import { useNavigate } from "react-router-dom"; 
 const EmployeLogin = () => {
@@ -133,18 +133,7 @@ const EmployeLogin = () => {
                 >
                   Contact Number*
                 </label>
-                <PhoneInput
-                  className="employee-login-form-phone-input"
-                  country={"in"}
-                  value={contactNumber}
-                  onChange={setContactNumber}
-                  containerClass="phone-input-container"
-                  inputProps={{
-                    name: "phoneNumber",
-                    required: true,
-                  }}
-                  inputStyle={{ width: "100%" }}
-                />
+               
                 <label
                   className="employee-login-form-label"
                   htmlFor="company-name"
