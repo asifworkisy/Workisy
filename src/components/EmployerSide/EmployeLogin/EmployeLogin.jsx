@@ -133,6 +133,18 @@ const EmployeLogin = () => {
                 >
                   Contact Number*
                 </label>
+                {/* <PhoneInput
+                  className="employee-login-form-phone-input"
+                  country={"in"}
+                  value={contactNumber}
+                  onChange={setContactNumber}
+                  containerClass="phone-input-container"
+                  inputProps={{
+                    name: "phoneNumber",
+                    required: true,
+                  }}
+                  inputStyle={{ width: "100%" }}
+                /> */}
                
                 <label
                   className="employee-login-form-label"
