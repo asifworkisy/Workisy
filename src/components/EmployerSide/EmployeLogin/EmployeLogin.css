@@ -7,8 +7,9 @@
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    
+
 }
+
 .custom-divider {
     height: 2px;
     background-color: #ff0000;
@@ -19,6 +20,7 @@
     margin-bottom: -2rem;
     width: 20%;
 }
+
 .employee-login-heading {
     flex: 1;
     max-width: 50%;
@@ -69,7 +71,7 @@
     width: 100%;
     max-width: 400px;
     margin-top: -8rem;
-    
+
 }
 
 .h4-container {
@@ -77,11 +79,11 @@
     justify-content: space-between;
     margin-bottom: 1rem;
     padding: 1rem;
-    padding-bottom:0;
+    padding-bottom: 0;
     padding-left: 3rem;
     padding-right: 2rem;
-    border-top-left-radius:10px ;
-    border-top-right-radius:10px ;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
     background-color: #096eb6d6;
     color: #fff;
@@ -94,7 +96,8 @@
     font-size: 1.5rem;
     cursor: pointer;
 }
-.employee-login-form-h4:hover{
+
+.employee-login-form-h4:hover {
     color: #0c2aef;
 }
 
@@ -179,7 +182,7 @@
 }
 
 
-.employee-login-form-p{
+.employee-login-form-p {
     font-size: 0.9rem;
     margin-top: -0.7rem;
     margin-left: 13rem;
@@ -187,20 +190,22 @@
     cursor: pointer;
 }
 
-.employee-login-form-new-user{
+.employee-login-form-new-user {
     font-size: 1.3rem;
     margin-top: 1rem;
-    margin-bottom:0 ;
+    margin-bottom: 0;
     /* margin-left: 4rem; */
     text-align: center;
     color: #000000;
 }
-.employee-login-form-new-user-link{
+
+.employee-login-form-new-user-link {
     color: #007bff;
     cursor: pointer;
     font-weight: bold;
 }
-.form-divider{
+
+.form-divider {
     height: 2px;
     background-color: #ff0000;
     border: none;
@@ -214,4 +219,44 @@
     color: red;
     font-size: 14px;
     margin-bottom: 10px;
+}
+
+
+
+.forgot-password-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
   }
+  
+  .forgot-password-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .forgot-password-back {
+    color: #007bff;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .employee-login-form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .employee-login-form-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

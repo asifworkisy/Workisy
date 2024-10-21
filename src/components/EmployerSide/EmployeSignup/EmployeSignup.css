@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     padding: 20px;
-    flex-wrap: wrap; /* Allow the container to wrap for smaller screens */
+    flex-wrap: wrap; 
 }
 .employee-signup-heading{
     font-size: 24px;
@@ -21,7 +21,7 @@
     display: flex;
     gap: 20px;
     width: 100%;
-    flex-wrap: wrap; /* Wrap on smaller screens */
+    flex-wrap: wrap; 
 }
 .personal-details-form-button button{
     height: 5rem;
@@ -31,7 +31,7 @@
 .personal-details-form-name {
     display: flex;
     gap: 10px;
-    margin-bottom: 15px; /* Add margin to separate from other elements */
+    margin-bottom: 15px; 
 }
 
 .personal-details-form-name label {
@@ -82,7 +82,7 @@
 }
 
 textarea {
-    resize: none; /* Maintain no resize for textareas */
+    resize: none; 
     width: 100%;
 }
 
