@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import Modal from "./EmployeeModal/Modal";
+import React, { useEffect, useState } from "react";
+import Select from "react-select";
+import EmployeeSignupModal from "./EmployeeModal/EmployeeSignupModal";
 import "./EmployeSignup.css";
 import PersonIcon from "@mui/icons-material/Person";
 import Header from "../../Home/Header/Header";
@@ -9,13 +10,73 @@ const EmployeSignup = () => {
     { description: "", year: "" },
   ]);
   const [isModalOpen, setModalOpen] = useState(false);
-  const [uploadedImage, setUploadedImage] = useState(null); // State for uploaded image
-  const [industries, setIndustries] = useState(""); // State for industries
-  const [functions, setFunctions] = useState(""); // State for functions
-  const [industryError, setIndustryError] = useState(""); // Error state for industries
-  const [functionError, setFunctionError] = useState(""); // Error state for functions
+  const [uploadedImage, setUploadedImage] = useState(null);
+  const [industries, setIndustries] = useState("");
+  const [functions, setFunctions] = useState("");
+  const [industryError, setIndustryError] = useState("");
+  const [functionError, setFunctionError] = useState("");
 
-  // Achievement handling functions remain the same
+  // Location states
+  const [countries, setCountries] = useState([]);
+  const [states, setStates] = useState([]);
+  const [districts, setDistricts] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [selectedState, setSelectedState] = useState(null);
+
+  useEffect(() => {
+    // Fetch countries from an API
+    fetch("https://restcountries.com/v3.1/all")
+      .then((response) => response.json())
+      .then((data) => {
+        const countryOptions = data.map((country) => ({
+          value: country.cca2,
+          label: country.name.common,
+        }));
+        setCountries(countryOptions);
+      });
+  }, []);
+
+  const handleCountryChange = (selectedOption) => {
+    setSelectedCountry(selectedOption);
+    setSelectedState(null); // Reset state and districts
+    setDistricts([]);
+
+    // Fetch states based on the selected country (you'll need an API for this)
+    fetch(`https://api.your-real-api.com/states/${selectedOption.value}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const stateOptions = data.map((state) => ({
+        value: state.code,
+        label: state.name,
+      }));
+      setStates(stateOptions);
+    })
+    .catch((error) => {
+      console.error('There was a problem with the fetch operation:', error);
+      // Optionally, you can set an error state to display an error message to users
+    });
+  };
+
+  const handleStateChange = (selectedOption) => {
+    setSelectedState(selectedOption);
+
+    // Fetch districts based on the selected state (you'll need an API for this)
+    fetch(`https://api.example.com/districts/${selectedOption.value}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const districtOptions = data.map((district) => ({
+          value: district.code,
+          label: district.name,
+        }));
+        setDistricts(districtOptions);
+      });
+  };
+
   const handleAddAchievement = () => {
     setAchievements([...achievements, { description: "", year: "" }]);
   };
@@ -29,13 +90,11 @@ const EmployeSignup = () => {
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
-  // Handle image upload from modal
   const handleImageUpload = (imageUrl) => {
     setUploadedImage(imageUrl);
     closeModal();
   };
 
-  // Handle input change for industries
   const handleIndustryChange = (e) => {
     const value = e.target.value;
     const industryList = value.split(",").map((item) => item.trim());
@@ -48,7 +107,6 @@ const EmployeSignup = () => {
     }
   };
 
-  // Handle input change for functions
   const handleFunctionChange = (e) => {
     const value = e.target.value;
     const functionList = value.split(",").map((item) => item.trim());
@@ -60,6 +118,7 @@ const EmployeSignup = () => {
       setFunctionError("");
     }
   };
+  const years = Array.from({ length: 30 }, (_, i) => 2024 - i); // Example for 30 years
 
   return (
     <>
@@ -91,27 +150,27 @@ const EmployeSignup = () => {
                   )}
                 </button>
               </div>
-              <Modal
+              <EmployeeSignupModal
                 isOpen={isModalOpen}
                 onClose={closeModal}
                 onImageUpload={handleImageUpload}
               />
               <div className="personal-details-input-group">
-                <label>First Name *</label>
+                <label className="employee-signup-label">First Name *</label>
                 <input type="text" placeholder="First Name" required />
               </div>
               <div className="personal-details-input-group">
-                <label>Last Name</label>
+                <label className="employee-signup-label">Last Name</label>
                 <input type="text" placeholder="Last Name" />
               </div>
             </div>
 
             <div className="personal-details-form-group">
-              <label>Email Address *</label>
+              <label className="employee-signup-label">Email Address *</label>
               <input type="email" placeholder="Email Address" required />
             </div>
             <div className="personal-details-form-group">
-              <label>Mobile Number *</label>
+              <label className="employee-signup-label">Mobile Number *</label>
               <input
                 type="tel"
                 placeholder="Enter mobile number with country code"
@@ -119,18 +178,33 @@ const EmployeSignup = () => {
               />
             </div>
             <div className="personal-details-form-group">
-              <label>Current Location *</label>
-              <select required>
-                <option value="">Select Location</option>
-                {/* Add more location options here */}
-              </select>
+              <label className="employee-signup-label">
+                Current Location *
+              </label>
+              <Select
+                options={countries}
+                onChange={handleCountryChange}
+                placeholder="Select Country"
+              />
+              {selectedCountry && (
+                <Select
+                  options={states}
+                  onChange={handleStateChange}
+                  placeholder="Select State"
+                />
+              )}
+              {selectedState && (
+                <Select options={districts} placeholder="Select District" />
+              )}
             </div>
 
             <h3 className="achievements-header">Achievements</h3>
             {achievements.map((achievement, index) => (
               <div key={index} className="achievement-form-group">
                 <div className="personal-details-form-group">
-                  <label>Description (250 Characters Remaining)</label>
+                  <label className="employee-signup-label">
+                    Description (250 Characters Remaining)
+                  </label>
                   <textarea
                     name="description"
                     placeholder="Description"
@@ -141,15 +215,16 @@ const EmployeSignup = () => {
                   />
                 </div>
                 <div className="personal-details-form-group">
-                  <label>Year of Achievement</label>
-                  <select
-                    name="year"
-                    value={achievement.year}
-                    onChange={(e) => handleAchievementChange(index, e)}
-                    required
-                  >
-                    <option value="">Select</option>
-                    {/* Add more year options here */}
+                  <label className="employee-signup-label">
+                    Year of Achievement
+                  </label>
+                  <select className="employee-signup-select" required>
+                    <option value="">From</option>
+                    {years.map((year) => (
+                      <option key={year} value={year}>
+                        {year}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -172,33 +247,47 @@ const EmployeSignup = () => {
                   Professional Details
                 </h3>
                 <div className="employee-signup-form-group">
+                  {/* <label className="employee-signup-label">
+                    Current Company Name*
+                  </label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
                     placeholder="Current Company Name"
                     required
                   />
+                  {/* <label className="employee-signup-label">
+                    Current Designation*
+                  </label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
                     placeholder="Current Designation"
                     required
                   />
+                  {/* <label className="employee-signup-label">From*</label> */}
                   <select className="employee-signup-select" required>
                     <option value="">From</option>
                     {/* Add more options for years */}
                   </select>
+                  {/* <label className="employee-signup-label">To*</label> */}
                   <select className="employee-signup-select" required>
                     <option value="">To</option>
                     {/* Add more options for years */}
                   </select>
                 </div>
                 <div className="employee-signup-form-group">
+                  {/* <label className="employee-signup-label">
+                    Address Line 1*
+                  </label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
                     placeholder="Address Line 1"
                   />
+                  {/* <label className="employee-signup-label">
+                    Address Line 2
+                  </label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
@@ -206,22 +295,28 @@ const EmployeSignup = () => {
                   />
                 </div>
                 <div className="employee-signup-form-group">
+                  {/* <label className="employee-signup-label">City*</label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
                     placeholder="City"
                   />
+                  {/* <label className="employee-signup-label">
+                    State/ Province/ Region*
+                  </label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
                     placeholder="State/Province/Region"
                   />
+                  {/* <label className="employee-signup-label">Country*</label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
                     placeholder="Country"
                     required
                   />
+                  {/* <label className="employee-signup-label">Zip Code*</label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
@@ -236,15 +331,21 @@ const EmployeSignup = () => {
                   Hiring Preferences
                 </h3>
                 <div className="employee-signup-form-group">
+                  {/* <label className="employee-signup-label">
+                    Total Experience in hiring*
+                  </label> */}
                   <select className="employee-signup-select" required>
                     <option value="">Total Experience in hiring</option>
                     {/* Add more options */}
                   </select>
+                  {/* <label className="employee-signup-label">
+                    Level I hire for*
+                  </label> */}
                   <select className="employee-signup-select" required>
-                    <label htmlFor="">Level I hire for</label>
                     <option value="">Level I hire for</option>
                     {/* Add more options */}
                   </select>
+                  {/* <label className="employee-signup-label">Referral Code</label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
@@ -254,6 +355,7 @@ const EmployeSignup = () => {
 
                 {/* Industries and Functions Input */}
                 <div className="employee-signup-form-group">
+                  {/* <label className="employee-signup-label">Industry*</label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
@@ -265,7 +367,7 @@ const EmployeSignup = () => {
                   {industryError && (
                     <p className="error-message">{industryError}</p>
                   )}
-
+                  {/* <label className="employee-signup-label">Function*</label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
@@ -280,6 +382,9 @@ const EmployeSignup = () => {
                 </div>
 
                 <div className="employee-signup-form-group">
+                  {/* <label className="employee-signup-label">
+                    Skills I hire for*
+                  </label> */}
                   <input
                     className="employee-signup-input"
                     type="text"
@@ -289,7 +394,7 @@ const EmployeSignup = () => {
               </div>
 
               <div className="employee-signup-form-checkbox">
-                <label className="employee-signup-checkbox-label">
+                <label className="employee-signup-checkbox-label1">
                   <input type="checkbox" required /> I agree to use the
                   aforesaid details to create my Recruiter Profile & display it
                   on the Workisy site and also agree to be bound by the Terms of

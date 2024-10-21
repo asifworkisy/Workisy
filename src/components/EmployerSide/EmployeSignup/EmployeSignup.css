@@ -74,7 +74,7 @@
 .personal-details-form-group input,
 .personal-details-form-group select,
 .personal-details-form-group textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -137,7 +137,7 @@ textarea {
 .employee-signup-form-group select,
 .employee-signup-form-group textarea {
     flex: 1;
-    min-width: 200px;
+    /* min-width: 200px; */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -162,5 +162,29 @@ textarea {
 
 .employee-signup-checkbox-label {
     margin-right: 10px;
+}
+
+
+.personal-details-form-group label,
+.employee-signup-form-group label {
+    display: block; /* Make labels block elements */
+    margin-top: 10px; /* Space above the input box */
+    margin-bottom: 5px; /* Space below the label */
+    font-size: 14px; /* Consistent font size */
+}
+
+.personal-details-form-group input,
+.personal-details-form-group select,
+.personal-details-form-group textarea,
+.employee-signup-form-group input,
+.employee-signup-form-group select,
+.employee-signup-form-group textarea {
+    width: 100%; /* Full width for inputs */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    margin-top: 5px; /* Add some space below the input box */
 }
 

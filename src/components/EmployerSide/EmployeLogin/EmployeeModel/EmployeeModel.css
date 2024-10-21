@@ -1,4 +1,4 @@
-.modal-overlay {
+.employee-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,15 +8,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
-.modal-content {
+.employee-modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     width: 400px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.employee-modal-close-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.employee-modal-close-icon:hover {
+    color: #0056b3;
 }
 
 .talk-to-sales-form {
@@ -44,31 +58,6 @@
 .talk-to-sales-form button:hover {
     background-color: #0056b3;
 }
-
-.modal-close-button {
-    padding: 10px;
-    margin-top: 10px; 
-    background-color: #dc3545; 
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.modal-close-icon {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px; 
-    cursor: pointer;
-    color: #007bff; 
-}
-
-.modal-close-icon:hover {
-    color: #0056b3; 
-}
-
 
 .error-message {
     color: red;

@@ -40,7 +40,7 @@ const EmployeLogin = () => {
   };
 
   const handleModalSubmit = (data) => {
-    console.log("Sales Inquiry Data:", data); // Handle the data from the modal here
+    console.log("Sales Inquiry Data:", data); 
   };
 
   return (
