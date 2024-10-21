@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./EmployeLogin.css";
 import Header from "../../Home/Header/Header";
 import { useNavigate } from "react-router-dom"; 
-
+import EmployeeModel from "./EmployeeModel/EmployeeModel";
 const EmployeLogin = () => {
   const [fullName, setFullName] = useState("");
   const [contactNumber, setContactNumber] = useState("");
@@ -11,12 +11,12 @@ const EmployeLogin = () => {
   const [formError, setFormError] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
   const [showForgotPasswordForm, setShowForgotPasswordForm] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Define state for modal visibility
 
   const navigate = useNavigate(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
     if (!fullName || !contactNumber || !companyName || !emailId) {
       setFormError(true);
     } else {
@@ -39,6 +39,10 @@ const EmployeLogin = () => {
     console.log("Forgot password form submitted");
   };
 
+  const handleModalSubmit = (data) => {
+    console.log("Sales Inquiry Data:", data); // Handle the data from the modal here
+  };
+
   return (
     <>
       <Header />
@@ -52,7 +56,13 @@ const EmployeLogin = () => {
           <h3 className="employee-login-h3">
             We're revolutionising recruitment. Sign up now!
           </h3>
-          <button className="employee-login-button">Talk to Sales</button>
+          <button 
+            className="employee-login-button" 
+            onClick={() => setIsModalOpen(true)} // Open modal on button click
+          >
+            Talk to Sales
+          </button>
+
         </div>
         <div className="employee-login-form-container">
           <div className="h4-container">
@@ -220,6 +230,11 @@ const EmployeLogin = () => {
               </form>
             )}
           </div>
+          <EmployeeModel 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        onSubmit={handleModalSubmit} 
+      />
         </div>
       </div>
     </>
