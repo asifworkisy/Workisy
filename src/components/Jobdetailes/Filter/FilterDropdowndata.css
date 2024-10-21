@@ -1,11 +1,13 @@
 .container{
     display: flex;
-    justify-content: left;
-    width: 73%;
+    justify-content: center;
+    width: 99%;
     padding: 10px;
     top: 0%;
-    left: 5%;
-    background: white;
-    /* width: 300px; */
+    left: 0%;
     position: fixed;
+    z-index: 2;
+    background: linear-gradient(75deg, rgb(80, 103, 230), #096eb6, rgb(80, 103, 230));
+    animation: animation-13isdeb 2s linear infinite;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }

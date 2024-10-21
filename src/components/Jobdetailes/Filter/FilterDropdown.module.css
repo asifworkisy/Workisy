@@ -33,7 +33,7 @@ body {
   background: #fff;
   border: 1px solid #d2d1d6;
   border-radius: 16px;
-  color: #1d1934;
+  color: white !important; 
   margin: 5px 0;
   font-family: 'Nunito' !important;
   padding: 5px 10px;
@@ -45,19 +45,19 @@ body {
 }
 
 .location-button span {
-  margin-right: 2px;
+  margin-right: 1px;
   display: inline-flex;
   align-items: center; /* Keep the text and number on the same line */
 }
 
 .location-button .count {
   font-size: 12px;
-  margin-left: 5px; 
+  margin-left: 3px; 
   color: white; 
 }
 
 .location-button:hover {
-  border-color: #2557a7;
+  border-color: #fff;
 }
 .dropdown-body {
   background-color: white;

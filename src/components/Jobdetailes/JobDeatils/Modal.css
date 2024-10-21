@@ -13,12 +13,14 @@
   
   .modal-box {
     background-color: white;
-    padding: 20px;
+    padding: 12px;
     border-radius: 8px;
     width: 600px;
     max-width: 90%;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
+    top: 6%;
+    bottom: 17px;
   }
   
   .close-button {
@@ -33,7 +35,9 @@
   
   .modal-title {
     font-size: 22px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: center;
   }
   
   .tabs {
@@ -90,7 +94,7 @@
   
   .form-group input,
   .form-group select {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
