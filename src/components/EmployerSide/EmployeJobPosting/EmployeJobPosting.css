@@ -1,0 +1,130 @@
+/* src/components/JobPostingPage.css */
+
+.job-posting-page {
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.job-posting-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-tag {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #006da0;
+  margin-bottom: 8px;
+}
+
+.main-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.job-posting-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.text-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.service-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #474747;
+  margin-bottom: 15px;
+  width: 70%;
+}
+
+.description {
+  color: #858484;
+  font-size: 13px;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  width:70%;
+  padding-left: 15px;
+  
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-right: 65px;
+  margin-bottom: 15px;
+}
+
+.feature i {
+  font-size: 20px;
+  color: #006da0;
+  margin-right: 8px;
+}
+
+.feature span {
+  font-size: 14px;
+  color: #333333;
+  
+}
+
+.buy-now-btn {
+  padding: 10px 15px;
+  background-color: #ffffff;
+  color: #0032d6;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 100px;
+}
+
+.buy-now-btn:hover {
+  background-color: #dbf1ff;
+}
+
+.image-section {
+  flex: 1;
+  text-align: center;
+  width: 60%;
+  /* background-color: rgb(209, 248, 248); */
+}
+
+.illustration {
+  max-width: 90%;
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .job-posting-info {
+    flex-direction: column;
+  }
+
+  .text-section {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .service-title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}

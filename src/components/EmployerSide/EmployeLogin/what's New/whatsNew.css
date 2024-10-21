@@ -1,0 +1,95 @@
+/* src/components/Testimonials.css */
+
+.recruiters-testimonials-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.recruiters-testimonials-text {
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+.recruiters-section-tag {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #006da0;
+  margin-bottom: 8px;
+}
+
+.recruiters-main-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.recruiters-description1 {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.6;
+}
+
+.recruiters-testimonials-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.recruiters-testimonial-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.recruiters-avatar-container {
+  width: 220 px; /* Fixed width for the container */
+  height: 120px; /* Fixed height for the container */
+  border-radius: 5%;
+  overflow: hidden; /* Ensures the image stays within the circular area */
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recruiters-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+  transition: transform 800ms ease;
+}
+
+.recruiters-avatar-container:hover .recruiters-avatar-image {
+  transform: scale(1.5); /* Zoom effect */
+}
+
+
+.recruiters-position {
+  font-size: 12px;
+  color: #8f8f8f;
+  margin-bottom: 15px;
+}
+.recruiters-testimonial-text {
+  font-size: 14px;
+  color: #3b3b3b;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .recruiters-testimonials-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .recruiters-testimonial-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+}

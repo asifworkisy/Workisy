@@ -1,46 +1,35 @@
 import React, { useState } from "react";
 import "./EmployeLogin.css";
+// import PhoneInput from "react-phone-input-2";
+// import "react-phone-input-2/lib/style.css";
 import Header from "../../Home/Header/Header";
-import { useNavigate } from "react-router-dom"; 
-import EmployeeModel from "./EmployeeModel/EmployeeModel";
+import { useNavigate } from "react-router-dom"; // Use the hook here
+import JobPostingPage from "../EmployeJobPosting/EmployeJobPosting";
+import ImageLeftContentRight from "../Search best/SearchBest";
+import Testimonials from "./Recruiters Recommend/RecruitersRecommend";
+import WhatsNew from "./what's New/whatsNew";
+
 const EmployeLogin = () => {
   const [fullName, setFullName] = useState("");
-  const [contactNumber, setContactNumber] = useState("");
+  // const [contactNumber, setContactNumber] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [emailId, setEmailId] = useState("");
-  const [formError, setFormError] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
-  const [showForgotPasswordForm, setShowForgotPasswordForm] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Define state for modal visibility
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate(); // Use the navigate function
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!fullName || !contactNumber || !companyName || !emailId) {
-      setFormError(true);
-    } else {
-      setFormError(false); 
-      console.log({
-        fullName,
-        contactNumber,
-        companyName,
-        emailId,
-      });
-      setFullName("");
-      setContactNumber("");
-      setCompanyName("");
-      setEmailId("");
-    }
-  };
-
-  const handleForgotPasswordSubmit = (e) => {
-    e.preventDefault();
-    console.log("Forgot password form submitted");
-  };
-
-  const handleModalSubmit = (data) => {
-    console.log("Sales Inquiry Data:", data); // Handle the data from the modal here
+    console.log({
+      fullName,
+      // contactNumber,
+      companyName,
+      emailId,
+    });
+    setFullName("");
+    // setContactNumber("");
+    setCompanyName("");
+    setEmailId("");
   };
 
   return (
@@ -56,22 +45,13 @@ const EmployeLogin = () => {
           <h3 className="employee-login-h3">
             We're revolutionising recruitment. Sign up now!
           </h3>
-          <button 
-            className="employee-login-button" 
-            onClick={() => setIsModalOpen(true)} // Open modal on button click
-          >
-            Talk to Sales
-          </button>
-
+          <button className="employee-login-button">Talk to Sales</button>
         </div>
         <div className="employee-login-form-container">
           <div className="h4-container">
             <h4
               className="employee-login-form-h4"
-              onClick={() => {
-                setShowLoginForm(true);
-                setShowForgotPasswordForm(false);
-              }}
+              onClick={() => setShowLoginForm(true)}
             >
               Login
             </h4>
@@ -84,7 +64,7 @@ const EmployeLogin = () => {
           </div>
 
           <div className="employee-login-form-div">
-            {showLoginForm && !showForgotPasswordForm ? (
+            {showLoginForm ? (
               <form className="employee-login-form">
                 <label className="employee-login-form-label" htmlFor="name">
                   User Name
@@ -103,86 +83,32 @@ const EmployeLogin = () => {
                 <input
                   className="employee-login-form-input"
                   type="password"
-                  id="password"
-                  name="password"
+                  id="confirm-password"
+                  name="confirm-password"
                   placeholder="Enter Password"
                   required
                 />
-                <p
-                  className="employee-login-form-p"
-                  onClick={() => setShowForgotPasswordForm(true)}
-                >
-                  Forgot Password?
-                </p>
+                <p className="employee-login-form-p">Forgot Password?</p>
                 <button className="employee-login-form-button" type="submit">
                   Login
                 </button>
-                <hr className="form-divider" />
+                <hr className="form-divider"></hr>
                 <p className="employee-login-form-new-user">
                   New User?{" "}
                   <span
                     className="employee-login-form-new-user-link"
-                    onClick={() => navigate("/employee-signup")}
+                    onClick={() => navigate("/employee-signup")} // Correct use of navigate
                   >
                     Sign up
                   </span>
                 </p>
               </form>
-            ) : showForgotPasswordForm ? (
-              <form className="forgot-password-form" onSubmit={handleForgotPasswordSubmit}>
-                <h2 className="forgot-password-heading">Forgot Password</h2>
-                <p className="forgot-password-description">
-                  Please enter account username and registered email address for password recovery.
-                </p>
-                <label className="employee-login-form-label" htmlFor="username">
-                  Username
-                </label>
-                <input
-                  className="employee-login-form-input"
-                  type="text"
-                  id="username"
-                  name="username"
-                  placeholder="Enter Username"
-                  required
-                />
-                <label className="employee-login-form-label" htmlFor="email">
-                  Email ID
-                </label>
-                <input
-                  className="employee-login-form-input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Enter Email ID"
-                  required
-                />
-                <label className="employee-login-form-label" htmlFor="captcha">
-                  Enter Captcha
-                </label>
-                <input
-                  className="employee-login-form-input"
-                  type="text"
-                  id="captcha"
-                  name="captcha"
-                  placeholder="Enter Captcha"
-                  required
-                />
-                <button type="submit" className="employee-login-form-button">
-                  Submit
-                </button>
-                <p
-                  className="forgot-password-back"
-                  onClick={() => setShowForgotPasswordForm(false)}
-                >
-                  Back to Login
-                </p>
-              </form>
             ) : (
               <form className="talk-to-sales-form" onSubmit={handleSubmit}>
-                {formError && (
-                  <p className="error-message">Please fill in the mandatory fields</p>
-                )}
-                <label className="employee-login-form-label" htmlFor="full-name">
+                <label
+                  className="employee-login-form-label"
+                  htmlFor="full-name"
+                >
                   Full Name*
                 </label>
                 <input
@@ -193,18 +119,28 @@ const EmployeLogin = () => {
                   placeholder="Enter your Full Name"
                   required
                 />
-                <label className="employee-login-form-label" htmlFor="talk-to-sales-number">
+                <label
+                  className="employee-login-form-label"
+                  htmlFor="talk-to-sales-number"
+                >
                   Contact Number*
                 </label>
-                <input
-                  type="text"
-                  id="talk-to-sales-number"
+                {/* <PhoneInput
+                  className="employee-login-form-phone-input"
+                  country={"in"}
                   value={contactNumber}
-                  onChange={(e) => setContactNumber(e.target.value)}
-                  placeholder="Enter your Contact Number"
-                  required
-                />
-                <label className="employee-login-form-label" htmlFor="company-name">
+                  onChange={setContactNumber}
+                  containerClass="phone-input-container"
+                  inputProps={{
+                    name: "phoneNumber",
+                    required: true,
+                  }}
+                  inputStyle={{ width: "100%" }}
+                /> */}
+                <label
+                  className="employee-login-form-label"
+                  htmlFor="company-name"
+                >
                   Company Name*
                 </label>
                 <input
@@ -230,13 +166,12 @@ const EmployeLogin = () => {
               </form>
             )}
           </div>
-          <EmployeeModel 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        onSubmit={handleModalSubmit} 
-      />
         </div>
       </div>
+      <JobPostingPage />
+      <ImageLeftContentRight />
+      <Testimonials />
+      <WhatsNew />
     </>
   );
 };
