@@ -3,35 +3,33 @@ import "./EmployeLogin.css";
 // import PhoneInput from "react-phone-input-2";
 // import "react-phone-input-2/lib/style.css";
 import Header from "../../Home/Header/Header";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom"; // Use the hook here
+import JobPostingPage from "../EmployeJobPosting/EmployeJobPosting";
+import ImageLeftContentRight from "../Search best/SearchBest";
+import Testimonials from "./Recruiters Recommend/RecruitersRecommend";
+import WhatsNew from "./what's New/whatsNew";
+
 const EmployeLogin = () => {
   const [fullName, setFullName] = useState("");
-  const [contactNumber, setContactNumber] = useState("");
+  // const [contactNumber, setContactNumber] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [emailId, setEmailId] = useState("");
-  const [formError, setFormError] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate(); // Use the navigate function
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
-    if (!fullName || !contactNumber || !companyName || !emailId) {
-      setFormError(true);
-    } else {
-      setFormError(false); 
-      console.log({
-        fullName,
-        contactNumber,
-        companyName,
-        emailId,
-      });
-      setFullName("");
-      setContactNumber("");
-      setCompanyName("");
-      setEmailId("");
-    }
+    console.log({
+      fullName,
+      // contactNumber,
+      companyName,
+      emailId,
+    });
+    setFullName("");
+    // setContactNumber("");
+    setCompanyName("");
+    setEmailId("");
   };
 
   return (
@@ -107,12 +105,6 @@ const EmployeLogin = () => {
               </form>
             ) : (
               <form className="talk-to-sales-form" onSubmit={handleSubmit}>
-                {/* Show error message if validation fails */}
-                {formError && (
-                  <p className="error-message">
-                    Please Fill in the mandatory fields
-                  </p>
-                )}
                 <label
                   className="employee-login-form-label"
                   htmlFor="full-name"
@@ -145,7 +137,6 @@ const EmployeLogin = () => {
                   }}
                   inputStyle={{ width: "100%" }}
                 /> */}
-               
                 <label
                   className="employee-login-form-label"
                   htmlFor="company-name"
@@ -177,6 +168,10 @@ const EmployeLogin = () => {
           </div>
         </div>
       </div>
+      <JobPostingPage />
+      <ImageLeftContentRight />
+      <Testimonials />
+      <WhatsNew />
     </>
   );
 };
