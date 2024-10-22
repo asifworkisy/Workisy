@@ -8,7 +8,7 @@ const Resume=()=>{
   const [savedHeadline, setSavedHeadline] = useState('Your current resume headline.');
   const handleOpen=()=>{
     setOpen(!open)
-    console.log(open)
+    
   }
 
   const handleheadlineSave=()=>{

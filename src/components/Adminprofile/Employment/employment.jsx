@@ -267,28 +267,28 @@ const Employment=()=>{
                             <input type="text" id="company-name" className='text-input' placeholder='Enter Compnay Name' onChange={(e)=>setFulltimeRole(e.target.value)}/>
                         </div>
                         <div style={{marginTop:'30px'}}>
-                        <FormLabel id="demo-row-radio-buttons-group-label" sx={{color:'#121224', fontWeight:600}}>Joining Date<span style={{ color: 'red' }}>*</span></FormLabel>
-                        <div style={{display:'flex', alignItems:'center'}}>
-                            <div style={{width:'100%'}}>
-                                <Select
-                                    value={selectJoinYearOpt}
-                                    onChange={handleChangeJoinYear}
-                                    options={joinYear}
-                                    isSearchable
-                                    placeholder="Select or search for an option..."
-                                    styles={ customStyles}
+                            <FormLabel id="demo-row-radio-buttons-group-label" sx={{color:'#121224', fontWeight:600}}>Joining Date<span style={{ color: 'red' }}>*</span></FormLabel>
+                            <div style={{display:'flex', alignItems:'center'}}>
+                                <div style={{width:'100%'}}>
+                                    <Select
+                                        value={selectJoinYearOpt}
+                                        onChange={handleChangeJoinYear}
+                                        options={joinYear}
+                                        isSearchable
+                                        placeholder="Select or search for an option..."
+                                        styles={ customStyles}
+                                    />
+                                </div>
+                                <div style={{marginLeft:'20px', width:'100%'}}>
+                                    <Select
+                                        value={selectJoinMOnthOpt}
+                                        onChange={(selectJoinMOnthOpt)=>setJoinMOnthOpt(selectJoinMOnthOpt)}
+                                        options={joinMonths}
+                                        isSearchable
+                                        placeholder="Select or search for an option..."
+                                        styles={ customStyles}
                                 />
-                            </div>
-                            <div style={{marginLeft:'20px', width:'100%'}}>
-                                <Select
-                                    value={selectJoinMOnthOpt}
-                                    onChange={(selectJoinMOnthOpt)=>setJoinMOnthOpt(selectJoinMOnthOpt)}
-                                    options={joinMonths}
-                                    isSearchable
-                                    placeholder="Select or search for an option..."
-                                    styles={ customStyles}
-                            />
-                            </div>
+                                </div>
                             </div>
                         </div>
                         <div style={{marginTop:'30px'}}>
