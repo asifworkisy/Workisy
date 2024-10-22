@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import EmployeeSignupModal from "./EmployeeModal/EmployeeSignupModal";
+import { useNavigate } from "react-router-dom";
 import "./EmployeSignup.css";
 import PersonIcon from "@mui/icons-material/Person";
 import Header from "../../Home/Header/Header";
 
 const EmployeSignup = () => {
+  const navigate = useNavigate();
   const [achievements, setAchievements] = useState([
     { description: "", year: "" },
   ]);
@@ -43,23 +45,23 @@ const EmployeSignup = () => {
 
     // Fetch states based on the selected country (you'll need an API for this)
     fetch(`https://api.your-real-api.com/states/${selectedOption.value}`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then((data) => {
-      const stateOptions = data.map((state) => ({
-        value: state.code,
-        label: state.name,
-      }));
-      setStates(stateOptions);
-    })
-    .catch((error) => {
-      console.error('There was a problem with the fetch operation:', error);
-      // Optionally, you can set an error state to display an error message to users
-    });
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const stateOptions = data.map((state) => ({
+          value: state.code,
+          label: state.name,
+        }));
+        setStates(stateOptions);
+      })
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
+        // Optionally, you can set an error state to display an error message to users
+      });
   };
 
   const handleStateChange = (selectedOption) => {
@@ -118,13 +120,22 @@ const EmployeSignup = () => {
       setFunctionError("");
     }
   };
-  const years = Array.from({ length: 30 }, (_, i) => 2024 - i); // Example for 30 years
+  const years = Array.from({ length: 50 }, (_, i) => 2024 - i);
 
   return (
     <>
       <Header />
       <div className="employee-signup-container">
         <h1 className="employee-signup-heading">Create Recruiter Profile</h1>
+        <h4 className="employee-signup-h4">
+          Existing Employers/Recruiters?{" "}
+          <span
+            className="employee-signup-login"
+            onClick={() => navigate("/employee-login")}
+          >
+            Login
+          </span>
+        </h4>
       </div>
       <div className="employee-signup-container">
         <div className="employee-signup-flex-container">
@@ -238,90 +249,106 @@ const EmployeSignup = () => {
             </button>
           </div>
 
-          {/* Employee Signup Form Container */}
+          {/* {/*--------------- Employee Signup Form Container -------------/} */}
+
           <div className="employee-signup-form-container">
             <form className="employee-signup-form">
-              {/* Professional Details */}
+              {/* ------------Professional Details-------------*/}
+
               <div className="employee-signup-section">
                 <h3 className="employee-signup-section-header">
                   Professional Details
                 </h3>
-                <div className="employee-signup-form-group">
-                  {/* <label className="employee-signup-label">
-                    Current Company Name*
-                  </label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="Current Company Name"
-                    required
-                  />
-                  {/* <label className="employee-signup-label">
-                    Current Designation*
-                  </label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="Current Designation"
-                    required
-                  />
-                  {/* <label className="employee-signup-label">From*</label> */}
-                  <select className="employee-signup-select" required>
-                    <option value="">From</option>
-                    {/* Add more options for years */}
-                  </select>
-                  {/* <label className="employee-signup-label">To*</label> */}
-                  <select className="employee-signup-select" required>
-                    <option value="">To</option>
-                    {/* Add more options for years */}
-                  </select>
-                </div>
-                <div className="employee-signup-form-group">
-                  {/* <label className="employee-signup-label">
+                <div className="employee-signup-border">
+                  <div className="employee-signup-form-group">
+                    <label className="employee-signup-label">
+                      Current Company Name*
+                    </label>
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="Current Company Name"
+                      required
+                    />
+                  </div>
+                  <div className="employee-signup-form-group">
+                    <label className="employee-signup-label">
+                      Current Designation*
+                    </label>
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="Current Designation"
+                      required
+                    />
+                  </div>
+                  <div className="employee-signup-form-group">
+                    <label className="employee-signup-label">From*</label>
+                    <input
+                      type="date"
+                      className="employee-signup-select"
+                      required
+                      placeholder="From"
+                    />
+                    </div>
+                    <div className="employee-signup-form-group">
+                      
+
+                    <label className="employee-signup-label">To*</label>
+                    <input
+                      type="date"
+                      className="employee-signup-select"
+                      required
+                      placeholder="From"
+                    />
+                  </div>
+                  <div className="employee-signup-form-group">
+                    {/* <label className="employee-signup-label">
                     Address Line 1*
                   </label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="Address Line 1"
-                  />
-                  {/* <label className="employee-signup-label">
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="Address Line 1"
+                    />
+                    {/* <label className="employee-signup-label">
                     Address Line 2
                   </label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="Address Line 2"
-                  />
-                </div>
-                <div className="employee-signup-form-group">
-                  {/* <label className="employee-signup-label">City*</label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="City"
-                  />
-                  {/* <label className="employee-signup-label">
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="Address Line 2"
+                    />
+                  </div>
+                  <div className="employee-signup-form-group">
+                    {/* <label className="employee-signup-label">City*</label> */}
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="City"
+                    />
+                    {/* <label className="employee-signup-label">
                     State/ Province/ Region*
                   </label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="State/Province/Region"
-                  />
-                  {/* <label className="employee-signup-label">Country*</label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="Country"
-                    required
-                  />
-                  {/* <label className="employee-signup-label">Zip Code*</label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="Zip Code"
-                  />
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="State/Province/Region"
+                    />
+                    {/* <label className="employee-signup-label">Country*</label> */}
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="Country"
+                      required
+                    />
+                    {/* <label className="employee-signup-label">Zip Code*</label> */}
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="Zip Code"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -330,66 +357,68 @@ const EmployeSignup = () => {
                 <h3 className="employee-signup-section-header">
                   Hiring Preferences
                 </h3>
-                <div className="employee-signup-form-group">
-                  {/* <label className="employee-signup-label">
+                <div className="employee-signup-border">
+                  <div className="employee-signup-form-group">
+                    {/* <label className="employee-signup-label">
                     Total Experience in hiring*
                   </label> */}
-                  <select className="employee-signup-select" required>
-                    <option value="">Total Experience in hiring</option>
-                    {/* Add more options */}
-                  </select>
-                  {/* <label className="employee-signup-label">
+                    <select className="employee-signup-select" required>
+                      <option value="">Total Experience in hiring</option>
+                      {/* Add more options */}
+                    </select>
+                    {/* <label className="employee-signup-label">
                     Level I hire for*
                   </label> */}
-                  <select className="employee-signup-select" required>
-                    <option value="">Level I hire for</option>
-                    {/* Add more options */}
-                  </select>
-                  {/* <label className="employee-signup-label">Referral Code</label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="Referral Code"
-                  />
-                </div>
+                    <select className="employee-signup-select" required>
+                      <option value="">Level I hire for</option>
+                      {/* Add more options */}
+                    </select>
+                    {/* <label className="employee-signup-label">Referral Code</label> */}
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="Referral Code"
+                    />
+                  </div>
 
-                {/* Industries and Functions Input */}
-                <div className="employee-signup-form-group">
-                  {/* <label className="employee-signup-label">Industry*</label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="Industry (Max 4)"
-                    value={industries}
-                    onChange={handleIndustryChange}
-                    required
-                  />
-                  {industryError && (
-                    <p className="error-message">{industryError}</p>
-                  )}
-                  {/* <label className="employee-signup-label">Function*</label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="Function (Max 4)"
-                    value={functions}
-                    onChange={handleFunctionChange}
-                    required
-                  />
-                  {functionError && (
-                    <p className="error-message">{functionError}</p>
-                  )}
-                </div>
+                  {/* Industries and Functions Input */}
+                  <div className="employee-signup-form-group">
+                    {/* <label className="employee-signup-label">Industry*</label> */}
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="Industry (Max 4)"
+                      value={industries}
+                      onChange={handleIndustryChange}
+                      required
+                    />
+                    {industryError && (
+                      <p className="error-message">{industryError}</p>
+                    )}
+                    {/* <label className="employee-signup-label">Function*</label> */}
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="Function (Max 4)"
+                      value={functions}
+                      onChange={handleFunctionChange}
+                      required
+                    />
+                    {functionError && (
+                      <p className="error-message">{functionError}</p>
+                    )}
+                  </div>
 
-                <div className="employee-signup-form-group">
-                  {/* <label className="employee-signup-label">
+                  <div className="employee-signup-form-group">
+                    {/* <label className="employee-signup-label">
                     Skills I hire for*
                   </label> */}
-                  <input
-                    className="employee-signup-input"
-                    type="text"
-                    placeholder="Skills I hire for"
-                  />
+                    <input
+                      className="employee-signup-input"
+                      type="text"
+                      placeholder="Skills I hire for"
+                    />
+                  </div>
                 </div>
               </div>
 
