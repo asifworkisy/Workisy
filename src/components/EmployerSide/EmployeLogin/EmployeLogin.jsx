@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import "./EmployeLogin.css";
 import Header from "../../Home/Header/Header";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import EmployeeModel from "./EmployeeModel/EmployeeModel";
+import JobPostingPage from "../EmployeJobPosting/EmployeJobPosting";
+import ImageLeftContentRight from "../Search best/SearchBest";
+import Testimonials from "./Recruiters Recommend/RecruitersRecommend";
+import WhatsNew from "./what's New/whatsNew";
 const EmployeLogin = () => {
   const [fullName, setFullName] = useState("");
   const [contactNumber, setContactNumber] = useState("");
@@ -13,14 +17,15 @@ const EmployeLogin = () => {
   const [showForgotPasswordForm, setShowForgotPasswordForm] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false); // Define state for modal visibility
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!fullName || !contactNumber || !companyName || !emailId) {
       setFormError(true);
     } else {
-      setFormError(false); 
+      setFormError(false);
       console.log({
         fullName,
         contactNumber,
@@ -40,9 +45,8 @@ const EmployeLogin = () => {
   };
 
   const handleModalSubmit = (data) => {
-    console.log("Sales Inquiry Data:", data); 
+    console.log("Sales Inquiry Data:", data); // Handle the data from the modal here
   };
-
   return (
     <>
       <Header />
@@ -56,13 +60,12 @@ const EmployeLogin = () => {
           <h3 className="employee-login-h3">
             We're revolutionising recruitment. Sign up now!
           </h3>
-          <button 
-            className="employee-login-button" 
+          <button
+            className="employee-login-button"
             onClick={() => setIsModalOpen(true)} // Open modal on button click
           >
             Talk to Sales
           </button>
-
         </div>
         <div className="employee-login-form-container">
           <div className="h4-container">
@@ -129,10 +132,14 @@ const EmployeLogin = () => {
                 </p>
               </form>
             ) : showForgotPasswordForm ? (
-              <form className="forgot-password-form" onSubmit={handleForgotPasswordSubmit}>
+              <form
+                className="forgot-password-form"
+                onSubmit={handleForgotPasswordSubmit}
+              >
                 <h2 className="forgot-password-heading">Forgot Password</h2>
                 <p className="forgot-password-description">
-                  Please enter account username and registered email address for password recovery.
+                  Please enter account username and registered email address for
+                  password recovery.
                 </p>
                 <label className="employee-login-form-label" htmlFor="username">
                   Username
@@ -180,9 +187,14 @@ const EmployeLogin = () => {
             ) : (
               <form className="talk-to-sales-form" onSubmit={handleSubmit}>
                 {formError && (
-                  <p className="error-message">Please fill in the mandatory fields</p>
+                  <p className="error-message">
+                    Please fill in the mandatory fields
+                  </p>
                 )}
-                <label className="employee-login-form-label" htmlFor="full-name">
+                <label
+                  className="employee-login-form-label"
+                  htmlFor="full-name"
+                >
                   Full Name*
                 </label>
                 <input
@@ -193,7 +205,10 @@ const EmployeLogin = () => {
                   placeholder="Enter your Full Name"
                   required
                 />
-                <label className="employee-login-form-label" htmlFor="talk-to-sales-number">
+                <label
+                  className="employee-login-form-label"
+                  htmlFor="talk-to-sales-number"
+                >
                   Contact Number*
                 </label>
                 <input
@@ -204,7 +219,10 @@ const EmployeLogin = () => {
                   placeholder="Enter your Contact Number"
                   required
                 />
-                <label className="employee-login-form-label" htmlFor="company-name">
+                <label
+                  className="employee-login-form-label"
+                  htmlFor="company-name"
+                >
                   Company Name*
                 </label>
                 <input
@@ -230,13 +248,17 @@ const EmployeLogin = () => {
               </form>
             )}
           </div>
-          <EmployeeModel 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        onSubmit={handleModalSubmit} 
-      />
+          <EmployeeModel
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            onSubmit={handleModalSubmit}
+          />
         </div>
       </div>
+      <JobPostingPage />
+      <ImageLeftContentRight />
+      <Testimonials />
+      <WhatsNew />
     </>
   );
 };
