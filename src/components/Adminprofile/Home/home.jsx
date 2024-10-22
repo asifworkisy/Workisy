@@ -6,6 +6,10 @@ import Skills from '../Keyskills/skills'
 import Employment from '../Employment/employment'
 import Education from '../Education/education'
 import ItSkills from '../Itskills/itskills'
+import Project from '../Project/project'
+import ProfileSummary from '../ProfileSummary/summary'
+import Awards from '../Awards/awards'
+import Certification from '../Certification/certifiaction'
 import './home.css'
 const Home=()=>{
   return (
@@ -20,6 +24,10 @@ const Home=()=>{
           <Employment/>
           <Education/>
           <ItSkills/>
+          <Project/>
+          <ProfileSummary/>
+          <Awards/>
+          <Certification/>
         </div>
     </div>
   )

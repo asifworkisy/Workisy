@@ -1,0 +1,28 @@
+.award-section-item{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:flex-start;
+    margin-top:13px;
+}
+.award-section-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+   
+}
+.award-section-heading{
+    color:#1D1934;
+    font-size:14px;
+    font-family:sans-serif;
+    padding: 1px;;
+    margin:0;
+}
+.award-section-para{
+    color:#777585;
+    font-size:12px;
+    font-family:sans-serif;
+    padding:1px;
+    margin:0;
+}
