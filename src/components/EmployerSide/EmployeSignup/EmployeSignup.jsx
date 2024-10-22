@@ -261,40 +261,33 @@ const EmployeSignup = () => {
                 </h3>
                 <div className="employee-signup-border">
                   <div className="employee-signup-form-group">
-                    <label className="employee-signup-label">
-                      Current Company Name*
-                    </label>
+                    {/* <label className="employee-signup-label">
+                    Current Company Name*
+                  </label> */}
                     <input
                       className="employee-signup-input"
                       type="text"
                       placeholder="Current Company Name"
                       required
                     />
-                  </div>
-                  <div className="employee-signup-form-group">
-                    <label className="employee-signup-label">
-                      Current Designation*
-                    </label>
+                    {/* <label className="employee-signup-label">
+                    Current Designation*
+                  </label> */}
                     <input
                       className="employee-signup-input"
                       type="text"
                       placeholder="Current Designation"
                       required
                     />
-                  </div>
-                  <div className="employee-signup-form-group">
-                    <label className="employee-signup-label">From*</label>
+                    {/* <label className="employee-signup-label">From*</label> */}
                     <input
                       type="date"
                       className="employee-signup-select"
                       required
                       placeholder="From"
                     />
-                    </div>
-                    <div className="employee-signup-form-group">
-                      
 
-                    <label className="employee-signup-label">To*</label>
+                    {/* <label className="employee-signup-label">To*</label> */}
                     <input
                       type="date"
                       className="employee-signup-select"

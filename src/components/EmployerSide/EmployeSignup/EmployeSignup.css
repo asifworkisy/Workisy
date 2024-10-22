@@ -183,11 +183,25 @@ textarea {
 }
 
 /* Keep existing styles for form groups */
+.personal-details-form-group,
+.employee-signup-form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing between columns */
+}
+
 .personal-details-form-group label,
 .employee-signup-form-group label {
     display: block;
-    margin-bottom: 5px; 
-    font-size: 14px; 
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.personal-details-form-group .row-group,
+.employee-signup-form-group .row-group {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
 }
 
 .personal-details-form-group input,
@@ -197,16 +211,17 @@ textarea {
 .employee-signup-form-group select,
 .employee-signup-form-group textarea {
     width: 100%;
-    padding: 10px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    font-size: 14px; 
-    box-sizing: border-box; 
-    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
+
 
 .employee-signup-border {
     border: 1px solid #000000;
     padding: 1rem; 
-    border-radius: 8px; 
+    border-radius: 8px;
 }
+
