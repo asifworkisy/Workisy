@@ -73,7 +73,7 @@ export default function Job()
                            
               
                           }}
-                    to="/adminProfile">{job}</Link>
+                    to="/jobDetailes">{job}</Link>
                   
     
               ))

@@ -1,12 +1,14 @@
 /* Main Job Listing Container */
 .job-listing-container {
-  width: 60%;
+  width: 47%;
   border: 1px solid #ddd;
   border-radius: 10px;
   background-color: #fff;
-  /* margin: 0 auto; Center the container */
-  /* padding: 20px; */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 37%;
+  top: 14%;
+  z-index: 1; /* Change this to a positive value */
 }
 
 /* Job Header */
@@ -18,8 +20,6 @@
   border-radius: 10px 10px 0px 0px;
   border-bottom: 1px solid #e0e0e0;
   /* margin-bottom: 20px; */
-  position: sticky;
-  top: 0px;
 }
 
 .job-header h1 {
@@ -47,7 +47,7 @@
     border-radius: 10px;
 }
 .job-scrollbar::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
+  width: 4px; /* Width of the scrollbar */
 }
 
 .job-scrollbar::-webkit-scrollbar-track {

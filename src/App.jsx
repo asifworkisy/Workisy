@@ -6,7 +6,6 @@ import Homepage from './components/Home/Homepage/Home';
 import "./App.css";
 import EmployeLogin from './components/EmployerSide/EmployeLogin/EmployeLogin';
 import EmployeSignup from './components/EmployerSide/EmployeSignup/EmployeSignup';
-
 export default function App() {
   return (
     <BrowserRouter>

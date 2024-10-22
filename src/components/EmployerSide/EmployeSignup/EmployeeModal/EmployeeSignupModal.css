@@ -1,0 +1,139 @@
+.employee-signup-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.employee-modal-content {
+    background-color: #fff;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.employee-modal-header-section{
+    border-bottom: 5px solid #007bffd3;
+    border-radius: 50px;
+}
+
+.employee-modal-header-section {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.employee-modal-header {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.employee-signup-modal-container .modal-close-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #007bff;
+    margin-left: 15px;
+}
+
+.employee-signup-modal-container .modal-close-icon:hover {
+    color: #007bff;
+}
+
+.employee-modal-file-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.employee-modal-file-input {
+    display: none;
+}
+
+.employee-modal-file-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.employee-modal-file-name {
+    color: #777;
+}
+
+.employee-modal-upload-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.employee-modal-upload-button:hover {
+    background-color: #0063ce;
+}
+
+.employee-modal-guidelines {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.employee-modal-guidelines ul {
+    padding-left: 20px;
+}
+
+.employee-modal-guidelines li {
+    margin-bottom: 8px;
+}
+
+.employee-modal-file-section {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    margin-bottom: 25px;
+    justify-content: center;
+    border: 1px dotted black;
+    padding: 2rem;
+}
+
+.employee-modal-file-button {
+    background-color:#007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px; 
+}
+
+.employee-modal-file-name {
+    color: #777;
+}
+
+
+.file-error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  

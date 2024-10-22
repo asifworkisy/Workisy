@@ -1,0 +1,112 @@
+/* src/components/ImageLeftContentRight.css */
+
+.image-content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.image-section {
+  flex: 1;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.illustration {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-section {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.section-tag {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #006da0;
+  margin-bottom: 8px;
+}
+
+.main-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.service-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #666666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.feature i {
+  font-size: 20px;
+  color: #006da0;
+  margin-right: 8px;
+}
+
+.feature span {
+  font-size: 14px;
+  color: #333333;
+}
+
+.buy-now-btn {
+  padding: 10px 20px;
+  background-color: #006da0;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buy-now-btn:hover {
+  background-color: #005488;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .image-content-section {
+    flex-direction: column;
+  }
+
+  .text-section {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .service-title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
