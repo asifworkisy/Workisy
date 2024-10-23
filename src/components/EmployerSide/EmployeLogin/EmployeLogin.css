@@ -215,11 +215,16 @@
     width: 40%;
 }
 
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
+.errorr-message {
+    color: red; 
+    font-size: 20px; 
+    margin: 10px 0; 
+    text-align: left;
+    position: relative;
+    left: 0; 
+    padding-left: 26px; 
+  }
+  
 
 
 

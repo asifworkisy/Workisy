@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import EmployeeSignupModal from "./EmployeeModal/EmployeeSignupModal";
 import { useNavigate } from "react-router-dom";
-import "./EmployeSignup.css";
+import "./EmployeeRegister.css";
 import PersonIcon from "@mui/icons-material/Person";
 import Header from "../../Home/Header/Header";
 
-const EmployeSignup = () => {
+const EmployeeRegister = () => {
   const navigate = useNavigate();
   const [achievements, setAchievements] = useState([
     { description: "", year: "" },
@@ -435,4 +435,5 @@ const EmployeSignup = () => {
   );
 };
 
-export default EmployeSignup;
+export default EmployeeRegister;
+
