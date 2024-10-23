@@ -34,8 +34,7 @@ const LoginForm = ({ onLogin, onShowForgotPassword, onShowSignup }) => {
         name="password"
         placeholder="Enter Password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)} // Update password state
-        required
+        onChange={(e) => setPassword(e.target.value)} 
       />
       <p className="employee-login-form-p" onClick={onShowForgotPassword}>
         Forgot Password?

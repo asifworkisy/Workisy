@@ -10,10 +10,10 @@ import ImageLeftContentRight from "../Search best/SearchBest";
 import Testimonials from "./Recruiters Recommend/RecruitersRecommend";
 import WhatsNew from "./what's New/whatsNew";
 import LoginForm from "./LoginForm";
-import ForgotPasswordForm from "./ForgotPasswordForm"; 
-import TalkToSalesForm from "./TalkToSalesForm"; 
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
+import ForgotPasswordForm from "./ForgotPasswordForm";
+import TalkToSalesForm from "./TalkToSalesForm";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const EmployeLogin = () => {
   const [showLoginForm, setShowLoginForm] = useState(true);
@@ -26,11 +26,14 @@ const EmployeLogin = () => {
 
   const handleLogin = async (userData) => {
     try {
-      const response = await axios.post('https://workisy-backend.onrender.com/api/v1/admin/auth/login', userData); 
+      const response = await axios.post(
+        "https://workisy-backend.onrender.com/api/v1/admin/auth/login",
+        userData
+      );
       console.log("Login successful:", response.data);
-      
-      // Show success toast
-      toast.success('Form submitted successfully!', {
+
+
+      toast.success("You have successfully logged in!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -40,18 +43,17 @@ const EmployeLogin = () => {
         progress: undefined,
       });
 
-      setTimeout(()=>{
-
-        navigate('/employer-profile'); 
-      },1000)
+      setTimeout(() => {
+        navigate("/employer-profile");
+      }, 1000);
     } catch (error) {
       console.error("Error logging in:", error.response?.data || error.message);
-      
-      // Set error message state
+
+
       setErrorMessage("Please enter correct credentials");
 
-      // Show error toast
-      toast.error('There was an error submitting the form.', {
+
+      toast.error("Kindly check and enter your credentials correctly.", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -69,22 +71,22 @@ const EmployeLogin = () => {
   };
 
   const handleModalSubmit = (data) => {
-    console.log("Sales Inquiry Data:", data); 
+    console.log("Sales Inquiry Data:", data);
   };
 
   return (
     <>
       <Header />
-      <ToastContainer // Add ToastContainer here
-        position="top-right" 
-        autoClose={5000} 
-        hideProgressBar 
-        newestOnTop 
-        closeOnClick 
-        rtl={false} 
-        pauseOnFocusLoss 
-        draggable 
-        pauseOnHover 
+      <ToastContainer 
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
       />
       <div className="employee-login-container">
         <div className="employee-login-heading">
@@ -110,7 +112,7 @@ const EmployeLogin = () => {
               onClick={() => {
                 setShowLoginForm(true);
                 setShowForgotPasswordForm(false);
-                setErrorMessage(""); 
+                setErrorMessage("");
               }}
             >
               Login
@@ -126,19 +128,19 @@ const EmployeLogin = () => {
           <div className="employee-login-form-div">
             {showLoginForm && !showForgotPasswordForm ? (
               <>
-                <LoginForm 
-                  onLogin={handleLogin} 
-                  onShowForgotPassword={() => setShowForgotPasswordForm(true)} 
-                  onShowSignup={() => setIsSignupOpen(true)} 
+                <LoginForm
+                  onLogin={handleLogin}
+                  onShowForgotPassword={() => setShowForgotPasswordForm(true)}
+                  onShowSignup={() => setIsSignupOpen(true)}
                 />
               </>
             ) : showForgotPasswordForm ? (
-              <ForgotPasswordForm onForgotPassword={handleForgotPasswordSubmit} />
+              <ForgotPasswordForm
+                onForgotPassword={handleForgotPasswordSubmit}
+              />
             ) : (
               <TalkToSalesForm onSubmit={handleModalSubmit} />
             )}
-
-            {errorMessage && <p className="errorr-message">{errorMessage}</p>} 
           </div>
 
           {isModalOpen && (

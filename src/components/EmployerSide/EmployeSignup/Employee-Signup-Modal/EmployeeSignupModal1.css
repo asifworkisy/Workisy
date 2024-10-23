@@ -9,15 +9,17 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    
   }
   
   .employee-signup-modal1-content {
     background: white;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 400px;
     max-width: 90%;
     position: relative;
+    border: 2px dotted #007bff;
   }
   
   .employee-signup-close-button {
@@ -35,7 +37,9 @@
   }
   
   .employee-signup-heading {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #007bff;
   }
   
   .employee-signup-label {

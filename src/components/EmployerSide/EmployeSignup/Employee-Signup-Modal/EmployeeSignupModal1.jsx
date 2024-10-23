@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
-import { toast, ToastContainer } from 'react-toastify'; // Import Toast components
-import 'react-toastify/dist/ReactToastify.css'; // Import Toast styles
+import { toast, ToastContainer } from 'react-toastify'; 
+import axios from 'axios'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 import "./EmployeeSignupModal1.css";
 
 const EmployeeSignup = ({ isOpen, onClose, onSubmit }) => {
@@ -25,60 +26,49 @@ const EmployeeSignup = ({ isOpen, onClose, onSubmit }) => {
     const fetchUrl = `https://workisy-backend.onrender.com/api/v1/admin/auth/signup`;
 
     try {
-      const response = await fetch(fetchUrl, {
-        method: "POST",
+      const response = await axios.post(fetchUrl, userData, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(userData),
       });
 
-      if (response.ok) {
-        const result = await response.json();
-        console.log("Signup successful:", result);
+      toast.success('Signup successful!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
 
-        // Show success toast
-        toast.success('Signup successful!', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+      console.log("Signup successful:", response.data);
+      
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
 
-        // Reset form fields
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setPassword("");
+      if (onSubmit) onSubmit(response.data);
 
-        if (onSubmit) onSubmit(result);
-
-        // Redirect after a short delay to allow the user to see the success message
-        setTimeout(() => {
-          navigate('/employer-profile'); 
-          onClose();
-        }, 1000);
-      } else {
-        const errorMessage = await response.json(); // Parse the error response as JSON
-        console.error("Error during signup:", response.statusText, errorMessage);
-        
-        // Show error toast with specific error message
-        toast.error(`Signup failed: ${errorMessage.message || 'Please try again.'}`, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-      }
+      setTimeout(() => {
+        navigate('/employer-profile'); 
+        onClose();
+      }, 1000);
     } catch (error) {
-      console.error("Error during signup:", error);
-      alert("An error occurred during signup.");
+      console.error("Error during signup:", error.response ? error.response.data : error.message);
+
+      const errorMessage = error.response?.data?.message || 'An account with this email already exists.';
+      
+      toast.error(`Signup failed: ${errorMessage}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
