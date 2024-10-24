@@ -27,11 +27,10 @@ const EmployeLogin = () => {
   const handleLogin = async (userData) => {
     try {
       const response = await axios.post(
-        "https://workisy-backend.onrender.com/api/v1/admin/auth/login",
+        "https://workisy-backend.onrender.com/api/v1/admin/auth/login",  
         userData
       );
       console.log("Login successful:", response.data);
-
 
       toast.success("You have successfully logged in!", {
         position: "top-right",
@@ -43,6 +42,7 @@ const EmployeLogin = () => {
         progress: undefined,
       });
 
+
       setTimeout(() => {
         navigate("/employer-profile");
       }, 1000);
@@ -50,8 +50,7 @@ const EmployeLogin = () => {
       console.error("Error logging in:", error.response?.data || error.message);
 
 
-      setErrorMessage("Please enter correct credentials");
-
+      // setErrorMessage("Please enter correct credentials");
 
       toast.error("Kindly check and enter your credentials correctly.", {
         position: "top-right",
@@ -77,7 +76,7 @@ const EmployeLogin = () => {
   return (
     <>
       <Header />
-      <ToastContainer 
+      <ToastContainer
         position="top-right"
         autoClose={5000}
         hideProgressBar
@@ -112,7 +111,7 @@ const EmployeLogin = () => {
               onClick={() => {
                 setShowLoginForm(true);
                 setShowForgotPasswordForm(false);
-                setErrorMessage("");
+                setErrorMessage(""); 
               }}
             >
               Login
@@ -133,6 +132,9 @@ const EmployeLogin = () => {
                   onShowForgotPassword={() => setShowForgotPasswordForm(true)}
                   onShowSignup={() => setIsSignupOpen(true)}
                 />
+                {errorMessage && ( // Display the error message
+                  <p className="error-message">{errorMessage}</p>
+                )}
               </>
             ) : showForgotPasswordForm ? (
               <ForgotPasswordForm
