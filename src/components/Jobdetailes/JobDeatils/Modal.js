@@ -1,107 +1,4 @@
-
-
-// import React, { useState } from 'react';
-// import './Modal.css';
-
-// const Modal = ({ show, onClose, skills }) => {
-//   const [activeTab, setActiveTab] = useState('personalDetails'); // Tracks the current active tab
-
-//   // Function to switch tabs
-//   const handleTabClick = (tab) => {
-//     setActiveTab(tab);
-//   };
-
-//   if (!show) {
-//     return null;
-//   }
-
-//   return (
-//     <div className="modal-overlay">
-//       <div className="modal-box">
-//         <button className="close-button" onClick={onClose}>
-//           &times;
-//         </button>
-
-//         <h2 className="modal-title">Apply Job</h2>
-
-//         {/* Tab navigation */}
-//         <div className="tabs">
-//           <button
-//             className={`tab ${activeTab === 'personalDetails' ? 'active' : ''}`}
-//             onClick={() => handleTabClick('personalDetails')}
-//           >
-//             Personal Details
-//           </button>
-//           <button
-//             className={`tab ${activeTab === 'additionalInformation' ? 'active' : ''}`}
-//             onClick={() => handleTabClick('additionalInformation')}
-//           >
-//             Additional Information
-//           </button>
-//         </div>
-
-//         {/* Progress bar */}
-//         <div className="progress-bar">
-//           <div className={`progress ${activeTab === 'additionalInformation' ? 'progress-active' : ''}`} />
-//         </div>
-
-//         {/* Form content */}
-//         <div className="form-content">
-//           {activeTab === 'personalDetails' && (
-//             <form className="personal-details-form">
-//               <div className="form-group">
-//                 <label>Full Name</label>
-//                 <input type="text" placeholder="e.g. johndoe" />
-//               </div>
-//               <div className="form-group">
-//                 <label>Email</label>
-//                 <input type="email" placeholder="e.g. johndoe@example.com" />
-//               </div>
-//               <div className="form-group">
-//                 <label>Mobile</label>
-//                 <input type="text" placeholder="e.g. 9876543210" />
-//               </div>
-//               <div className="form-group">
-//                 <label>Total Experience</label>
-//                 <select>
-//                   <option>--</option>
-//                   <option>0-1 years</option>
-//                   <option>1-3 years</option>
-//                   <option>3-5 years</option>
-//                   <option>5+ years</option>
-//                 </select>
-//               </div>
-//               <div className="form-group">
-//                 <label>Job Skills</label>
-//                 <select>
-//                   <option>NOTHING SELECTED</option>
-//                   {/* Dynamically render job skills */}
-//                   {skills.map((skill, index) => (
-//                     <option key={index} value={skill}>
-//                       {skill}
-//                     </option>
-//                   ))}
-//                 </select>
-//               </div>
-//             </form>
-//           )}
-//           {activeTab === 'additionalInformation' && (
-//             <div className="additional-info">
-//               {/* Add fields for the additional information */}
-//               <p>Additional information goes here.</p>
-//             </div>
-//           )}
-//         </div>
-
-//         {/* Submit button */}
-//         <button className="apply-confirm-button">Submit Application</button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Modal;
-
+  
 
 
 import React, { useState } from 'react';
@@ -112,7 +9,7 @@ const Modal = ({ show, onClose, skills }) => {
   const [jobSkills, setJobSkills] = useState([]); // State for job skills
   const [selectedSkill, setSelectedSkill] = useState(''); // State for currently selected skill from dropdown
 
-  // Function to switch tabs
+  // Function to switch tabs    
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
@@ -129,12 +26,19 @@ const Modal = ({ show, onClose, skills }) => {
     setSelectedSkill(''); // Reset the dropdown selection
   };
 
+  // Function to handle click outside the modal-box to close the modal
+  const handleOverlayClick = (e) => {
+    if (e.target.className === 'modal-overlay') {
+      onClose();
+    }
+  };
+
   if (!show) {
     return null;
   }
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay" onClick={handleOverlayClick}>
       <div className="modal-box">
         <button className="close-button" onClick={onClose}>
           &times;
@@ -231,5 +135,3 @@ const Modal = ({ show, onClose, skills }) => {
 };
 
 export default Modal;
-
-
