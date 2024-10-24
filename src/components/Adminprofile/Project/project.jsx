@@ -129,7 +129,7 @@ const Project = () => {
                   <input type="text" id="company-name" className='text-input' placeholder='Enter Client Name' onChange={(e)=> setClientName(e.target.value)}/>
               </div>
               <div style={{marginTop:'30px', display:'flex', flexDirection:'column',}}>
-                    <FormLabel id="demo-row-radio-buttons-group-label" sx={{color:'#121224', fontWeight:'600'}}>Employemnt Type<span style={{ color: 'red' }}>*</span></FormLabel>
+                    <FormLabel id="demo-row-radio-buttons-group-label" sx={{color:'#121224', fontWeight:'600'}}>Project status<span style={{ color: 'red' }}>*</span></FormLabel>
                     <RadioGroup
                         row
                         aria-labelledby="demo-row-radio-buttons-group-label-project"

@@ -10,6 +10,8 @@ import Project from '../Project/project'
 import ProfileSummary from '../ProfileSummary/summary'
 import Awards from '../Awards/awards'
 import Certification from '../Certification/certifiaction'
+import CareerProfile from '../CareerProfile/career'
+import PersonalDetails from '../PersonalDetails/personal'
 import './home.css'
 const Home=()=>{
   return (
@@ -28,6 +30,8 @@ const Home=()=>{
           <ProfileSummary/>
           <Awards/>
           <Certification/>
+          <CareerProfile/>
+          <PersonalDetails/>
         </div>
     </div>
   )

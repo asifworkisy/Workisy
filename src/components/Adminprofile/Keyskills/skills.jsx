@@ -49,10 +49,10 @@ const Skills=()=>{
                 </ul>
              </div>
              <CreatableSelect
-                isMulti // Enables multiple selections
-                value={skills} // Binds the selected skills to the component
-                onChange={handleChange} // Handles skill addition/removal
-                options={skills} // Provides options to select
+                isMulti 
+                value={skills} 
+                onChange={handleChange} 
+                options={skills} 
                 placeholder="Add skills..."
                 isClearable
                 closeMenuOnSelect={false}

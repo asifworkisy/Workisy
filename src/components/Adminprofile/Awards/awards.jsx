@@ -63,9 +63,9 @@ const Awards=()=>{
               <MilitaryTechIcon/>
             </div>
             <div className='award-section-content'>
-              <h2 className='award-section-heading'>best cadet award</h2>
+              <h2 className='award-section-heading'>Best Employee Award</h2>
               <p className='award-section-para'>Feb 2024</p>
-              <p className='award-section-para' style={{fontSize:'14px'}}>best cadet award in ncc in drill</p>
+              <p className='award-section-para' style={{fontSize:'14px'}}>I got the best employee award for completing work in time and  efficiency in my work</p>
             </div>
           </div>
         {awardsData.map((award, index)=>(

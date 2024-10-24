@@ -73,6 +73,7 @@ const Certification = () => {
                     <p className='certificate-issueby'>Next Wave</p>
                     <a  style={{fontSize:'14px', color:'#275DF5', marginTop:'2px'}} href="https://mui.com/material-ui/material-icons/?query=paper">https://mui.com/material-ui/material-icons/?query=paper</a>
                     <p className='certificate-issueby'>validity:lifeTime</p>
+                    
                 </div>
             </div>
             {certifiacteData.map((each)=>(
@@ -84,7 +85,8 @@ const Certification = () => {
                     <h2 className='award-section-heading'>{each.certificateName}</h2>
                     <p className='certificate-issueby'>{each.issuedBy}</p>
                     <a  style={{fontSize:'14px', color:'#275DF5', marginTop:'2px'}} href={`${each.certificateUrl}`}>{each.certificateUrl}</a>
-                    <p className='certificate-issueby'>validity:lifeTime</p>
+                    {isChecked &&(<p className='certificate-issueby'>validity:lifeTime</p>)}
+                    {!isChecked &&(<p className='certificate-issueby'>{`validity: ${each.validity.month} ${each.validity.year}`}</p>)}
                 </div>
              </div> 
             ))}
