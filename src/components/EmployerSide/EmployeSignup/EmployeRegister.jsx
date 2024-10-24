@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Select from "react-select";
 import EmployeeSignupModal from "./EmployeeModal/EmployeeSignupModal";
 import { useNavigate } from "react-router-dom";
 import "./EmployeeRegister.css";
@@ -17,67 +16,6 @@ const EmployeeRegister = () => {
   const [functions, setFunctions] = useState("");
   const [industryError, setIndustryError] = useState("");
   const [functionError, setFunctionError] = useState("");
-
-  // Location states
-  const [countries, setCountries] = useState([]);
-  const [states, setStates] = useState([]);
-  const [districts, setDistricts] = useState([]);
-  const [selectedCountry, setSelectedCountry] = useState(null);
-  const [selectedState, setSelectedState] = useState(null);
-
-  useEffect(() => {
-    // Fetch countries from an API
-    fetch("https://restcountries.com/v3.1/all")
-      .then((response) => response.json())
-      .then((data) => {
-        const countryOptions = data.map((country) => ({
-          value: country.cca2,
-          label: country.name.common,
-        }));
-        setCountries(countryOptions);
-      });
-  }, []);
-
-  const handleCountryChange = (selectedOption) => {
-    setSelectedCountry(selectedOption);
-    setSelectedState(null); // Reset state and districts
-    setDistricts([]);
-
-    // Fetch states based on the selected country (you'll need an API for this)
-    fetch(`https://api.your-real-api.com/states/${selectedOption.value}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const stateOptions = data.map((state) => ({
-          value: state.code,
-          label: state.name,
-        }));
-        setStates(stateOptions);
-      })
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-        // Optionally, you can set an error state to display an error message to users
-      });
-  };
-
-  const handleStateChange = (selectedOption) => {
-    setSelectedState(selectedOption);
-
-    // Fetch districts based on the selected state (you'll need an API for this)
-    fetch(`https://api.example.com/districts/${selectedOption.value}`)
-      .then((response) => response.json())
-      .then((data) => {
-        const districtOptions = data.map((district) => ({
-          value: district.code,
-          label: district.name,
-        }));
-        setDistricts(districtOptions);
-      });
-  };
 
   const handleAddAchievement = () => {
     setAchievements([...achievements, { description: "", year: "" }]);
@@ -192,21 +130,11 @@ const EmployeeRegister = () => {
               <label className="employee-signup-label">
                 Current Location *
               </label>
-              <Select
-                options={countries}
-                onChange={handleCountryChange}
-                placeholder="Select Country"
+              <input
+                type="current location"
+                placeholder="Enter you current location"
+                required
               />
-              {selectedCountry && (
-                <Select
-                  options={states}
-                  onChange={handleStateChange}
-                  placeholder="Select State"
-                />
-              )}
-              {selectedState && (
-                <Select options={districts} placeholder="Select District" />
-              )}
             </div>
 
             <h3 className="achievements-header">Achievements</h3>
@@ -357,6 +285,12 @@ const EmployeeRegister = () => {
                   </label> */}
                     <select className="employee-signup-select" required>
                       <option value="">Total Experience in hiring</option>
+                      <option value="">less then 1 year</option>
+                      <option value="">less then 2 year</option>
+                      <option value="">less then 3 year</option>
+                      <option value="">less then 4 year</option>
+                      <option value="">less then 5 year</option>
+                      <option value="">less then 6 year</option>
                       {/* Add more options */}
                     </select>
                     {/* <label className="employee-signup-label">
@@ -364,6 +298,8 @@ const EmployeeRegister = () => {
                   </label> */}
                     <select className="employee-signup-select" required>
                       <option value="">Level I hire for</option>
+                      <option value="">Frehser</option>
+                      <option value="">Experienced</option>
                       {/* Add more options */}
                     </select>
                     {/* <label className="employee-signup-label">Referral Code</label> */}
@@ -436,4 +372,3 @@ const EmployeeRegister = () => {
 };
 
 export default EmployeeRegister;
-
