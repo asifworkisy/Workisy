@@ -1,18 +1,31 @@
 .employee-signup-container {
     display: flex;
     justify-content: center;
+    justify-content: space-between;
     padding: 20px;
-    flex-wrap: wrap; 
+    padding-bottom: 0;
 }
-.employee-signup-heading{
+
+.employee-signup-heading {
     font-size: 24px;
-    /* text-align: left; */
+    margin: 0;
+}
+
+.employee-signup-h4 {
+    padding-right: 5rem;
+    font-size: 0.8rem;
+    margin-bottom: -1rem;
+}
+
+.employee-signup-login {
+    color: #007bff;
+    cursor: pointer;
 }
 
 .personal-details-container {
     flex: 0 0 20%;
     padding: 20px;
-    background-color: #cad1f4;
+    background-color: #bbd6f2;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -21,9 +34,10 @@
     display: flex;
     gap: 20px;
     width: 100%;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
-.personal-details-form-button button{
+
+.personal-details-form-button button {
     height: 5rem;
     width: 4rem;
 }
@@ -31,7 +45,7 @@
 .personal-details-form-name {
     display: flex;
     gap: 10px;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
 }
 
 .personal-details-form-name label {
@@ -53,7 +67,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-    width: 100%; 
+    width: 100%;
 }
 
 .personal-details-header,
@@ -74,7 +88,7 @@
 .personal-details-form-group input,
 .personal-details-form-group select,
 .personal-details-form-group textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -82,12 +96,12 @@
 }
 
 textarea {
-    resize: none; 
+    resize: none;
     width: 100%;
 }
 
 .add-more-button {
-    background-color: #6200ea;
+    background-color: #007bff;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -98,17 +112,15 @@ textarea {
 }
 
 .add-more-button:hover {
-    background-color: #5400d4;
+    background-color: #045bb8;
 }
 
-
 .employee-signup-form-container {
-    flex: 0 0 50%; 
+    flex: 0 0 50%;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid black;
-    /* background-color: #f9f3ff;    */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .employee-signup-header {
@@ -137,7 +149,6 @@ textarea {
 .employee-signup-form-group select,
 .employee-signup-form-group textarea {
     flex: 1;
-    min-width: 200px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -145,7 +156,7 @@ textarea {
 }
 
 .employee-signup-submit-button {
-    background-color: #6200ea;
+    background-color: #007bff;
     color: #fff;
     padding: 12px 20px;
     border: none;
@@ -157,10 +168,60 @@ textarea {
 }
 
 .employee-signup-submit-button:hover {
-    background-color: #5400d4;
+    background-color: #0453a7;
 }
 
 .employee-signup-checkbox-label {
     margin-right: 10px;
+}
+
+/* Styles for the label containers */
+.employee-signup-label {
+    margin-bottom: 5px; 
+    font-size: 14px; 
+    color: #333;
+}
+
+/* Keep existing styles for form groups */
+.personal-details-form-group,
+.employee-signup-form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing between columns */
+}
+
+.personal-details-form-group label,
+.employee-signup-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.personal-details-form-group .row-group,
+.employee-signup-form-group .row-group {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+}
+
+.personal-details-form-group input,
+.personal-details-form-group select,
+.personal-details-form-group textarea,
+.employee-signup-form-group input,
+.employee-signup-form-group select,
+.employee-signup-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+.employee-signup-border {
+    border: 1px solid #000000;
+    padding: 1rem; 
+    border-radius: 8px;
 }
 

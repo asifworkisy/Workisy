@@ -13,6 +13,8 @@ const Quick=()=>{
            <li className='list-item'>IT Skills</li>
            <li className='list-item'>Projects</li>
            <li className='list-item'>Projects Summary</li>
+           <li className='list-item'>Awards & Achievements</li>
+           <li className='list-item'>Certification</li>
            <li className='list-item'>Personal Details</li>
          </ul>
        </div>

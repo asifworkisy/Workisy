@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./EmployeeModel.css"; 
+import "./EmployeeModel.css";
 
 const EmployeeModel = ({ isOpen, onClose, onSubmit }) => {
   const [fullName, setFullName] = React.useState("");
@@ -25,12 +25,11 @@ const EmployeeModel = ({ isOpen, onClose, onSubmit }) => {
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      onClose(); // Close the modal if clicking outside the modal content
+      onClose();
     }
   };
 
   useEffect(() => {
-    // Close the modal when the escape key is pressed
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         onClose();
@@ -47,9 +46,14 @@ const EmployeeModel = ({ isOpen, onClose, onSubmit }) => {
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>
       <div className="modal-content">
-        <span className="modal-close-icon" onClick={onClose}>&times;</span>
+        <span className="employee-modal-close-icon" onClick={onClose}>
+          &times;
+        </span>
+
         <h2>Talk to Sales</h2>
-        {formError && <p className="error-message">Please fill in all fields</p>}
+        {formError && (
+          <p className="error-message">Please fill in all fields</p>
+        )}
         <form className="talk-to-sales-form" onSubmit={handleSubmit}>
           <label htmlFor="full-name">Full Name*</label>
           <input

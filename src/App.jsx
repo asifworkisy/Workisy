@@ -5,7 +5,10 @@ import Jobcontainer from './components/Jobdetailes/Jobcontainer';
 import Homepage from './components/Home/Homepage/Home';
 import "./App.css";
 import EmployeLogin from './components/EmployerSide/EmployeLogin/EmployeLogin';
-import EmployeSignup from './components/EmployerSide/EmployeSignup/EmployeSignup';
+import EmployeeRegister from './components/EmployerSide/EmployeSignup/EmployeRegister';
+// import EmployeeSignup from './components/EmployerSide/EmployeSignup/Employee-Signup-Modal/EmployeeSignupModal1';
+
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -14,7 +17,8 @@ export default function App() {
         <Route path="/adminProfile" element={<Adminprofile />} />
         <Route path="/jobDetailes" element={<Jobcontainer />} />
         <Route path="/employee-login" element={<EmployeLogin />} />
-        <Route path="/employee-signup" element={<EmployeSignup />} />
+        <Route path="/employer-profile" element={<EmployeeRegister />} />
+        {/* <Route path="/employee-signup" element={<EmployeeSignup />} /> */}
       </Routes>
     </BrowserRouter>
   );
