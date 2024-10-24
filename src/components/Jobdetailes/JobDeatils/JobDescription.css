@@ -9,6 +9,7 @@
   left: 37%;
   top: 14%;
   z-index: 1; /* Change this to a positive value */
+  bottom: 1px;
 }
 
 /* Job Header */
