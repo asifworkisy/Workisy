@@ -55,7 +55,7 @@ const Awards=()=>{
     <div className='profile-admin-cnt skills-co-cnt'>
       <div className='itskills-cnt'>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1 className='resume-heading'>Projects</h1>
+          <h1 className='resume-heading'>Awards</h1>
           <p className='add-emplo-para' onClick={() =>setOpenAwards(!openAwards)}>+Add</p>
         </div>
         <div className='award-section-item'>

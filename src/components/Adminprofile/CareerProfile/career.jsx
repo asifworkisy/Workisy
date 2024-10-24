@@ -93,7 +93,7 @@ console.log(careerData)
     <div className='profile-admin-cnt skills-co-cnt'>
         <div className='itskills-cnt'>
             <div style={{display:'flex', }}>
-              <p className="resume-heading">Profile summary</p>
+              <p className="resume-heading">Career Profile</p>
               <button className='edit-button' onClick={()=>setOpenCareer(!openCareer)}><CiEdit style={{outline:'none'}}/></button>
             </div>
 
