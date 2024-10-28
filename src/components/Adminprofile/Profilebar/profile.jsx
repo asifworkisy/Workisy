@@ -127,7 +127,7 @@ const Profile = () => {
             <div className="profile-img">
                 <StyledBox>
                     <Avatar
-                        src={selectedImage || "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?t=st=1730110783~exp=1730114383~hmac=e3840286b799be25cacf78d83a4d0a8cb8d2f524191c9e145beb87047dbff06f&w=740"}
+                        src={selectedImage || "https://img.freepik.com/free-vector/user-blue-gradient_78370-4692.jpg?t=st=1730111490~exp=1730115090~hmac=de7356e78c81c8412ad60d482857411ea8d54633bd4f306e136dd44ea2e5e7fd&w=740"}
                         alt="Profile"
                         sx={{
                             height:"161px",
