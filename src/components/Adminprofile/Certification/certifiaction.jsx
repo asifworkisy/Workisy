@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, forwardRef} from 'react'
 import { Dialog, FormLabel} from '@mui/material';
 import { PiCertificateThin } from "react-icons/pi";
 import './certification.css'
@@ -21,7 +21,7 @@ const customStyles = {
       },
     }),
   };
-const Certification = () => {
+const Certification = forwardRef((props, ref) => {
     const [openCert, setOpenCert]=useState(false)
     const [certName, setCertificationName]=useState("")
     const [certIssuedBy, setCertIssuedBy]=useState("")
@@ -58,7 +58,7 @@ const Certification = () => {
     console.log(certifiacteData)
    
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
         <div className='employment-cnt'>
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                 <h1 className='resume-heading'>Certification</h1>
@@ -147,7 +147,7 @@ const Certification = () => {
         </div>
     </div>    
   )
-}
+});
 
 export default Certification
 

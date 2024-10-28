@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,forwardRef } from 'react';
 import './project.css';
 import { Dialog, FormControlLabel, RadioGroup, Radio, FormLabel, TextField } from '@mui/material';
 import Select from 'react-select';
@@ -18,7 +18,7 @@ const customStyles = {
   }),
 };
 
-const Project = () => {
+const Project = forwardRef((props, ref) => {
   const [openPro, setOpenPro] = useState(false);
   const [proTitle, setProjectTitle] = useState("");
   const [clientName, setClientName] = useState("");
@@ -88,7 +88,7 @@ const Project = () => {
   
   
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
       <div className='itskills-cnt'>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1 className='resume-heading'>Projects</h1>
@@ -261,7 +261,7 @@ const Project = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Project;
 

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, forwardRef} from 'react'
 import { Dialog,FormLabel, TextField } from '@mui/material';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import Select from 'react-select';
@@ -20,7 +20,7 @@ const customStyles = {
     }),
   };
 
-const Awards=()=>{
+const Awards=forwardRef((props, ref)=>{
     const [openAwards,setOpenAwards]=useState(false)
     const [award, setAwardName]=useState("")
     const [selectYear, setSelectYear]=useState("")
@@ -52,7 +52,7 @@ const Awards=()=>{
     }
     console.log(awardsData)
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
       <div className='itskills-cnt'>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1 className='resume-heading'>Awards</h1>
@@ -130,7 +130,7 @@ const Awards=()=>{
       </div>
     </div>    
   )
-}
+})
 
 export default Awards
 

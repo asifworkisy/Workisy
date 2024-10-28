@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { CiEdit } from "react-icons/ci";
 import { Dialog} from '@mui/material';
 import './index.css'
-const Resume=()=>{
+const Resume=forwardRef((props, ref)=>{
   const [open, setOpen]=useState(false)
   const [textAreaInput, setTextAreaInput]=useState("")
   const [savedHeadline, setSavedHeadline] = useState('Your current resume headline.');
@@ -16,8 +16,8 @@ const Resume=()=>{
     setOpen(false)
   }
   return (
-    <div className="profile-admin-cnt">
-        <div className="resume-cnt">
+    <div className="profile-admin-cnt res-mar-cnt">
+        <div className="resume-cnt" ref={ref}>
              <div className="resume-header-top-cnt">
                <p className="resume-heading">Resume</p>
                <div className="buttons-cnt">
@@ -54,7 +54,7 @@ const Resume=()=>{
         </div>    
     </div>
   )
-}
+})
 
 
 export default Resume

@@ -1,5 +1,5 @@
 import { Dialog, FormControlLabel, RadioGroup, Radio, FormLabel,FormControl, Checkbox, TextField} from '@mui/material'
-import React,{useState} from 'react'
+import React,{useState, forwardRef} from 'react'
 import { CiEdit } from 'react-icons/ci'
 import Select from 'react-select';
 import './personal.css'
@@ -20,16 +20,16 @@ const customStyles = {
   }),
 };
 
-const PersonalDetails=()=>{
+const PersonalDetails=forwardRef((props, ref)=>{
     const [openPersonal, setOpenPersonal]=useState(false)
-    const [selectedGender, setSelectedGender]=useState("")
+    const [selectedGender, setSelectedGender]=useState("Male")
     const [selectedPersonValues, setSelectedPersonValues] = useState([]);
-    const [maritalStatus, setMaritalStatus]=useState("")
-    const [day, setDay] = useState('');
-    const [month, setMonth] = useState('');
-    const [year, setYear] = useState('');
+    const [maritalStatus, setMaritalStatus]=useState("Single/Unmarried")
+    const [day, setDay] = useState('6');
+    const [month, setMonth] = useState('jan');
+    const [year, setYear] = useState('2021');
     const [Category, setCategory] = useState('');
-    const [abledPerson, setAbledPerson]=useState("")
+    const [abledPerson, setAbledPerson]=useState("no")
     const [careerBreak, setCareerBreak]=useState("")
     const [workPermit, setWorkpermit]=useState("")
     const [selectCountries, setSelectCOuntries]=useState("")
@@ -43,7 +43,7 @@ const PersonalDetails=()=>{
     ]);
     const [personalData, setPersonalData]=useState([])
 
-   
+   console.log(languages)
    
     const days = Array.from({ length: 31 }, (_, i) => i + 1);
     const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -95,10 +95,10 @@ const PersonalDetails=()=>{
            datOfBirth:{day, month, year},
            category:Category,
            abledPerson:abledPerson,
-           disableType:disableType,
+           disableType:disableType? disableType.label: "",
            disTypeDescr:disTypeDescr,
            careerBreak:careerBreak,
-           workPermit:workPermit,
+           workPermit:workPermit? workPermit.label: "",
            selectCountries:selectCountries,
            address:address,
            homwtown:homwtown,
@@ -119,17 +119,98 @@ const PersonalDetails=()=>{
 
    console.log(personalData)
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
         <div className='itskills-cnt'>
             <div style={{display:'flex', }}>
               <p className="resume-heading">Personal Details</p>
               <button className='edit-button' onClick={()=>setOpenPersonal(!openPersonal)}><CiEdit style={{outline:'none'}}/></button>
             </div>
+            {personalData.map((each, index)=>(
+            <div key={index}>
+              <div className='career-section-cnt' >
+                  <div className='career-details-cnt' style={{marginLeft:'40px'}}>
+                      <div className='current-industry-cnt'>
+                        <h3 className='carreer-title'>Personal</h3>
+                        <h3 className='carreer-content'>{each.gender},{each.maritalStatus}</h3>
+                      </div>
 
+
+                      <div className='current-industry-cnt'>
+                        <h3 className='carreer-title'>Date of birth</h3>
+                        <h3 className='carreer-content'>{`${each.datOfBirth.day}-${each.datOfBirth.month}-${each.datOfBirth.year}`}</h3>
+                      </div>
+
+                      <div className='current-industry-cnt'>
+                        <h3 className='carreer-title'>Category</h3>
+                        <h3 className='carreer-content'>{each.category}</h3>
+                      </div>
+
+                      <div className='current-industry-cnt'>
+                        <h3 className='carreer-title'>Differently abled</h3>
+                        <h3 className='carreer-content'>{each.abledPerson}</h3>
+                      </div>
+                  </div>
+                  <div className='career-details-cnt career-second-cnt' >
+                      <div className='current-industry-cnt'>
+                        <h3 className='carreer-title'>Career break</h3>
+                        <h3 className='carreer-content'>{each.careerBreak}</h3>
+                      </div>
+
+                      <div className='current-industry-cnt'>
+                        <h3 className='carreer-title'>Work permit</h3>
+                        <h3 className='carreer-content'>{each.workPermit}</h3>
+                      </div>
+
+                      <div className='current-industry-cnt'>
+                        <h3 className='carreer-title'>Address</h3>
+                        <h3 className='carreer-content'>{each.address}</h3>
+                      </div>
+
+                  </div>
+                  
+              </div>
+            </div>
+            ))}
+            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                <h1 className='resume-heading'>languages</h1>
+                <p className='add-emplo-para' onClick={()=>setOpenPersonal(!openPersonal)}>Add language</p>
+            </div>
+            <div>
+                <table  cellPadding="10" style={{  width: '100%' }} className='table'>
+                    <thead >
+                        <tr className='thead-row'>
+                            <th className='table-head'>Languages</th>
+                            <th className='table-head'>Proficiency</th>
+                            <th className='table-head'>Read</th>
+                            <th className='table-head'>Write</th>
+                            <th className='table-head'>Speak</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                      {personalData.length > 0 && personalData[0].languages.length > 0 ? (
+                        personalData[0].languages.map((each, index) => (
+                          <tr key={index}>
+                            <td className="custom-td">{each.language}</td>
+                            <td className="custom-td">{each.proficiency}</td>
+                            <td className="custom-td">{each.checkboxValue.read ? '🗸' : '--'}</td>
+                            <td className="custom-td">{each.checkboxValue.write ? '🗸' : '--'}</td>
+                            <td className="custom-td">{each.checkboxValue.speak ? '🗸' : '--'}</td>
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td colSpan="5" style={{ textAlign: 'center' }}>No data available</td>
+                        </tr>
+                      )}
+                    </tbody>
+                </table>
+            </div>
             <Dialog open={openPersonal} onClose={() => setOpenPersonal(false)}  maxWidth="md"   fullWidth  PaperProps={{ sx: {borderRadius: '20px',overflowY: 'auto','::-webkit-scrollbar': { display: 'none' },'-ms-overflow-style': 'none','scrollbar-width': 'none',},}}>
                 <div style={{display:'flex', flexDirection:'column', padding:'50px'}}>
                     <h1 className="resume-modal-heading">Personal Details</h1>
                     <p className="resume-modal-para">This information is important for employers to know you better.</p>
+
                     <form style={{marginTop:'20px'}} onSubmit={handleSavePerDetails}>
                        <div style={{marginTop:'30px', display:'flex', flexDirection:'column',}}>
                           <label htmlFor="company-name" className='label-name'>Gender</label>
@@ -336,7 +417,7 @@ const PersonalDetails=()=>{
         </div>
     </div>        
   )
-}
+})
 
 export default PersonalDetails
 

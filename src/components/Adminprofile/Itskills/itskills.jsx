@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, forwardRef} from 'react'
 import Select from 'react-select';
 import './itskills.css'
 import { Dialog } from '@mui/material'
@@ -19,7 +19,7 @@ const ItskillsStyles = {
     }),
   };
 
-const ItSkills=()=>{
+const ItSkills=forwardRef((props, ref)=>{
     const [openIt, setOpenIt]=useState(false)
     const [skillIt, setSkillIt]=useState("")
     const [version, setVersion]=useState("")
@@ -58,7 +58,7 @@ const ItSkills=()=>{
       setOpenIt(false)
     }   
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
         <div className='itskills-cnt'>
            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                 <h1 className='resume-heading'>IT Skills</h1>
@@ -161,7 +161,7 @@ const ItSkills=()=>{
         </div>
     </div>    
   )
-}
+})
 
 export default ItSkills
 

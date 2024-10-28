@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, forwardRef} from 'react'
 import { CiEdit } from 'react-icons/ci'
 import { IoIosClose } from "react-icons/io";
 import { Dialog, FormControl, FormControlLabel, Checkbox, FormLabel, Radio,RadioGroup } from '@mui/material';
@@ -26,7 +26,7 @@ const initialLoc = [
     { label: "Mumbai", value: "mumbai" },
   ];  
 
-const CareerProfile=()=>{
+const CareerProfile=forwardRef((props, ref)=>{
     const [openCareer, setOpenCareer]=useState(false)
     const [currentIndustry, setCurrentIndustry]=useState("")
     const [department, setDepartment]=useState("")
@@ -90,7 +90,7 @@ console.log(careerData)
 
 
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
         <div className='itskills-cnt'>
             <div style={{display:'flex', }}>
               <p className="resume-heading">Career Profile</p>
@@ -270,7 +270,7 @@ console.log(careerData)
         </div> 
     </div>        
   )
-}
+})
 
 export default CareerProfile
 

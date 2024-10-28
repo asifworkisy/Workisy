@@ -1,4 +1,4 @@
-import React ,{useState}from 'react'
+import React ,{useState, forwardRef}from 'react'
 import { Dialog} from '@mui/material';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -58,7 +58,7 @@ const years = [
   };
 
 
-const Employment=()=>{
+const Employment=forwardRef((props, ref)=>{
     const [openEmployee, setOpenEmployee]=useState(false)
     const [selectExpYearOpt,setSeletExpOpt]=useState(null)
     const [selectExpMonthOpt,setSeletMonthOpt]=useState(null)
@@ -165,7 +165,7 @@ const Employment=()=>{
    
 
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt'ref={ref} >
         <div className='employment-cnt'>
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                 <h1 className='resume-heading'>Employment</h1>
@@ -459,7 +459,7 @@ const Employment=()=>{
         </div>
     </div>
   )
-}
+})
 
 export default Employment
 
