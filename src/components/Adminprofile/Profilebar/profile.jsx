@@ -127,7 +127,7 @@ const Profile = () => {
             <div className="profile-img">
                 <StyledBox>
                     <Avatar
-                        src={selectedImage || 'https://via.placeholder.com/100'}
+                        src={selectedImage || "https://img.freepik.com/free-vector/user-blue-gradient_78370-4692.jpg?t=st=1730111490~exp=1730115090~hmac=de7356e78c81c8412ad60d482857411ea8d54633bd4f306e136dd44ea2e5e7fd&w=740"}
                         alt="Profile"
                         sx={{
                             height:"161px",
@@ -161,7 +161,7 @@ const Profile = () => {
                     </div>
                     <Divider orientation="vertical" flexItem />
                     <div className="right-container">
-                        <p className="notice"> <SlPhone className="icon" /> 9640167072</p>
+                        <p className="notice"> <SlPhone className="icon" /> 9876543201</p>
                         <p className="notice"><CiMail className="icon" />praveen@appitsotware.com</p>
                         <p className="notice"> <CiCalendar className='icon'/>1 Month</p>
                     </div>

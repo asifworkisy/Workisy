@@ -10,15 +10,16 @@
     min-height:100vh;
     display:flex;
     flex-direction:column;
-    justify-content:center;
-    /* align-items:flex-start; */
+    justify-content:flex-start;
+    align-items:center;
 }
 .quick-profile-cnt{
     display:flex;
     flex-direction:row;
     justify-content:center;
     align-items:flex-start;
-    padding:40px;
+    /* padding:40px; */
+    margin-left:200px;
    
    
 }
