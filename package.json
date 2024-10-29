@@ -24,7 +24,9 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.8.1",
     "react-toastify": "^10.0.6",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "proxy": "https://workisy-backend.onrender.com"
+
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.14.5"

@@ -12,7 +12,7 @@ const EmployeeRegister = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
-  const [currentLocation, setCurrentLocation] = useState("");
+  const [currentLoaction, setCurrentLocation] = useState("");
   const [currentCompanyName, setCurrentCompanyName] = useState("");
   const [currentDesignation, setCurrentDesignation] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -25,13 +25,15 @@ const EmployeeRegister = () => {
 
 
   
+  const handleSubmit = async (e) => {
+    e.preventDefault();  
 
-  const formData={
+    const formData={
       firstName,
       lastName,
       email,
       mobileNumber,
-      currentLocation,
+      currentLoaction,
       currentCompanyName,
       currentDesignation,
       startDate,
@@ -42,31 +44,29 @@ const EmployeeRegister = () => {
       stateProvinceRegion,
       zipCode
   }
-
-  
-
-
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFmNjkwNWEzZWExZmVkMmQ1MTFkZDEiLCJpYXQiOjE3MzAxMTE3NDksImV4cCI6MTczMTgzOTc0OSwiaXNzIjoid29ya2lzeSJ9.NPsCXO6ORQIZsv2pCQz2MuW_GPR_UWB1cNylnyz2hJY"; 
- 
-  const handleSubmit = async (e) => {
-    e.preventDefault();  // Prevents the page from refreshing
-
-  try {
-    const response = await axios.post(
-      "https://workisy-backend.onrender.com/api/v1/employer/profile/employerprofile",
-      formData,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`, // Use backticks here for template literals
-        },
-      }
+ const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIwODBjODAxZjBjNjg5Zjk1YWEzMzMiLCJpYXQiOjE3MzAxODMzNjgsImV4cCI6MTczMTkxMTM2OCwiaXNzIjoid29ya2lzeSJ9.KKUJSM7h_XLg-3A52-AZShtHiZT38nWcqEM4jjToqK4";
+    try {
+      const response = await axios.post(
+       "https://workisy-backend.onrender.com/api/v1/employer/profile/employerprofile" ,
+         formData, 
+         {
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            },
+         }
     );
-    console.log("Profile created:", response.data);
-    navigate("/employee-login");
-  } catch (error) {
-    console.error("Error submitting data:", error);
+
+      console.log("successful:", response.data);
+    
+    } catch (error) {
+      console.error(error);
+
+      
+      
+    }
   }
-}
+      
   
 
   return (
@@ -125,7 +125,7 @@ const EmployeeRegister = () => {
                 type="current location"
                 placeholder="Enter you current location"
                 required
-                value={currentLocation}
+                value={currentLoaction}
                 onChange={(i)=>setCurrentLocation(i.target.value)}
               />
             </div>
