@@ -2,72 +2,64 @@ import React, {useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import "./EmployeeRegister.css";
-import axios from "axios";
+
 import Header from "../../Home/Header/Header";
 
 const EmployeeRegister = () => {
-  const navigate = useNavigate();
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [currentLoaction, setCurrentLocation] = useState("");
-  const [currentCompanyName, setCurrentCompanyName] = useState("");
-  const [currentDesignation, setCurrentDesignation] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [addressLine1, setAddressLine1] = useState("");
-  const [addressLine2, setAddressLine2] = useState("");
-  const [city, setCity] = useState("");
-  const [stateProvinceRegion, setStateProvinceRegion] = useState("");
-  const [zipCode, setZipCode] = useState("");
+  const navigate=useNavigate();
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    mobileNumber: '',
+    currentLoaction: '',
+    currentCompanyName: '',
+    currentDesignation: '',
+    startDate: '',
+    endtDate: '',
+    addressLine1: '',
+    addressLine2: '',
+    city: '',
+    stateProvinceRegion: '',
+    zipCode: '',
+    isActive: false,
+  });
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value,
+    });
+  };
 
 
-  
-  const handleSubmit = async (e) => {
-    e.preventDefault();  
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const formData={
-      firstName,
-      lastName,
-      email,
-      mobileNumber,
-      currentLoaction,
-      currentCompanyName,
-      currentDesignation,
-      startDate,
-      endDate,
-      addressLine1,
-      addressLine2,
-      city,
-      stateProvinceRegion,
-      zipCode
-  }
- const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIwODBjODAxZjBjNjg5Zjk1YWEzMzMiLCJpYXQiOjE3MzAxODMzNjgsImV4cCI6MTczMTkxMTM2OCwiaXNzIjoid29ya2lzeSJ9.KKUJSM7h_XLg-3A52-AZShtHiZT38nWcqEM4jjToqK4";
-    try {
-      const response = await axios.post(
-       "https://workisy-backend.onrender.com/api/v1/employer/profile/employerprofile" ,
-         formData, 
-         {
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${token}`
-            },
-         }
-    );
+    fetch('https://workisy-backend.onrender.com/api/v1/employer/profile/employerprofile', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFhOWVjOTk5ODhmNWIyZGViZmY1YzciLCJpYXQiOjE3Mjk3OTc4MzMsImV4cCI6MTczMTUyNTgzMywiaXNzIjoid29ya2lzeSJ9.Q1pL8_X1BMlCbInNjzFvZ-y3qZretw3Pr3lPXXAkqEk',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
 
-      console.log("successful:", response.data);
-    
-    } catch (error) {
-      console.error(error);
+        alert('Profile created successfully!');
+        // Handle success - you can show a message to the user or redirect
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        // Handle error - you can show an error message to the user
+      });
+  };
 
-      
-      
-    }
-  }
-      
-  
+
+
 
   return (
     <>
@@ -85,190 +77,204 @@ const EmployeeRegister = () => {
         </h4>
       </div>
       <div className="employee-signup-container">
-        <div className="employee-signup-flex-container">
+        <form className="employee-signup-flex-container"  onSubmit={handleSubmit}>
           {/* Personal Details Section */}
-          <div className="personal-details-container">
-            <h3 className="personal-details-header">Personal Details</h3>
-            <div className="personal-details-form-name">
-             
-             
-              <div className="personal-details-input-group">
-                <label className="employee-signup-label">First Name *</label>
-                <input type="text" placeholder="First Name" required  value={firstName} onChange={(i)=>setFirstName(i.target.value)}/>
-              </div>
-              <div className="personal-details-input-group">
-                <label className="employee-signup-label">Last Name</label>
-                <input type="text" placeholder="Last Name" value={lastName} onChange={(i)=>setLastName(i.target.value)} />
-              </div>
-            </div>
+                    <div className="personal-details-container">
+                      <h3 className="personal-details-header">Personal Details</h3>
+                      <div className="personal-details-form-name">
+                      
+                      
+                        <div className="personal-details-input-group">
+                          <label className="employee-signup-label">First Name *</label>
+                          <input type="text" placeholder="First Name" required name="firstName" value={formData.firstName} onChange={handleChange}/>
+                        </div>
+                        <div className="personal-details-input-group">
+                          <label className="employee-signup-label">Last Name</label>
+                          <input type="text" placeholder="Last Name" name="lastName" value={formData.lastName} onChange={handleChange} />
+                        </div>
+                      </div>
 
-            <div className="personal-details-form-group">
-              <label className="employee-signup-label">Email Address *</label>
-              <input type="email" placeholder="Email Address" required  value={email} onChange={(i)=>setEmail(i.target.value)} />
-            </div>
-            <div className="personal-details-form-group">
-              <label className="employee-signup-label">Mobile Number *</label>
-              <input
-                type="tel"
-                placeholder="Enter mobile number with country code"
-                required
-                value={mobileNumber}
-                onChange={(i)=>setMobileNumber(i.target.value)}
+                      <div className="personal-details-form-group">
+                        <label className="employee-signup-label">Email Address *</label>
+                        <input type="email" placeholder="Email Address" required  name="email" value={formData.email} onChange={handleChange} />
+                      </div>
+                      <div className="personal-details-form-group">
+                        <label className="employee-signup-label">Mobile Number *</label>
+                        <input
+                          type="tel"
+                          placeholder="Enter mobile number with country code"
+                          required
+                          name="mobileNumber"
+                          value={formData.mobileNumber}
+                          onChange={handleChange}
 
-              />
-            </div>
-            <div className="personal-details-form-group">
-              <label className="employee-signup-label">
-                Current Location *
-              </label>
-              <input
-                type="current location"
-                placeholder="Enter you current location"
-                required
-                value={currentLoaction}
-                onChange={(i)=>setCurrentLocation(i.target.value)}
-              />
-            </div>
+                        />
+                      </div>
+                      <div className="personal-details-form-group">
+                        <label className="employee-signup-label">
+                          Current Location *
+                        </label>
+                        <input
+                          type="current location"
+                          placeholder="Enter you current location"
+                          required
+                          name="currentLoaction"
+                          value={formData.currentLoaction}
+                          onChange={handleChange}
+                        />
+                      </div>
 
-           
-          
-           
-          </div>
+                    
+                    
+                    
+                    </div>
 
-          {/* {/*--------------- Employee Signup Form Container -------------/} */}
+                    {/* {/*--------------- Employee Signup Form Container -------------/} */}
 
-          <div className="employee-signup-form-container">
-            <form className="employee-signup-form">
-              {/* ------------Professional Details-------------*/}
+                    <div className="employee-signup-form-container">
+                      <div className="employee-signup-form">
+                        {/* ------------Professional Details-------------*/}
 
-              <div className="employee-signup-section">
-                <h3 className="employee-signup-section-header">
-                  Professional Details
-                </h3>
-                <div className="employee-signup-border">
-                  <div className="employee-signup-form-group">
-                    {/* <label className="employee-signup-label">
-                    Current Company Name*
-                  </label> */}
-                    <input
-                      className="employee-signup-input"
-                      type="text"
-                      placeholder="Current Company"
-                      required
+                        <div className="employee-signup-section">
+                          <h3 className="employee-signup-section-header">
+                            Professional Details
+                          </h3>
+                          <div className="employee-signup-border">
+                            <div className="employee-signup-form-group">
+                              {/* <label className="employee-signup-label">
+                              Current Company Name*
+                            </label> */}
+                              <input
+                                className="employee-signup-input"
+                                type="text"
+                                placeholder="Current Company"
+                                required
+                                name="currentCompanyName"
+                                value={formData.currentCompanyName}
+                                onChange={handleChange}
+                              />
+                              {/* <label className="employee-signup-label">
+                              Current Designation*
+                            </label> */}
+                              <input
+                                className="employee-signup-input"
+                                type="text"
+                                placeholder="Current Designation"
+                                required
+                                name="currentDesignation"
+                                value={formData.currentDesignation}
+                                onChange={handleChange}
+                              />
+                              {/* <label className="employee-signup-label">From*</label> */}
+                              <input
+                                type="date"
+                                className="employee-signup-select"
+                                required
+                                placeholder="From"
+                                name="startDate"
+                                value={formData.startDate}
+                                onChange={handleChange}
+                              />
 
-                      value={currentCompanyName}
-                      onChange={(i)=>setCurrentCompanyName(i.target.value)}
-                    />
-                    {/* <label className="employee-signup-label">
-                    Current Designation*
-                  </label> */}
-                    <input
-                      className="employee-signup-input"
-                      type="text"
-                      placeholder="Current Designation"
-                      required
-                      value={currentDesignation}
-                      onChange={(i)=>setCurrentDesignation(i.target.value)}
-                    />
-                    {/* <label className="employee-signup-label">From*</label> */}
-                    <input
-                      type="date"
-                      className="employee-signup-select"
-                      required
-                      placeholder="From"
-                      value={startDate}
-                      onChange={(i)=>setStartDate(i.target.value)}
-                    />
+                              {/* <label className="employee-signup-label">To*</label> */}
+                              <input
+                                type="date"
+                                className="employee-signup-select"
+                                required
+                                placeholder="From"
+                                name="endtDate"
+                                value={formData.endtDate}
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div className="employee-signup-form-group">
+                              {/* <label className="employee-signup-label">
+                              Address Line 1*
+                            </label> */}
+                              <input
+                                className="employee-signup-input"
+                                type="text"
+                                placeholder="Address Line 1"
+                                name="addressLine1"
+                                value={formData.addressLine1}
+                                onChange={handleChange}
+                              />
+                              {/* <label className="employee-signup-label">
+                              Address Line 2
+                            </label> */}
+                              <input
+                                className="employee-signup-input"
+                                type="text"
+                                placeholder="Address Line 2"
+                                name="addressLine2"
+                                value={formData.addressLine2}
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div className="employee-signup-form-group">
+                              {/* <label className="employee-signup-label">City*</label> */}
+                              <input
+                                className="employee-signup-input"
+                                type="text"
+                                placeholder="City"
+                                name="city"
+                                value={formData.city}
+                                onChange={handleChange}
+                              />
+                              {/* <label className="employee-signup-label">
+                              State/ Province/ Region*
+                            </label> */}
+                              <input
+                                className="employee-signup-input"
+                                type="text"
+                                placeholder="State/Province/Region"
+                                name="stateProvinceRegion"
+                                value={formData.stateProvinceRegion}
+                                onChange={handleChange}
+                              />
+                              {/* <label className="employee-signup-label">Country*</label> */}
+                              {/* <input
+                                className="employee-signup-input"
+                                type="text"
+                                placeholder="Country"
+                                required
 
-                    {/* <label className="employee-signup-label">To*</label> */}
-                    <input
-                      type="date"
-                      className="employee-signup-select"
-                      required
-                      placeholder="From"
-                      value={endDate}
-                      onChange={(i)=>setEndDate(i.target.value)}
-                    />
-                  </div>
-                  <div className="employee-signup-form-group">
-                    {/* <label className="employee-signup-label">
-                    Address Line 1*
-                  </label> */}
-                    <input
-                      className="employee-signup-input"
-                      type="text"
-                      placeholder="Address Line 1"
-                      value={addressLine1}
-                      onChange={(i)=>setAddressLine1(i.target.value)}
-                    />
-                    {/* <label className="employee-signup-label">
-                    Address Line 2
-                  </label> */}
-                    <input
-                      className="employee-signup-input"
-                      type="text"
-                      placeholder="Address Line 2"
-                      value={addressLine2}
-                      onChange={(i)=>setAddressLine2(i.target.value)}
-                    />
-                  </div>
-                  <div className="employee-signup-form-group">
-                    {/* <label className="employee-signup-label">City*</label> */}
-                    <input
-                      className="employee-signup-input"
-                      type="text"
-                      placeholder="City"
-                      value={city}
-                      onChange={(i)=>setCity(i.target.value)}
-                    />
-                    {/* <label className="employee-signup-label">
-                    State/ Province/ Region*
-                  </label> */}
-                    <input
-                      className="employee-signup-input"
-                      type="text"
-                      placeholder="State/Province/Region"
-                    />
-                    {/* <label className="employee-signup-label">Country*</label> */}
-                    <input
-                      className="employee-signup-input"
-                      type="text"
-                      placeholder="Country"
-                      required
+                                value={stateProvinceRegion}
+                                onChange={(i)=>setStateProvinceRegion(i.target.value)}
+                              /> */}
+                              {/* <label className="employee-signup-label">Zip Code*</label> */}
+                              <input
+                                className="employee-signup-input"
+                                type="text"
+                                placeholder="Zip Code"
+                                name="zipCode"
+                                value={formData.zipCode}
+                                onChange={handleChange}
+                              />
+                            </div>
+                          </div>
+                        </div>
 
-                      value={stateProvinceRegion}
-                      onChange={(i)=>setStateProvinceRegion(i.target.value)}
-                    />
-                    {/* <label className="employee-signup-label">Zip Code*</label> */}
-                    <input
-                      className="employee-signup-input"
-                      type="text"
-                      placeholder="Zip Code"
-                      value={zipCode}
-                      onChange={(i)=>setZipCode(i.target.value)}
-                    />
-                  </div>
-                </div>
-              </div>
+                        {/* Hiring Preferences */}
+                    
 
-              {/* Hiring Preferences */}
-          
+                        <div className="employee-signup-form-checkbox">
+                          <label className="employee-signup-checkbox-label1">
+                            <input type="checkbox" 
+                              id="isActive" name="isActive" checked={formData.isActive} onChange={handleChange}
+                             /> I agree to use the
+                            aforesaid details to create my Recruiter Profile & display it
+                            on the Workisy site and also agree to be bound by the Terms of
+                            Use & Privacy of Workisy
+                          </label>
+                        </div>
 
-              <div className="employee-signup-form-checkbox">
-                <label className="employee-signup-checkbox-label1">
-                  <input type="checkbox" required /> I agree to use the
-                  aforesaid details to create my Recruiter Profile & display it
-                  on the Workisy site and also agree to be bound by the Terms of
-                  Use & Privacy of Workisy
-                </label>
-              </div>
-
-              <button className="employee-signup-submit-button" type="submit" onClick={handleSubmit} >
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
+                        <button className="employee-signup-submit-button" type="submit" >
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+        </form>
       </div>
     </>
   );

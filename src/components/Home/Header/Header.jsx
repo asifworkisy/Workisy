@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Loginpage from "./login/loginpage";
 import { Box, Button, IconButton, Tooltip } from "@mui/material";
@@ -126,6 +126,7 @@ export default function Header() {
           columnGap: "5rem",
         }}
       >
+        <Link to="/">
         <Box
           component="img"
           src={title}
@@ -134,6 +135,8 @@ export default function Header() {
             width: { xs: "8rem", sm: "9rem" },
           }}
         />
+        </Link>
+       
 
         <Box
           sx={{
