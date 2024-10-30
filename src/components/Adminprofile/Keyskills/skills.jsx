@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, forwardRef} from 'react'
 import { CiEdit } from "react-icons/ci";
 import { IoIosClose } from "react-icons/io";
 import { Dialog} from '@mui/material';
@@ -10,7 +10,7 @@ const initialSkills = [
   { label: "React", value: "react" },
 ];
 
-const Skills=()=>{
+const Skills=forwardRef((props, ref)=>{
    const [openskills, setOpenskills]=useState(false)
    const [skills, setSkills] = useState(initialSkills);
    const [saveSkills, setSavedSkills]=useState([])
@@ -22,7 +22,7 @@ const Skills=()=>{
     setOpenskills(false)
    }
   return (
-    <div className="profile-admin-cnt skills-co-cnt">
+    <div className="profile-admin-cnt skills-co-cnt" ref={ref}>
     <div className='keyskills-cnt'>
        <div style={{display:'flex', }}>
             <p className="resume-heading">Key Skills</p>
@@ -49,10 +49,10 @@ const Skills=()=>{
                 </ul>
              </div>
              <CreatableSelect
-                isMulti // Enables multiple selections
-                value={skills} // Binds the selected skills to the component
-                onChange={handleChange} // Handles skill addition/removal
-                options={skills} // Provides options to select
+                isMulti 
+                value={skills} 
+                onChange={handleChange} 
+                options={skills} 
                 placeholder="Add skills..."
                 isClearable
                 closeMenuOnSelect={false}
@@ -67,5 +67,5 @@ const Skills=()=>{
     </div>
     </div>
   )
-}
+})
 export default Skills

@@ -10,9 +10,10 @@
     margin:15px 0px 16px;  
     border-radius:20px;
     width:80%;
-    border:1px solid #aeaeb9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display:flex;
     flex-direction:column;
+    background-color: #ffffff;
 }
 .resume-header-top-cnt{
     display:flex;
@@ -85,4 +86,8 @@
     border-radius:15PX;
     color:#ffffff;
     outline:none !important;
+}
+
+.res-mar-cnt{
+    margin-top:-15px;
 }

@@ -4,13 +4,31 @@
     font-family:'Inter' !important;
 } */
 .side-cnt{
+    /* padding: 0 ;
+    margin:0 ; */
+    
+}
+.home-cnt{
+    padding:40px;
+    /* width:90% !important; */
+    /* min-height:100vh; */
+    display:flex;
+    max-width: fit-content;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    background-color: #f7fafa ;
+    
+}
+.quick-profile-cnt{
     display:flex;
     flex-direction:row;
     justify-content:center;
     align-items:flex-start;
-    width:90% !important;
-    padding:40px;
-    min-height:100vh;
+    /* padding:40px; */
+    margin-left:200px;
+   
+   
 }
 .profile-left-cnt{
     display:flex;
@@ -18,11 +36,15 @@
     justify-content:flex-start;
     align-items:flex-start;
    margin-left:40px;
+   position:sticky;
+   top:0
+   
 }
 .profile-right-cnt{
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
     align-items:flex-start;
-    
+   
 }
+

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, forwardRef} from 'react'
 import { Dialog, FormLabel} from '@mui/material';
 import { PiCertificateThin } from "react-icons/pi";
 import './certification.css'
@@ -21,7 +21,7 @@ const customStyles = {
       },
     }),
   };
-const Certification = () => {
+const Certification = forwardRef((props, ref) => {
     const [openCert, setOpenCert]=useState(false)
     const [certName, setCertificationName]=useState("")
     const [certIssuedBy, setCertIssuedBy]=useState("")
@@ -58,7 +58,7 @@ const Certification = () => {
     console.log(certifiacteData)
    
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
         <div className='employment-cnt'>
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                 <h1 className='resume-heading'>Certification</h1>
@@ -73,6 +73,7 @@ const Certification = () => {
                     <p className='certificate-issueby'>Next Wave</p>
                     <a  style={{fontSize:'14px', color:'#275DF5', marginTop:'2px'}} href="https://mui.com/material-ui/material-icons/?query=paper">https://mui.com/material-ui/material-icons/?query=paper</a>
                     <p className='certificate-issueby'>validity:lifeTime</p>
+                    
                 </div>
             </div>
             {certifiacteData.map((each)=>(
@@ -84,7 +85,8 @@ const Certification = () => {
                     <h2 className='award-section-heading'>{each.certificateName}</h2>
                     <p className='certificate-issueby'>{each.issuedBy}</p>
                     <a  style={{fontSize:'14px', color:'#275DF5', marginTop:'2px'}} href={`${each.certificateUrl}`}>{each.certificateUrl}</a>
-                    <p className='certificate-issueby'>validity:lifeTime</p>
+                    {isChecked &&(<p className='certificate-issueby'>validity:lifeTime</p>)}
+                    {!isChecked &&(<p className='certificate-issueby'>{`validity: ${each.validity.month} ${each.validity.year}`}</p>)}
                 </div>
              </div> 
             ))}
@@ -145,7 +147,7 @@ const Certification = () => {
         </div>
     </div>    
   )
-}
+});
 
 export default Certification
 

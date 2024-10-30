@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, forwardRef} from 'react'
 import { Dialog} from '@mui/material';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -23,7 +23,7 @@ const customStyles = {
     }),
   };
 
-const Education=()=>{
+const Education=forwardRef((props, ref)=>{
     const [opneEdu, setEducation]=useState(false)
     const [educationType, setTypeEducation]=useState(educationOption[1])
     const [university, setUniversity]=useState('')
@@ -125,7 +125,7 @@ const Education=()=>{
    
    
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
         <div className='employment-cnt'>
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                 <h1 className='resume-heading'>Education</h1>
@@ -376,7 +376,7 @@ const Education=()=>{
         </div>
     </div>    
   )
-}
+})
 export default Education
 
 const educationOption=[

@@ -12,6 +12,8 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "dotenv": "^16.4.5",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
     "rc-slider": "^11.1.6",
     "react": "^18.3.1",
     "react-axios": "^2.0.6",
@@ -22,7 +24,9 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.8.1",
     "react-toastify": "^10.0.6",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "proxy": "https://workisy-backend.onrender.com"
+
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.14.5"

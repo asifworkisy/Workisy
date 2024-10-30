@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, forwardRef} from 'react'
 import { Dialog,FormLabel, TextField } from '@mui/material';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import Select from 'react-select';
@@ -20,7 +20,7 @@ const customStyles = {
     }),
   };
 
-const Awards=()=>{
+const Awards=forwardRef((props, ref)=>{
     const [openAwards,setOpenAwards]=useState(false)
     const [award, setAwardName]=useState("")
     const [selectYear, setSelectYear]=useState("")
@@ -52,10 +52,10 @@ const Awards=()=>{
     }
     console.log(awardsData)
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
       <div className='itskills-cnt'>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1 className='resume-heading'>Projects</h1>
+          <h1 className='resume-heading'>Awards</h1>
           <p className='add-emplo-para' onClick={() =>setOpenAwards(!openAwards)}>+Add</p>
         </div>
         <div className='award-section-item'>
@@ -63,9 +63,9 @@ const Awards=()=>{
               <MilitaryTechIcon/>
             </div>
             <div className='award-section-content'>
-              <h2 className='award-section-heading'>best cadet award</h2>
+              <h2 className='award-section-heading'>Best Employee Award</h2>
               <p className='award-section-para'>Feb 2024</p>
-              <p className='award-section-para' style={{fontSize:'14px'}}>best cadet award in ncc in drill</p>
+              <p className='award-section-para' style={{fontSize:'14px'}}>I got the best employee award for completing work in time and  efficiency in my work</p>
             </div>
           </div>
         {awardsData.map((award, index)=>(
@@ -130,7 +130,7 @@ const Awards=()=>{
       </div>
     </div>    
   )
-}
+})
 
 export default Awards
 

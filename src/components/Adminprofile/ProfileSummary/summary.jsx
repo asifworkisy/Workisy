@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, forwardRef} from 'react'
 import { CiEdit } from 'react-icons/ci'
 import { Dialog, TextField } from '@mui/material';
 
@@ -18,7 +18,7 @@ const customStyles = {
   }),
 };
 
-const ProfileSummary=()=>{
+const ProfileSummary=forwardRef((props, ref)=>{
     const [opneSummary, setOpenSummary]=useState(false)
     const [summary, setProjectSummary]=useState("Give recruiters a brief overview of the highlights of your career, key achievements, and career goals to help recruiters know your profile better.")
    
@@ -28,7 +28,7 @@ const ProfileSummary=()=>{
       setOpenSummary(false)
     }
   return (
-        <div className='profile-admin-cnt skills-co-cnt'>
+        <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
           <div className='itskills-cnt'>
             <div style={{display:'flex', }}>
               <p className="resume-heading">Profile summary</p>
@@ -54,6 +54,6 @@ const ProfileSummary=()=>{
           </div>
         </div>    
   )
-}
+})
 
 export default ProfileSummary

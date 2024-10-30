@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,forwardRef } from 'react';
 import './project.css';
 import { Dialog, FormControlLabel, RadioGroup, Radio, FormLabel, TextField } from '@mui/material';
 import Select from 'react-select';
@@ -18,7 +18,7 @@ const customStyles = {
   }),
 };
 
-const Project = () => {
+const Project = forwardRef((props, ref) => {
   const [openPro, setOpenPro] = useState(false);
   const [proTitle, setProjectTitle] = useState("");
   const [clientName, setClientName] = useState("");
@@ -88,7 +88,7 @@ const Project = () => {
   
   
   return (
-    <div className='profile-admin-cnt skills-co-cnt'>
+    <div className='profile-admin-cnt skills-co-cnt' ref={ref}>
       <div className='itskills-cnt'>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1 className='resume-heading'>Projects</h1>
@@ -129,7 +129,7 @@ const Project = () => {
                   <input type="text" id="company-name" className='text-input' placeholder='Enter Client Name' onChange={(e)=> setClientName(e.target.value)}/>
               </div>
               <div style={{marginTop:'30px', display:'flex', flexDirection:'column',}}>
-                    <FormLabel id="demo-row-radio-buttons-group-label" sx={{color:'#121224', fontWeight:'600'}}>Employemnt Type<span style={{ color: 'red' }}>*</span></FormLabel>
+                    <FormLabel id="demo-row-radio-buttons-group-label" sx={{color:'#121224', fontWeight:'600'}}>Project status<span style={{ color: 'red' }}>*</span></FormLabel>
                     <RadioGroup
                         row
                         aria-labelledby="demo-row-radio-buttons-group-label-project"
@@ -261,7 +261,7 @@ const Project = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Project;
 

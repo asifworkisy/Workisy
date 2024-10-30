@@ -1,0 +1,44 @@
+.checkbox-container {
+    display: flex; /* Use flexbox to arrange checkboxes in a row */
+    gap: 16px; /* Space between checkboxes */
+  }
+  
+  .career-section-cnt{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+  }
+ .current-industry-cnt{
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items:flex-start;
+  margin-top: 15px;
+  
+ } 
+.carreer-title{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #717B9E;
+    margin-bottom: 4px;
+ 
+}
+
+.carreer-content{
+  font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #474D6A;
+  margin-top:0px;  
+  
+}
+.career-second-cnt{
+  transform: translateX(-10vw);
+ 
+}
+
+.pre-locations{
+  display:flex;
+  flex-wrap: wrap;
+}
