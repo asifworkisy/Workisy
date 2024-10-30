@@ -7,6 +7,8 @@ import Header from "../../Home/Header/Header";
 
 const EmployeeRegister = () => {
 
+ 
+
   const navigate=useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
@@ -33,6 +35,7 @@ const EmployeeRegister = () => {
     });
   };
 
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +44,7 @@ const EmployeeRegister = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzFhOWVjOTk5ODhmNWIyZGViZmY1YzciLCJpYXQiOjE3Mjk3OTc4MzMsImV4cCI6MTczMTUyNTgzMywiaXNzIjoid29ya2lzeSJ9.Q1pL8_X1BMlCbInNjzFvZ-y3qZretw3Pr3lPXXAkqEk',
+        'Authorization': `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(formData),
     })

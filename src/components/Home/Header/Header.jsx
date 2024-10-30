@@ -114,6 +114,9 @@ export default function Header() {
         alignItems: "center",
         justifyContent: "space-between",
         fontFamily: "inter",
+        position:"sticky",
+        top:0,
+        zIndex:"20  "
       }}
     >
       <Box

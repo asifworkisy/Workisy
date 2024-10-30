@@ -32,6 +32,9 @@ const EmployeeSignup = ({ isOpen, onClose, onSubmit }) => {
         },
       });
 
+
+    
+
       toast.success('Signup successful!', {
         position: "top-right",
         autoClose: 5000,
@@ -41,6 +44,8 @@ const EmployeeSignup = ({ isOpen, onClose, onSubmit }) => {
         draggable: true,
         progress: undefined,
       });
+
+
 
       console.log("Signup successful:", response.data);
       
