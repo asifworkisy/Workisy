@@ -31,6 +31,8 @@ const EmployeLogin = () => {
         userData
       );
       console.log("Login successful:", response.data);
+      localStorage.setItem("accessToken",response.data?.data?.tokens?.accessToken);
+     
 
       toast.success("You have successfully logged in!", {
         position: "top-right",
