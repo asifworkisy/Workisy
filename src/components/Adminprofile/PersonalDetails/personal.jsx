@@ -22,14 +22,14 @@ const customStyles = {
 
 const PersonalDetails=forwardRef((props, ref)=>{
     const [openPersonal, setOpenPersonal]=useState(false)
-    const [selectedGender, setSelectedGender]=useState("Male")
+    const [selectedGender, setSelectedGender]=useState("")
     const [selectedPersonValues, setSelectedPersonValues] = useState([]);
-    const [maritalStatus, setMaritalStatus]=useState("Single/Unmarried")
-    const [day, setDay] = useState('6');
-    const [month, setMonth] = useState('jan');
-    const [year, setYear] = useState('2021');
+    const [maritalStatus, setMaritalStatus]=useState("")
+    const [day, setDay] = useState('');
+    const [month, setMonth] = useState('');
+    const [year, setYear] = useState('');
     const [Category, setCategory] = useState('');
-    const [abledPerson, setAbledPerson]=useState("no")
+    const [abledPerson, setAbledPerson]=useState("")
     const [careerBreak, setCareerBreak]=useState("")
     const [workPermit, setWorkpermit]=useState("")
     const [selectCountries, setSelectCOuntries]=useState("")
@@ -85,37 +85,62 @@ const PersonalDetails=forwardRef((props, ref)=>{
       setLanguages([...languages, { language: '', proficiency: '', checkboxValue: { read: false, write: false, speak: false } }]);
     };
     
-   const handleSavePerDetails=(event)=>{
-      event.preventDefault()
-
-      const personalDetails={
-           gender:selectedGender,
-           personalVales:selectedPersonValues,
-           maritalStatus:maritalStatus,
-           datOfBirth:{day, month, year},
-           category:Category,
-           abledPerson:abledPerson,
-           disableType:disableType? disableType.label: "",
-           disTypeDescr:disTypeDescr,
-           careerBreak:careerBreak,
-           workPermit:workPermit? workPermit.label: "",
-           selectCountries:selectCountries,
-           address:address,
-           homwtown:homwtown,
-           pincode:pincode,
-           languages:languages
-
-      }
-
+    const handleSavePerDetails = async (event) => {
+      event.preventDefault();
+  
+      const personalDetails = {
+        gender: selectedGender,
+        personalVales: selectedPersonValues,
+        maritalStatus: maritalStatus,
+        dateOfBirth: {
+            day: day || "", // Provide fallback value if undefined
+            month: month || "",
+            year: year || ""
+        },
+        category: Category,
+        abledPerson: abledPerson,
+        disableType: disableType ? disableType.label : "",
+        disTypeDescr: disTypeDescr,
+        careerBreak: careerBreak,
+        workPermit: workPermit ? workPermit.label : "",
+        selectCountries: selectCountries,
+        address: address,
+        homwtown: homwtown,
+        pincode: pincode,
+        languages: languages
+    };
+  
+      // Set personal data in state
       setPersonalData((prevData) => {
-        if (!Array.isArray(prevData)) {
-            
-            return [personalDetails];
-        }
-        return [personalDetails]; 
-        });
-        setOpenPersonal(false)
-   }
+          if (!Array.isArray(prevData)) {
+              return [personalDetails];
+          }
+          return [personalDetails];
+      });
+  
+      // Send the data to the API endpoint
+      // try {
+      //     const response = await fetch("https://workisy-backend-nyf4.onrender.com/api/personalDetails", {
+      //         method: "POST",
+      //         headers: {
+      //             "Content-Type": "application/json",
+      //         },
+      //         body: JSON.stringify(personalDetails),
+      //     });
+  
+      //     if (response.ok) {
+      //         const responseData = await response.json();
+      //         console.log("Data successfully saved:", responseData);
+      //     } else {
+      //         console.error("Failed to save data:", response.statusText);
+      //     }
+      // } catch (error) {
+      //     console.error("Error:", error);
+      // }
+  
+      // Close the personal details form/modal
+      setOpenPersonal(false);
+  };
 
    console.log(personalData)
   return (
@@ -137,7 +162,7 @@ const PersonalDetails=forwardRef((props, ref)=>{
 
                       <div className='current-industry-cnt'>
                         <h3 className='carreer-title'>Date of birth</h3>
-                        <h3 className='carreer-content'>{`${each.datOfBirth.day}-${each.datOfBirth.month}-${each.datOfBirth.year}`}</h3>
+                        <h3 className='carreer-content'>{`${each.dateOfBirth.day}-${each.dateOfBirth.month}-${each.dateOfBirth.year}`}</h3>
                       </div>
 
                       <div className='current-industry-cnt'>

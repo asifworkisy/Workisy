@@ -63,8 +63,9 @@ const handleChangePreferedLoc=(selectedOptions)=>{
   
 }
 
-const handleSaveCareer=(event)=>{
+const handleSaveCareer=async (event)=>{
   event.preventDefault()
+
   const careerDetails={
     currentIndustry:currentIndustry.label,
     department:department? department.label: "",
@@ -78,13 +79,33 @@ const handleSaveCareer=(event)=>{
 
   setCareerData((prevData) => {
     if (!Array.isArray(prevData)) {
-        // Initialize as an array if `prevData` isn't an array or is undefined
+        
         return [careerDetails];
     }
-    return [careerDetails]; // Spread in the existing data
+    return [careerDetails]; 
     });
-    setOpenCareer(false)
-}
+
+  //   try {
+  //     const response = await fetch("https://workisy-backend-nyf4.onrender.com/api/careerDetails", {
+  //         method: "POST",
+  //         headers: {
+  //             "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(careerDetails),
+  //     });
+
+  //     if (response.ok) {
+  //         const responseData = await response.json();
+  //         console.log("Data successfully saved:", responseData);
+  //     } else {
+  //         console.error("Failed to save data:", response.statusText);
+  //     }
+  // } catch (error) {
+  //     console.error("Error:", error);
+  // }
+
+  setOpenCareer(false)
+};
 
 console.log(careerData)
 

@@ -12,6 +12,7 @@ import Awards from '../Awards/awards'
 import Certification from '../Certification/certifiaction'
 import CareerProfile from '../CareerProfile/career'
 import PersonalDetails from '../PersonalDetails/personal'
+import Header from '../../Home/Header/Header'
 import './home.css'
 
 
@@ -32,6 +33,8 @@ const Home=()=>{
   };
   
   return (
+    <>
+    <Header/>
     <div className='home-cnt'>
       <div>
         <Profile/>
@@ -56,6 +59,7 @@ const Home=()=>{
         </div>
       </div>  
     </div>
+    </> 
   )
 }
 
