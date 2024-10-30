@@ -146,7 +146,7 @@ const FilterDropdown = ({
 
             <div className={styles['buttons-container']}>
               <button className={styles['reset-button']} onClick={resetSelection}>
-                Reset
+                   Reset
               </button>
               <button className={styles['apply-button']} onClick={onToggle}>
                 Apply
@@ -169,7 +169,7 @@ FilterDropdown.propTypes = {
   withSlider: PropTypes.bool,
   sliderRange: PropTypes.array,
   onSliderChange: PropTypes.func,
-};
+};  
 
 export default FilterDropdown;
 
