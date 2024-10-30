@@ -4,11 +4,12 @@
 .quick-links-cnt{
     display:flex;
     flex-direction:column;
-    border:1px solid #b8afaf;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius:10px;
     width:300px;
-   
+    background-color: #ffffff;
     margin:15px 0px;
+    position:sticky;
     
    
 }

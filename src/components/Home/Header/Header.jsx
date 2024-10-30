@@ -280,7 +280,7 @@ export default function Header() {
           },
         }}
       >
-        <IconButton
+      <IconButton
           size="large"
           aria-label="account of current user"
           aria-controls="menu-appbar"
