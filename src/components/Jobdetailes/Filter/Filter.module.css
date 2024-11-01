@@ -40,7 +40,7 @@
 }
 
 .scrollableContainer {
-  max-height: 100px; /* Set max height for the scrollable area */
+  max-height: 200px; /* Set max height for the scrollable area */
   overflow-y: auto;  /* Enable vertical scrolling */
   padding: 10px;     /* Add padding for better spacing */
 }
