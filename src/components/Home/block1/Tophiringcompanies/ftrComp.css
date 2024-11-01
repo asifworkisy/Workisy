@@ -1,6 +1,8 @@
 .fm{
     height: 500px;
     width: 100%;
+    color: rgb(229, 241, 246);
+  
     
    
     h1{
@@ -59,5 +61,7 @@
     opacity: 0;
     transform: translateX(100%);
     transition: opacity 500ms, transform 500ms;
+    
   }
+  
   
