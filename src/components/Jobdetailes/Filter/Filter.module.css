@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+
+.filterButton {
+  padding: 6px;
+  font-size: 14px;
+  color: #fbfbfb;
+  width: max-content;
+  margin: 10px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.filterContainer {
+  position: absolute;
+  top: 60px;
+  right: 130px;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.filterHeader span {
+  color: #333;
+}
+
+.resetAll {
+  color: #7f56d9;
+  cursor: pointer;
+}
+
+.scrollableContainer {
+  max-height: 200px; /* Set max height for the scrollable area */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  padding: 10px;     /* Add padding for better spacing */
+}
+
+.filterSection {
+  text-align: center;
+}
+
+.filterTitle {
+  font-weight: 600;
+  color: #333;
+  margin: 0px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.filterOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filterOption {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background-color: #f3f4f6;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Highlight selected option */
+.selected {
+  background-color: #7f56d9; /* Change this to your desired highlight color */
+  color: #fff; /* Change text color for contrast */
+  border-color: #7f56d9; /* Optional: change border color for selected option */
+}
+
+.filterOption:hover {
+  background-color: #7f56d9;
+  color: #fff;
+}
+
+.showMore {
+  font-size: 12px;
+  color: #7f56d9;
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.showMore:hover {
+  text-decoration: underline;
+}
+
+.hr {
+  margin: 0px !important;
+}
