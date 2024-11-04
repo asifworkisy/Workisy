@@ -1,0 +1,51 @@
+.jobCardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Reset gap here as we're using margin for spacing */
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd; /* Default border color */
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    cursor: pointer;
+    margin-bottom: 20px; /* Add margin for spacing between cards */
+}
+
+.cardTitle {
+    font-size: 1.2em;
+    margin: 0;
+    color: #333;
+}
+
+.cardText {
+    margin: 8px 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.cardList {
+    list-style-type: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.cardListItem {
+    margin-bottom: 5px;
+    font-size: 0.85em;
+}
+
+.cardPosted {
+    color: #999;
+    font-size: 0.8em;
+}
+
+.cardSelected {
+    border-color: #2557a7; /* Change this to your desired highlight color */
+    border-width: 2px; /* Optional: increase border width for better visibility */
+    border-style: solid; /* Ensure the border is solid */
+}
