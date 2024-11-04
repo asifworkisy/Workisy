@@ -65,9 +65,12 @@ const JobDescription = ({ jobData }) => {
                         <p>{jobData.education}</p>
                     </div>
 
-                    <div className="location">
-                        <h4>Location</h4>
-                        <p><FaLocationDot style={{ marginRight: '8px' }} /> {jobData.location}</p>
+                    <div className="job-location">
+                        <h4>
+                            <FaLocationDot style={{ marginRight: '8px' }} />
+                            Location
+                        </h4>
+                        <p>{jobData.location}</p>
                     </div>
                 </div>
 

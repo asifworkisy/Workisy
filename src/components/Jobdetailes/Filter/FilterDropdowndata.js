@@ -2,7 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 // import '../App.css';
 import './FilterDropdowndata.css'
 import FilterDropdown from './FilterDropdown';
-// import Filter from './Filter';
+import Filter from './Filter';
+
+
 
 const location = [
   { id: 1, label: 'Bengaluru / Bangalore', count: 7183 },
@@ -102,7 +104,13 @@ function FilterDropdowndata() {
 
   return (
     <div className='container'>
-        <FilterDropdown
+       <FilterDropdown
+        // options={location}
+        title="Quick Apply"
+        // isOpen={openDropdown === "Quick Apply"}
+        // onToggle={() => handleDropdownToggle("Quick Apply")}
+      />
+      <FilterDropdown
         options={location}
         title="Location"
         isOpen={openDropdown === "Location"}
@@ -157,6 +165,12 @@ function FilterDropdowndata() {
         title="Education"
         isOpen={openDropdown === "Education"}
         onToggle={() => handleDropdownToggle("Education")}
+      />
+      <Filter
+       options={Education}
+       title="Education"
+       isOpen={openDropdown === "Education"}
+       onToggle={() => handleDropdownToggle("Education")}
       />
       
     </div>
