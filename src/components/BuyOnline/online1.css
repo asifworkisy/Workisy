@@ -1,0 +1,19 @@
+.custom-input {
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 6px;
+    width: 90%;
+    outline: none; /* Remove default outline */
+    transition: border-bottom-color 0.3s; /* Smooth transition for the border color */
+}
+
+.custom-input:focus {
+    border-bottom: 1px solid blue; /* Change to blue on focus */
+}
+
+.footer-form{
+    display:flex;
+    flex-direction: column;
+    row-gap: 2vw;
+    margin-top:1vw;
+}

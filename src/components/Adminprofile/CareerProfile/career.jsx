@@ -46,7 +46,9 @@ const CareerProfile=forwardRef((props, ref)=>{
       employeementType: { fulltime: false, parttime: false },
       locations: [],
       expSalary: ""
-  });                                      
+  });    
+  
+  
                                           
 
   const handleChange = (event) => {
