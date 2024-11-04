@@ -1,24 +1,23 @@
-
-import React from 'react';
-import './JobCard.css'; // Import the CSS file
+ import React from 'react';
+import styles from './JobCard.module.css'; // Import the CSS Module
 
 const JobCard = ({ jobListings, onJobClick, selectedJobIndex }) => {
     return (
-        <div className="job-cards-container">
+        <div className={styles.jobCardsContainer}>
             {jobListings.map((job, index) => (
                 <div 
-                    className={`card ${selectedJobIndex === index ? 'selected' : ''}`} // Apply selected class
+                    className={`${styles.card} ${selectedJobIndex === index ? styles.cardSelected : ''}`} // Apply selected class
                     key={job.id} 
-                    onClick={() => onJobClick(index)}
+                    onClick={() => onJobClick(index)} // Click handler to select job
                 >
-                    <h3>{job.title}</h3>
-                    <p>{job.company}</p>
-                    <p>{job.location}</p>
-                    <ul>
-                        <li>Job Types: {job.jobTypes}</li>
-                        <li>Total work: {job.totalWork}</li>
+                    <h3 className={styles.cardTitle}>{job.title}</h3>
+                    <p className={styles.cardText}>{job.company}</p>
+                    <p className={styles.cardText}>{job.location}</p>
+                    <ul className={styles.cardList}>
+                        <li className={styles.cardListItem}>Job Types: {job.jobTypes}</li> {/* Always visible */}
+                        <li className={styles.cardListItem}>Total Work: {job.totalWork}</li> {/* Always visible */}
                     </ul>
-                    <p className="posted">Posted {job.posted} ago</p>
+                    <p className={styles.cardPosted}>Posted {job.posted} ago</p>
                 </div>
             ))}
         </div>
@@ -26,4 +25,3 @@ const JobCard = ({ jobListings, onJobClick, selectedJobIndex }) => {
 };
 
 export default JobCard;
-

@@ -40,20 +40,22 @@
 }
 
 .scrollableContainer {
-  max-height: 200px; /* Set max height for the scrollable area */
+  max-height: 300px; /* Set max height for the scrollable area */
   overflow-y: auto;  /* Enable vertical scrolling */
   padding: 10px;     /* Add padding for better spacing */
 }
 
 .filterSection {
   text-align: center;
+  border-bottom: 1px solid lightgray;
+  padding: 3px;
 }
 
 .filterTitle {
   font-weight: 600;
   color: #333;
-  margin: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   text-align: left;
 }
 
@@ -61,6 +63,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  font-size: 11px;
 }
 
 .filterOption {
@@ -68,7 +71,7 @@
   border: 1px solid #ddd;
   border-radius: 16px;
   background-color: #f3f4f6;
-  font-size: 14px;
+  font-size: 11px;
   color: #333;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
@@ -91,6 +94,7 @@
   color: #7f56d9;
   cursor: pointer;
   margin-top: 10px;
+  margin-bottom: 10px;
   display: inline-block;
 }
 
@@ -100,4 +104,10 @@
 
 .hr {
   margin: 0px !important;
+}
+
+.filterName{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
