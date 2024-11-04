@@ -10,6 +10,7 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 import banner from "../../assets/buy-online/banner.png"
 import DvrIcon from '@mui/icons-material/Dvr';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
   const Features=()=>{
     const data = [
@@ -115,6 +116,39 @@ const CardBottom=()=>(
         
     </Box>
 )
+
+const Post=()=>(
+    <Box sx={{display:"flex",flexDirection:"column",rowGap:"1vw"}}>
+        <Typography sx={{fontSize:"16px",fontWeight:"bold",color:"#096eb6"}}>Naukari blog post</Typography>
+        <Typography variant='h5'>What's New</Typography>
+        <Box sx={{display:"flex",columnGap:"2vw"}}>
+            {
+                Array.from({length:3},(i,j)=>j).map((data,id)=>(
+                    <Box key={id} sx={{height:"300px",width:"250px",border:"1px solid rgb(200, 199, 199)",borderRadius:"10px",display:"flex",
+                        flexDirection:"column",
+                        rowGap:"1vw",
+                        alignItems:"center",
+                        justifyContent:"center",
+                        p:"10px"
+                    }}>
+
+                                 <AccountCircleIcon sx={{fontSize:"5vw"}}/>
+
+                                 <Box sx={{textAlign:"center"}}>
+                                        <Typography sx={{fontSize:"13px",fontWeight:"bold"}}> Ruby Jha </Typography>
+                                        <Typography sx={{fontSize:"11px"}}> Assistant Director & Direct Sourcing Leader Ernst & Young (GDS Talent Team) </Typography>
+                                </Box>
+                                <Divider/>
+                                <Typography>Naukri.com has been always the first choice for any critical search. Our highest offer contribution across database search engines continues to be from Resdex. Appreciate the continuous evolving features of Resdex search to make it even </Typography>
+                        </Box>
+
+                ))
+            }
+        </Box>
+
+
+    </Box>
+)
  
 
 const Template=()=>{
@@ -154,20 +188,45 @@ return(
 }
 
 
-
-const StoryCards=({scrollBar})=>{
+export const StoryCards=({scrollBar})=>{
     return(
         <Box sx={{display:"flex",columnGap:"2rem",overflowX:"scroll",scrollbarWidth:"none"}} ref={scrollBar}>
             {
                 Array.from({length:"10"},(i,id)=>i).map((i,index)=>(
                     <Box sx={{height:"300px",width:"250px",flexShrink:0,borderRadius:"10px",border:"1px solid rgb(200, 199, 199)"}}>
-                        {index}
+                        
                     </Box>
                 ))
             }
         </Box>
     )
 }
+
+
+const FrequentlyAskedQuestion=()=>(
+
+    <Box sx={{display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column",rowGap:"1vw"}}>
+            <Typography variant='h5' sx={{fontSize:"30px"}}>Frequently Asked Questions</Typography>
+            <Box sx={{display:"flex",columnGap:"2vw"}}>
+            {
+                Array.from({length:3},(i,j)=>j).map((data,id)=>(
+                    <Box key={id} sx={{height:"300px",width:"300px",border:"1px solid rgb(200, 199, 199)",borderRadius:"10px",
+                        "&:hover":{
+                            boxShadow:"4px 4px 5px 2px rgba(0, 0, 0, 0.3)",
+                            transform:"scale(1.01)"
+                        }
+                    }}>
+
+
+
+                        </Box>
+                ))
+            }
+            </Box>
+
+    </Box>
+    
+)
 
 
 export default function Online1() {
@@ -187,7 +246,7 @@ export default function Online1() {
 
     <Box sx={{width:"100%",display:"flex",flexDirection:"column",alignItems:"center"}}>
         <Typography variant='h5' sx={{fontSize:"1.2vw",fontWeight:"550",  textTransform: "uppercase",color:"blue"}}>Resume Database Access</Typography>
-        <Typography variant='h4' sx={{width:"500px",color:"rgb(54, 53, 53)"}}>Resdex - India's largest resume database for all your hiring needs </Typography> 
+        <Typography variant='h4' sx={{width:"550px",color:"rgb(54, 53, 53)"}}>Resdex - India's largest resume database for all your hiring needs </Typography> 
     </Box>
     <Box  sx={{display:"flex",columnGap:"2rem"}}>
 
@@ -265,7 +324,7 @@ export default function Online1() {
         <Typography variant='h4' >Why businesses trust Workisy Resdex</Typography>
        <Template/>
     </Box>
-    <Box sx={{width:"60%",height:"250px",backgroundColor:"rgb(229, 241, 246)",borderRadius:"10px",borderBottomRightRadius:"20%",p:"3rem",display:"flex"}}>
+    <Box sx={{width:"60%",height:"250px",backgroundColor:"rgb(239, 238, 248)",borderRadius:"10px",borderBottomRightRadius:"20%",p:"3rem",display:"flex"}}>
         <Box sx={{display:"flex",flexDirection:"column",rowGap:"1.5rem",width:"50%"}}>
             <Typography variant='h4'>Search Candidates from India's Largest Talent Pool</Typography>
             <Typography>Source candidates from Resdex - India's largest Talent Pool and find the perfect talent for your organisation.</Typography>
@@ -323,6 +382,11 @@ export default function Online1() {
 
         </Box>
     </Box>
+
+    <Post/>
+
+    <FrequentlyAskedQuestion/>
+
     
 
 

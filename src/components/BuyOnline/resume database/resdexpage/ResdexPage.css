@@ -1,0 +1,143 @@
+.resdex-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 10px;
+}
+
+.resdex-container h2 {
+  color: #666;
+  font-size: 18px;
+  margin: 0;
+}
+.resdex-container h3{
+  text-align: center;
+}
+
+.resdex-container h1 {
+
+  color: #333;
+  font-size: 24px;
+  margin: 10px 0 30px;
+}
+
+.resdex-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 20px;
+  color: #333;
+}
+
+.card .tagline {
+  text-align: center;
+  color: #0099ff;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.price {
+  text-align: center;
+  font-size: 30px !important; /* Increase this value to make the price larger */
+  color: #000000 !important;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: #6e6e6e;
+  font-size: 20px; /* Adjust this separately if you want a different size for the original price */
+  margin-left: 10px;
+}
+.card ul {
+  list-style-type: none !important; /* Removes dots before icons */
+  padding-top: 2px;
+  color: #555;
+}
+
+.card ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.noDot ul {
+  list-style-type: none !important; /* Removes dots before icons */
+}
+
+.card ul li svg {
+  margin-right: 8px; /* Space between icon and text */
+  color: #005300; /* Customize icon color if needed */
+}
+
+.validity {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.buy-now,
+.add-to-cart,
+.contact-sales {
+ 
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-right: 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.contact-sales {
+  margin-left: 80px;
+}
+
+.buy-now {
+ margin-left: 40px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.add-to-cart {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.contact-sales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.buy-now:hover,
+.add-to-cart:hover,
+.contact-sales:hover {
+  opacity: 0.9;
+}
+
+.requirement {
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+}
+.close1{
+  color: red;
+ 
+}
+.borderBotom{
+ padding-bottom: 20px;
+  border-bottom: 1px dashed rgb(151, 151, 151) ;
+}

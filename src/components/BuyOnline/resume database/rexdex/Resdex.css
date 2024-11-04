@@ -1,0 +1,50 @@
+/* NaukriResdexPage.css */
+.resdex-page {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+  /* margin-left: 250px; */
+}
+
+.title {
+  text-align: center;
+  color: #00539b;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  margin: 1rem 0;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-left: 200px;
+}
+
+.feature-card {
+
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid rgb(133, 133, 133);
+}
+
+.feature-card h4 {
+  margin: 1rem 0 0.5rem;
+  color: #333;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: small;
+}
