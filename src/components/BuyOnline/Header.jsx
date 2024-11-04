@@ -15,7 +15,8 @@ export default function Header({setPage}) {
         return(
             <Box sx={{
                 display:"flex",
-                flexDirection:"column"
+                flexDirection:"column",
+                
             }}>
                 <Button sx={btn} onClick={()=>setPage(1)}>Resume Database Access(RESDEX)</Button>
                 <Button sx={btn} onClick={()=>setPage(2)}>Job posting</Button>
