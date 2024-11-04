@@ -45,7 +45,7 @@ const Profile = () => {
             <div className="profile-img">
                 <StyledBox>
                     <Avatar
-                        src={selectedImage || "https://img.freepik.com/free-vector/user-blue-gradient_78370-4692.jpg?t=st=1730111490~exp=1730115090~hmac=de7356e78c81c8412ad60d482857411ea8d54633bd4f306e136dd44ea2e5e7fd&w=740"}
+                        src={selectedImage || "https://static.vecteezy.com/system/resources/previews/036/280/650/non_2x/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg"}
                         alt="Profile"
                         sx={{
                             height:"161px",

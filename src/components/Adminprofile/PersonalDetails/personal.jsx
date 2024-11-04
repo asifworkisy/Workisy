@@ -117,6 +117,8 @@ const PersonalDetails=forwardRef((props, ref)=>{
           }
           return [personalDetails];
       });
+
+      
   
       // Send the data to the API endpoint
       // try {
@@ -140,6 +142,10 @@ const PersonalDetails=forwardRef((props, ref)=>{
   
       // Close the personal details form/modal
       setOpenPersonal(false);
+  };
+  const handleDeleteLanguage = (index) => {
+    const newLanguages = languages.filter((_, i) => i !== index);
+    setLanguages(newLanguages);
   };
 
    console.log(personalData)
@@ -407,6 +413,7 @@ const PersonalDetails=forwardRef((props, ref)=>{
                             <div style={{ display:'flex', flexDirection:'column', width:'40%', marginLeft:'10px'}}>
                               <label htmlFor={`proficiency-${index}`} className='label-name' style={{fontWeight:'600'}}>proficiency</label>
                               <select className='text-input' name="proficiency"   value={lang.proficiency} onChange={(e) => handleProficiencyChange(index, e)} style={{height:'35px'}}>
+                                 <option value="" disabled >Select Proficiency</option>
                                 <option value="Beginner">Beginner</option>
                                 <option value="Proficient">Proficient</option>
                                 <option value="Expert">Expert</option> 
@@ -424,7 +431,7 @@ const PersonalDetails=forwardRef((props, ref)=>{
                                   </div>
                               </FormControl>
 
-                              <p className='delete-lang'>Delete</p>
+                              <p className='delete-lang' onClick={() => handleDeleteLanguage(index)}>Delete</p>
                           </div>
                            
                         </div>

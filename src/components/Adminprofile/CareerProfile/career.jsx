@@ -37,7 +37,16 @@ const CareerProfile=forwardRef((props, ref)=>{
     const [locations, setLocation] = useState(initialLoc);
     const [expSalary, setexpSalary]=useState("")
     const [careerData, setCareerData]=useState([])
-                                          
+    const [formData, setFormData] = useState({
+      currentIndustry: "",
+      department: "",
+      jobRole: "",
+      radiovalue: "",
+      jobType: { permanent: false, contractual: false },
+      employeementType: { fulltime: false, parttime: false },
+      locations: [],
+      expSalary: ""
+  });                                      
                                           
 
   const handleChange = (event) => {
@@ -85,24 +94,16 @@ const handleSaveCareer=async (event)=>{
     return [careerDetails]; 
     });
 
-  //   try {
-  //     const response = await fetch("https://workisy-backend-nyf4.onrender.com/api/careerDetails", {
-  //         method: "POST",
-  //         headers: {
-  //             "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify(careerDetails),
-  //     });
-
-  //     if (response.ok) {
-  //         const responseData = await response.json();
-  //         console.log("Data successfully saved:", responseData);
-  //     } else {
-  //         console.error("Failed to save data:", response.statusText);
-  //     }
-  // } catch (error) {
-  //     console.error("Error:", error);
-  // }
+    setFormData({
+      currentIndustry: "",
+      department: "",
+      jobRole: "",
+      radiovalue: "",
+      jobType: { permanent: false, contractual: false },
+      employeementType: { fulltime: false, parttime: false },
+      locations: [],
+      expSalary: ""
+  });
 
   setOpenCareer(false)
 };
