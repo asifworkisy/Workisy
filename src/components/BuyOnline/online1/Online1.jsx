@@ -1,84 +1,23 @@
 import { Box, Typography ,Divider, Button, IconButton, NativeSelect} from '@mui/material'
 import React, { useRef, useState } from 'react'
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import CheckIcon from '@mui/icons-material/Check';
-import CloseIcon from '@mui/icons-material/Close';
-import { IoIosInformationCircleOutline } from "react-icons/io";
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import banner from "../../assets/buy-online/banner.png"
+import banner from "../../../assets/buy-online/banner.png"
 import DvrIcon from '@mui/icons-material/Dvr';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import img1 from "../../assets/buy-online/new-post1.jpg"
-import img2 from "../../assets/buy-online/new-post2.jpg"
-import img3 from "../../assets/buy-online/new-post3.jpg"
+import img1 from "../../../assets/buy-online/new-post1.jpg"
+import img2 from "../../../assets/buy-online/new-post2.jpg"
+import img3 from "../../../assets/buy-online/new-post3.jpg"
 
 import "./online1.css"
+import { Features } from './Features';
+import { Set } from './Set';
 
-  const Features=()=>{
-    const data = [
-        { name: "CV views as per plan", value: 1 },
-        { name: "Unlimited search results", value: 1 },
-        { name: "All available candidates", value: 1 },
-        { name: "20+ advanced filters", value: 1 },
-        { name: "Multiple user access", value: 1 },
-        { name: "Email multiple candidates together", value: 1 },
-        { name: "Boolean keyword search", value: 1 },
-        { name: "Download CVs in bulk", value: 1 }
-      ];
-      
-    
-    return(
-        <Box sx={{mt:"2rem",display:"flex",flexDirection:"column",rowGap:"8px"}}>
-            {
-                data.map((data,id)=>(
-                    <Box sx={{display:"flex",alignItems:"center"}} key={id}>
-                          {
-                            data.value===1?<CheckIcon sx={{color:"green",border:"1px solid green",borderRadius:"50%",transform:"scale(.7)"}}/>:<CloseIcon sx={{color:"gray",border:"1px solid gray",borderRadius:"50%",transform:"scale(.7)"}}/>
-                        }  
-                        <Typography sx={{fontSize:"15px"}}>{data.name}</Typography>
-                        <IoIosInformationCircleOutline/>
-                    </Box>
-                ))
-            }
-        </Box>
 
-    )
 
-}
-const Set=()=>{
-    const data=
-    [
-        { value: 1, name: "100 CV views per requirement" },
-        { value: 1, name: "Up to 500 search results" },
-        { value: 1, name: "Candidates active in last 6 months" },
-        { value: 1, name: "10+ advanced filters" },
-        { value: 1, name: "Single user access" },
-        { value: 0, name: "Email multiple candidates together" },
-        { value: 0, name: "Boolean keyword search" },
-        { value: 0, name: "Download CVs in bulk" }
-    ]
-    
-    return(
-        <Box sx={{mt:"2rem",display:"flex",flexDirection:"column",rowGap:"8px"}}>
-            {
-                data.map((data,id)=>(
-                    <Box sx={{display:"flex",alignItems:"center"}} key={id}>
-                          {
-                            data.value===1?<CheckIcon sx={{color:"green",border:"1px solid green",borderRadius:"50%",transform:"scale(.7)"}}/>:<CloseIcon sx={{color:"gray",border:"1px solid gray",borderRadius:"50%",transform:"scale(.7)"}}/>
-                        }  
-                        <Typography sx={{fontSize:"15px"}}>{data.name}</Typography>
-                        <IoIosInformationCircleOutline/>
-                    </Box>
-                ))
-            }
-        </Box>
-
-    )
-
-}
 
 const Card=()=>{
     return(
@@ -272,25 +211,25 @@ const FormAp=()=>{
         </form>
     )
     return(
-        <Box sx={{width:"350px",height:"auto",backgroundColor:"white",color:"black",p:"1vw"}}>
+        <Box sx={{width:"350px",height:"auto",backgroundColor:"white",color:"black",p:"1vw",fontFamily:"inter"}}>
             <Typography sx={{fontSize:"15px",fontWeight:"bold"}}>Sales enquiry</Typography>
 
                 <p>Iam looking for</p>
                 <div style={{display:"flex",columnGap:"1vw",fontSize:"14px"}}>
 
                     <div>
-                    <input type='radio' id="req" name='page' onClick={()=>setPage(0)}/>
+                    <input type='radio' id="req" name='page' onClick={()=>setPage(0)} checked={page === 0}/>
                     <label for='req'>Recruitment solutions</label>
 
                     </div>
                     <div>
-                    <input type='radio' id="r" name='page'onClick={()=>setPage(1)}/>
+                    <input type='radio' id="r" name='page'onClick={()=>setPage(1)} checked={page === 1}/>
                     <label for='r'>Job opportunities</label>
 
                     </div>
                 </div>
                 {
-                    page === 0 ? <FormInfo/>:<Button>Search jobs on Workisy</Button>
+                    page === 0 ? <FormInfo/>:<Button sx={{backgroundColor:"blue",color:"white",mt:"5vw",fontWeight:"550",textTransform:"capitalize",ml:"1vw"}}>Search jobs on Workisy</Button>
                 }
                 
 
