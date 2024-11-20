@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.table-cnt{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    
+}
+.table-head-tr{
+    background-color:#136bcf;
+    padding:30px;
+    
+}
+.table-head-title{
+    font-size:13px;
+    color:#ffffff;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    padding:25px;
+}
+table{
+    width:80%;
+}
+th, td {
+    padding: 15px;
+  }
+.body-tr{
+    background-color:#ffffff;
+    border-bottom:1px solid #30b4f2;
+    border-left:1px solid #30b4f2;
+    border-right:1px solid #30b4f2;
+   
+  }
+td{
+    padding:20px;
+    font-size:14px;
+    color: rgb(19, 20, 20);
+    font-family:'Inter';
+    
+  }
+th:first-child {
+    border-top-left-radius: 10px; /* Rounded corner */
+}
+th:last-child {
+  border-top-right-radius: 10px; /* Rounded corner */
+}
+  .icon{
+    font-size:20px;
+    cursor:pointer;
+    margin-left:7px;
+    color:#666666;
+  }
+  .icon-cnt{
+    display:flex;
+    
+  }
+  .view-appliation{
+    background-color:#136bcf;
+    color:#ffffff;
+    border-radius:10px;
+    padding:5px 10px;
+    cursor:pointer;
+    font-size:14px;
+    font-family:'Inter';
+    
+  }
+  .view-appliation:hover{
+     background-color:#7e98df;
+  }
+  .dot-btn{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    border-radius:15px;
+    background-color:transparent;
+  }
+  .dot-btn:hover{
+    background-color:#f5ebebc4;
+  }
+
+  .dots-div{
+    
+    position: absolute; /* Position it absolutely */
+    top: 100%;          /* Position it directly below the button */
+    right: 0;           /* Align to the right */
+    background-color: white; /* Background color */
+    border: 1px solid #ccc; /* Border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Optional shadow */
+    z-index: 1000;      /* Ensure it appears above other elements */
+    width: 150px;       /* Set a width for the dropdown */
+    display: flex;      /* Align items in flex */
+    flex-direction: column; /* Stack items vertically */
+   
+  }
+  .dots-daa-cnt{
+    position: relative
+  }
+  .dot-name{
+    padding: 10px;      /* Add some padding */
+    cursor: pointer; 
+  }
+  .dot-name:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+}

@@ -1,0 +1,44 @@
+.jobreport-cnt{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+table{
+    width:80%;
+}
+th, td {
+    padding: 15px;
+}
+
+.resdox-table-head-tr{
+    background-color:#136bcf;
+    padding:30px;
+}
+.resdox-table-head-title{
+    font-size:13px;
+    color:#ffffff;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    padding:25px;
+}
+.resdox-body-tr{
+    background-color:#ffffff;
+    border-bottom:1px solid #30b4f2;
+    border-left:1px solid #30b4f2;
+    border-right:1px solid #30b4f2;
+}
+th:first-child {
+    border-top-left-radius: 10px; /* Rounded corner */
+}
+th:last-child {
+  border-top-right-radius: 10px; /* Rounded corner */
+}
+td{
+    padding:20px;
+    font-size:14px;
+    color: rgb(19, 20, 20);
+    font-family:'Inter';
+    
+  }

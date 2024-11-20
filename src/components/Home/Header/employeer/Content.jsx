@@ -6,7 +6,7 @@ export default function Content() {
     <div className='content'>
       <Link className='link' to="buy-online">Buy online</Link>
       <Link className='link'>Naukari Hairing Suite </Link>
-      <Link className='link'>Employeer Login</Link>
+      <Link className='link' to="/employee-home">Employer Login</Link>
       
     </div>
   )

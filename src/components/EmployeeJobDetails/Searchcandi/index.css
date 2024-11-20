@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.search-form-app-cnt{
+    background-color:#ffffff;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    width:100% ;
+    overflow:scroll;
+   
+
+}
+.search-form-cnt{
+    background-color:#ffffff;
+    display:flex;
+    flex-direction:column;
+    padding:10px;
+    width:70% !important;
+    margin-top:20px;
+    border-radius:15px;
+    border:1px solid #136bcf;
+}
+.exper-cnt{
+    display:flex;
+    flex-direction: column;
+    padding:12px 16px;
+
+}
+.heading{
+    font-family:"Inter";
+    font-size:16px;
+    color:#413a3a;
+}
+.search-checkbox-input-cnt{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+}
+.input-label-cnt{
+    display:flex;
+    flex-direction:row;
+    margin-right:10px;
+}
+.checkbox-name{
+    font-family:"Inter";
+    font-size:15px;
+    margin-left:4px;
+}
+.hr-line{
+    width:100%;
+}
+
+.input{
+    outline:none;
+    border:1px solid #bdb7b7;
+    padding:10px;
+    border-radius:4px;
+    width:100%;
+    height:40px;
+    font-size:17px;
+    color:#5c5959;
+}
+.select-input{
+    width:47%;
+    outline:none;
+    border:1px solid #bdb7b7;
+    padding:10px;
+    border-radius:4px;
+
+    height:40px;
+    font-size:17px;
+    color:#5c5959;
+}
+.exp-select-cnt{
+    display:flex;
+    justify-content:space-between;
+}
+.edu-list-cnt{
+    display:flex;
+    flex-wrap:wrap;
+    list-style-type:none;
+}
+.list-item{
+    border:1px solid #c2bebe;
+    margin:5px;
+    border-radius:20px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width:130px;
+    height:40px;
+}
+.icons-cnt{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.icon{
+    font-size:18px;
+    color:#000000;
+}
+.edu-para{
+    margin-left:5px;
+    font-family:"Inter";
+    font-size:14px;
+
+}
+.click-edu{
+    border-color:#78b2d7;
+    background-color: #c3e7fd;
+    color:#656eec;
+}
+.bottom-cnt{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    margin:10px;
+}
+.active-cnt{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+
+}
+.reset-btn{
+    background-color:#136bcf;
+    color:#ffffff;
+    font-size:16px;
+    font-family:'Inter';
+    border:none;
+    font-weight:400;
+    border-radius:14px;
+    outline:none;
+    cursor:pointer;
+    padding:7px 15px;
+}
+.search-cand-inp{
+    outline:none;
+    border:none;
+    color: #6d6868;
+}
+.search-candi-cnt{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    background-color: #136bcf;
+    padding:7px 13px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.bott-search-para{
+    font-size:15px;
+    font-family:'Inter';
+    font-weight: 500;
+    color: #ffffff;
+    margin:0px;
+}
+.select-active{
+    width:100%;
+    outline:none;
+    border:1px solid #bdb7b7;
+    padding:10px;
+    border-radius:4px;
+    height:40px;
+    font-size:17px;
+    color:#5c5959;
+    border-radius:2px;
+}
+.activein-para{
+        font-size:15px;
+        font-family:'Inter';
+        color: #1d1a1a;
+        width:100px;
+}
+.checkbox-inp{
+    background-color:#656eec;
+}

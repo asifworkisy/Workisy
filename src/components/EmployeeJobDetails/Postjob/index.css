@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.postjob-app-cnt{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    min-height:100vh;
+    width:100vw;
+    background-color:#ffffff;
+}
+.job-form-cnt{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    padding:20px;
+   
+    width:60%;
+    background-color:#ffffff;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    border:1px solid #136bcf;
+}
+.job-title-cnt{
+    background-color:#136bcf;
+    margin:0;
+    width:60%;
+    margin-top:30px;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    border:1px solid #136bcf;
+}
+.form-heading{
+    font-size:24px;
+    font-family:"Inter";
+    font-weight:600;
+    color:#ffffff;
+    padding:20px;
+   
+}
+.input-text{
+    font-size:14px;
+    font-family:"Inter";
+    font-weight:400;
+    color:#1b1919;
+}
+.input{
+    outline:none;
+    padding:0px 6px;
+    height:35px;
+    font-size:14px;
+    font-family:"Inter";
+    color:#6b6666;
+    border-radius:5px;
+    border:1px solid #bcbdc0;
+    margin-top:3px;
+    
+}
+.category-cnt{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:4px;
+}
+.select-inp{
+    width:260px;
+    outline:none;
+    box-shadow:none;
+    border-color: #ced4da;
+    height:40px;
+}
+.location-inp{
+    width:350px;
+}
+.date-cnt{
+    width:300px;
+}
+.checkbox{
+    height:14px;
+    width:14px;
+}
+.no-end-para{
+    font-size:14px;
+    font-family:"Inter";
+    margin-left:5px;
+}
+.checkbox-cnt{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:center;
+}
+.hr-line{
+    
+    margin-top:20px;
+    width:100%;
+    padding:0px;
+}
+.text-area{
+    border-radius:10px;
+    outline:none;
+    padding:10px;
+}
+.required-cnt{
+    display:flex;
+    flex-direction:row;
+    padding:0px;
+    margin:0px;
+}
+.check{
+    margin-left:30px;
+}
+.buttons-cnt{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+.btn-save{
+    outline:none;
+    cursor:pointer;
+    color: #ffffff;
+    background-color:#3733ffec;
+    font-family:"Inter";
+    border:none;
+    border-radius:7px;
+    padding:5px 10px;
+}
+.addmore-btn{
+    outline:none;
+    background-color:transparent;
+    border-radius:5px;
+    margin-left:20px;
+    border-width:1px;
+    
+}
+.btn-cancel{
+    outline:none;
+    border:none;
+    font-family:'Inter';
+    margin-left:20px;
+    background-color:transparent;
+}
+.status-cnt{
+    width:250px;
+}
+.asterisk{
+    size:1px;
+    color:rgb(219, 84, 84);
+}
+.salary-inp{
+    margin-left:10px;
+}
+.start-salary{
+    width:350px;
+    
+}
+.margin{
+    margin-left:20px;
+}
+@media (max-width: 768px) {
+    .job-form-cnt {
+        width: 90%;
+    }
+    .category-cnt,
+    .checkbox-cnt,
+    .status-cnt {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .buttons-cnt {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .addmore-btn,
+    .btn-cancel {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .select-inp,
+    .location-inp,
+    .date-cnt {
+        width: 100%;
+    }
+    .salary-inp,
+    .start-salary {
+        width: 100%;
+    }
+}
+@media (max-width: 576px) {
+    .form-heading {
+        font-size: 20px;
+    }
+    .input {
+        height: 30px;
+        font-size: 12px;
+    }
+    .no-end-para {
+        font-size: 12px;
+    }
+}

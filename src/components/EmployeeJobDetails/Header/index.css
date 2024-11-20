@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color:#ffffff;
+    padding: 0 20px;
+    color:#050505;
+    position:fixed; 
+                   /* Keep this to fix the navbar at the top */
+    top: 0;           /* Ensure it starts from the top */
+    
+    height: 60px;
+    box-shadow:1px 1px 1px 1px #e4e0e0;
+   
+  }
+
+  .left-nav-cnt{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .nav-logo{
+    height: 35px; /* Adjust the height as needed */
+    width:100;
+    margin-left:10px;
+  }
+
+  .nav-links-list {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left:200px;
+  }
+  .nav-list-item{
+    color: #645e5e;
+    font-size:15px;
+    font-family:"Inter";
+    cursor: pointer;
+    text-decoration:none;
+    width:100%;
+    white-space:nowrap;
+  }
+ 
+
+
+  .nav-links-list li {
+    margin: 0 15px;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  .menu-dropdown ul li{
+    transition: transform 0.3s ease;
+  }
+  .menu-dropdown ul li:hover{
+    transform:scale(1.1);
+  }
+
+
+  .menu-icon {
+    font-size: 19px;
+    cursor: pointer;
+    position: relative;
+
+  }
+  .profile-name{
+    height:28px;
+    width:27px;
+    border-radius:24px;
+    background-color:#e5eef5;
+    text-align: center;
+    align-self:center;
+    border:1px solid #7e7b7b;
+    color: #0c0b0b;
+    margin-right:10px;
+  }
+
+  .menu-dropdown,
+  .database-dropdown {
+    position: absolute;
+   
+    background-color:#fffcfc;
+    color:#080808;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+    width:200px;
+    width:220px;
+    margin-top:15px;
+    box-shadow: 0px 0px 1px 1px #e4e0e0;
+  }
+
+  .menu-dropdown ul,
+  .database-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width:100%;
+  }
+
+  .menu-dropdown li,
+  .database-dropdown li {
+    padding: 4px 6px;
+    cursor: pointer;
+    margin-top:10px;
+  }
+
+
+
+  .database-dropdown {
+    top: 100%; /* Positions directly below the Database item */
+    left: 0;
+  }
+
+  .menu-dropdown {
+    top: 100%; /* Positions directly below the Menu icon */
+    right: 0;  /* Aligns dropdown to the right edge of the Menu icon */
+  }
+
+  .nav-links-list li:hover{
+    color: #0e0d0d;
+    transform: scale(1.1);
+  } 
+  .report-dropdown{
+    position:absolute;
+   
+    background-color:#fffcfc;
+    color:#080808;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+    width:200px;
+    width:220px;
+    margin-top:15px;
+    box-shadow: 0px 0px 1px 1px #e4e0e0;
+    top: 47px;
+   left:600px;
+   
+  }
+  .report-dropdown ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width:100%;
+  }
+  .report-dropdown li{
+    padding: 4px 6px;
+    cursor: pointer;
+    margin-top:10px;
+  }
