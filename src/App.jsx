@@ -21,8 +21,8 @@ export default function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/admin-profile" element={<Adminprofile />} />
         <Route path="/job-details" element={<Jobcontainer />} />
-        <Route path="/employee/login" element={<EmployeLogin />} />
-        <Route path="/employer/profile" element={<EmployeeRegister />} />
+        <Route path="/employee-login" element={<EmployeLogin />} />
+        <Route path="/employer-profile" element={<EmployeeRegister />} />
         <Route path="/buy-online" element={<BuyOnline />} />
         <Route path="/employee-home" element={<EmployeeHome />} />
         <Route exact path="/postjob" element={<PostJob />} />
