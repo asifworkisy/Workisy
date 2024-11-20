@@ -25,11 +25,11 @@ export default function App() {
         <Route path="/employer/profile" element={<EmployeeRegister />} />
         <Route path="/buy-online" element={<BuyOnline />} />
         <Route path="/employee-home" element={<EmployeeHome />} />
-        <Route path="/post-job" element={<PostJob />} />
+        <Route exact path="/postjob" element={<PostJob />} />
         <Route path="/search-candidates" element={<SearchForm />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/resdox-report" element={<ResdoxReport />} />
-        <Route path="/job-report" element={<Jobreport />} />
+        <Route exact path="/login" element={<LoginPage />} />
+        <Route exact path="/resodx" element={<ResdoxReport />} />
+        <Route exact path="/job-report" element={<Jobreport />} />
         {/* Add fallback route */}
         <Route path="*" element={<div>Page Not Found</div>} />
       </Routes>
