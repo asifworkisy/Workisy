@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import "./content.css"
+import styles from './content.module.css'; 
+
 export default function Content() {
   return (
-    <div className='content'>
-      <Link className='link' to="buy-online">Buy online</Link>
-      <Link className='link'>Naukari Hairing Suite </Link>
-      <Link className='link' to="/employee-home">Employer Login</Link>
-      
+    <div className={styles.content}> 
+      <Link className={styles.link} to="/buy-online">Buy Online</Link>
+      <Link className={styles.link} >Naukari Hiring Suite</Link> {/* Added a to attribute */}
+      <Link className={styles.link} to="/employee-home">Employer Login</Link>
     </div>
-  )
+  );
 }

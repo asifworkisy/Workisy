@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .scroll-bar {
+    width: 110%;
+    margin-bottom: 20px;
+  }
+  
+
+  .numbers {
+    display: flex;
+    column-gap: 45px;
+
+  }
+  
+
+  .number {
+    font-size: 14px;
+    border: none;
+  
+    color: gray;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .highlight {
+    
+    color: #007bff;
+    transform: scale(1.3);            
+  }
+  

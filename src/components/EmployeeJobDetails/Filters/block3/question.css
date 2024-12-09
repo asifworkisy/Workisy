@@ -1,0 +1,58 @@
+
+.qContainer {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; 
+    display: inline;
+  
+  }
+  
+  .info-button {
+   
+    cursor: pointer;
+    background-color:white;
+    color: black;
+    border: none;
+
+    position: relative; 
+  }
+  
+  .message-box {
+    display: inline-block;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -70px; 
+    left: 60%;
+    transform: translateX(-90%);
+    margin-bottom: 100px;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    margin-left: 20px;
+    transition: opacity 0.3s ease;
+
+  
+  width: auto;
+  
+    
+  }
+  .message-box::before{
+    content: "";
+    height: 50px;
+    width: 50px;
+    transform: rotate(45deg);
+    background-color: #333;
+    z-index: -200;
+    position: absolute;
+    margin-left: 30%;
+  
+  }
+ 
+  .info-button:hover + .message-box {
+    opacity: 2;
+  }
+  

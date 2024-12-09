@@ -1,0 +1,13 @@
+.cv{
+    height: 100px;
+    width: 100%;
+    
+}
+.download{
+    font-size: 30px;
+}
+.cv {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}

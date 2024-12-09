@@ -13,6 +13,9 @@ import ResdoxReport from "./components/EmployeeJobDetails/ResdoxReport";
 import LoginPage from "./components/EmployeeJobDetails/Login";
 import PostJob from "./components/EmployeeJobDetails/Postjob";
 import SearchForm from "./components/EmployeeJobDetails/Searchcandi";
+import Profile from "./components/EmployeeJobDetails/Filters/Resume/profile";
+import Resume from "./components/EmployeeJobDetails/Filters/Resume/resume";
+import CV from "./components/EmployeeJobDetails/Filters/Resume/cv";
 
 export default function App() {
   return (
@@ -30,7 +33,11 @@ export default function App() {
         <Route exact path="/login" element={<LoginPage />} />
         <Route exact path="/resodx" element={<ResdoxReport />} />
         <Route exact path="/job-report" element={<Jobreport />} />
-        {/* Add fallback route */}
+
+        <Route path="/resume" element={<Resume />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="cv" element={<CV />} />
+        </Route>
         <Route path="*" element={<div>Page Not Found</div>} />
       </Routes>
     </BrowserRouter>

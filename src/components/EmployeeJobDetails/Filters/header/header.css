@@ -1,0 +1,98 @@
+:root {
+    font-size: 16px; 
+}
+.head {
+    height: 7.5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem; 
+    font-family: "Inter", sans-serif;
+    border-bottom: 0.0625rem solid rgb(210, 208, 208);
+    width: 100vw;
+}
+
+.inp {
+    width: 12.5rem; 
+    height: 1.875rem; 
+    border: none;
+    outline: none;
+    margin-left: 0.625rem; 
+    margin-bottom: 0.9375rem; 
+}
+
+.searchBar {
+    height: 3.125rem; 
+    width: 15.625rem; 
+    border: 0.0625rem solid gray; 
+    display: flex;
+    column-gap: 0.3125rem; 
+    padding-left: 0.9375rem; 
+    padding-top: 0.625rem; 
+    border-radius: 0.3125rem; 
+}
+
+.searchBar:hover {
+    border: 0.0625rem solid rgb(92, 150, 230); 
+}
+
+.IomdSearch {
+    font-size: 2.1875rem; 
+}
+
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 14px; /* Reduce base font size for tablets */
+    }
+
+    .head {
+        height: 6rem; /* Adjust height for smaller devices */
+        padding: 1.875rem; /* 30px */
+    }
+
+    .inp {
+        width: 10rem; /* 160px */
+    }
+
+    .searchBar {
+       
+        padding: 0.625rem;
+    }
+
+    .IomdSearch {
+        font-size: 1.75rem; /* 28px */
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    :root {
+        font-size: 12px; /* Further reduce base font size for mobile */
+    }
+
+    .head {
+        height: 5rem; /* Reduce height */
+        padding: 1.25rem; /* 20px */
+    }
+
+    .inp {
+        width: 8.75rem; /* 140px */
+    }
+
+    .searchBar {
+        height: 3rem; /* 32px */
+        width: 13rem; /* 160px */
+        transform: scale(.8);
+      
+       
+    }
+    .h3{
+        transform: scale(.5);
+       
+    }
+
+    .IomdSearch {
+        font-size: 1.5rem; /* 24px */
+    }
+}

@@ -1,0 +1,370 @@
+.block2{
+    width: 900px;
+    font-family: inter;
+   
+   
+}
+.b21{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid #e6ebf0;
+    row-gap: 18px;
+}
+.b2p{
+    background-color: #e6ebf0;
+    padding: 10px;
+    height: 70px;
+    width: 95%;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    column-gap: 10px;
+    /* margin-left: 10px/; */
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    margin-top: 20px;
+}
+.cardR{
+   
+    width: 95%;
+    height: auto;
+    box-shadow:rgba(0, 0, 0, 0.26) 1px 15px 29px, rgba(127, 125, 125, 0.23) 1px 11px 11px;
+    border: 1px solid rgb(48, 180, 242);
+    border-radius: 10px;
+    
+    list-style: none;
+}
+.cardBottom{
+    height: 50px;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.leftBottom{
+    display: flex;
+    column-gap: 12px;
+}
+.rightBottom{
+    display: flex;
+    column-gap: 12px;
+}
+.rbt1,.rbt2,.rbt3{
+    border: none;
+    background-color: rgb(250, 226, 213);
+    color: red;
+    font-weight: 600;
+    
+    padding: 5px;
+    border-radius: 3px;
+    width: 120px;
+    height: 35px;
+}
+.rbt2{
+    width: 80px;
+    background-color: rgb(235, 250, 255);
+    color: rgb(58, 150, 193);
+}
+.rbt2:hover{
+    background-color: rgb(216, 239, 254);
+}
+.left_btn{
+    font-weight: 600;
+    color: rgb(0, 145, 255);
+    font-size: 13.5px;
+
+    background-color: white;
+    border: none;
+    text-decoration: none;
+}
+.box{
+    transform: scale(1.5);
+    margin-bottom: 40px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 10px;
+}
+.b2Top{
+    /* background-color: blue; */
+    height: 70px;
+    width: 100%;
+    border-radius: 5px;
+  background-color: rgb(200, 232, 249);
+  border-bottom: 1px solid rgb(48, 180, 242);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.str{
+    height: 40px;
+    width: 150px;
+    background-color: rgb(84, 123, 250);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 7px;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+    
+}
+.iconStyle{
+    font-size: 17px;
+    margin-bottom: 5px;
+    color:rgb(80, 74, 74);
+}
+.circleOutline{
+    font-size: 38px;
+}
+.pic1{
+   
+    /* background-color: rgb(244, 249, 251); */
+    height: 300px;
+    width: 30%;
+    font-size: 12px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 8px;
+    /* border-left: 1px solid rgb(130, 204, 254); */
+    border-radius: 5px;
+}
+.pic1 img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.pic1 .b1,.pic1 .b2,.pic1 .call{
+    width: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    border: 1px solid gray;
+    color: rgb(109, 109, 109);
+    background-color: white;
+    font-weight: 600;
+    transition: all 0.7s;
+}
+.pic1 .b1:hover,.pic1 .b2:hover{
+    color: rgb(47, 47, 47);
+    background-color: rgb(211, 211, 211);
+}
+
+.pic1 .call{
+    border: none
+    ;color: rgb(130, 128, 128);
+    font-size: 11px;
+}
+.pic1 .call:hover{
+    background-color: white;
+    color: rgb(130, 128, 128);
+    border-bottom: 1px solid gray;
+    border-radius: 0;
+
+}
+.commit{
+    display: flex;
+    column-gap: 10px;
+}
+.commit .b19{
+    background-color: rgb(118, 207, 255);
+    border: none;
+    color:blue;
+    width: 70px;
+    border-radius: 5px;
+    padding: 3px;
+}
+.commit .b18{
+    background-color: white;
+    color: rgb(0, 162, 255);
+    border: none;
+}
+.faicon{
+    margin-bottom: 6px;margin-right: 5px;
+    color: yellow;
+}
+.strp{
+    margin-top: 10px;
+    font-weight: 550;
+}
+.strb{
+    font-weight: 55o;
+    background-color:rgb(200, 232, 249) ;
+    color: rgb(54, 152, 237);
+    outline: none;
+    border: none;
+}
+.card2{
+    padding: 20px;
+}
+.card21{
+    column-gap: 15px;
+    display: flex;
+}
+.card22{
+    display: flex;
+    column-gap: 24px;
+    transform: scale(.8) translateX(-30px)
+}
+.ca{
+    transform: scale(.9);
+    width: 70%;
+}
+.ed{
+    color: gray;
+    font-weight: 600;
+    font-size: 13.5px;
+    width: 185px;
+
+}
+.es{
+    color: gray;
+    font-weight: 600;
+    font-size: 13.5px;
+    width: 154px;
+
+}
+.es .icon{
+    font-size: 17px;
+    margin-left: 5px;
+}
+.ul-skill{
+    width: 80%;
+    display: flex;
+    column-gap: 10px;
+    margin-right: 36px;
+}
+.skill-li{
+    list-style: none;
+    font-size: 15px;
+}
+.cl{
+    color: gray;
+    font-weight: 600;
+    font-size: 13.5px;
+    width: 250px;
+}
+.cl .icon{
+    font-size: 17px;
+    margin-left: 5px;
+}
+.av{
+    color: gray;
+    font-weight: 600;
+    font-size: 13.5px;
+    width: 250px;
+}
+.av .icon{
+    font-size: 17px;
+    margin-left: 5px;
+}
+.avp{
+    width: 630px;
+    font-size: 15px;
+}
+.pic1-p{
+    font-weight: 600;
+    font-size: 12px;
+}
+.savefill{
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+.cover-desc{
+    width: 630px;
+    font-size: 15px;
+    height: auto;
+}
+@media screen and (max-width:811px){
+   .block33{
+    width: 30%;
+   
+   }
+   .block33{
+    transform: scale(.8);
+
+   }
+   .block3{
+    display: none;
+   }
+
+    .block2{
+        width: 72%;
+    }
+    .block1{
+        /* display: none; */
+        width: 40%;
+    }
+    .b2p{
+        font-size: 11px;
+        
+    }
+    .b2p1{
+        font-size: 14px;
+    }
+    .str{
+        transform: scale(.7);
+    }
+    .b2Top{
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        line-height: 2px;
+    }
+ .strp{
+    width: 500px;
+    transform: scale(.8);
+    margin-right: 400px;
+
+ }
+ .strb{
+    font-size: 12px;
+    margin-left: 50px;
+ }
+ .card2{
+    width: auto;
+ }
+ .pic1{
+    display: none;
+ }
+ .details{
+    width: 510px;
+    /* line-height: 20px; */
+}
+   .card22{
+    width: 400px;
+   }
+   .cardBottom{
+    flex-direction: column;
+   }
+.left_btn{
+    width: 150px;
+}
+.rightBottom{
+    transform: scale(.7);
+}
+.b111{
+    width: 200px;
+
+}
+
+    
+
+}

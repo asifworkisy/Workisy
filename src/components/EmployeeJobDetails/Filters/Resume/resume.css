@@ -1,0 +1,189 @@
+
+.footer{
+    width: 110%;
+    box-shadow:rgba(0, 0, 0, 0.26) 1px 15px 29px, rgba(127, 125, 125, 0.23) 1px 11px 11px;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+   
+}
+.resume{
+    height: 600px;
+    display: flex;
+    padding: 40px;
+    column-gap: 20px;
+    font-family: "inter";
+  
+}
+.save{
+    color: rgb(0, 157, 255);
+    font-size: 15px;
+    font-family: "Inter";
+    border: none;
+    background-color: white;
+    position: relative;
+    margin-left: 280px;
+  
+    
+}
+.save .icon{
+    margin-bottom: 6px;
+    font-size: 18px;
+    margin-right: 5px;
+}
+.leftRes{
+    width: 65%;
+ 
+    display: flex;
+    flex-direction: column;
+}
+
+.topcard{
+    height: auto;
+    
+    display: flex;
+    /* box-shadow:rgba(0, 0, 0, 0.26) 1px 15px 29px, rgba(127, 125, 125, 0.23) 1px 11px 11px; */
+
+    border: 1px solid rgb(111, 205, 248);
+    padding: 20px;
+    padding-left: 30px;
+    column-gap: 60px;
+    border-radius: 0px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.pic{
+    height: 120px;
+    width: 120px ;
+    border-radius: 50%;
+    
+}
+.des{
+    font-size: 13px;
+    font-weight: 400;
+    width: 250px;
+}
+.profile-info{
+    display: flex;
+   column-gap: 70px;
+
+}
+.h{
+    font-size: 13px;
+
+}
+.p3{
+    column-gap: 85px;
+}
+.p1{
+    column-gap: 120px;
+}
+.btnTop{
+    display: flex;
+    column-gap: 30px;
+}
+.btnTop button{
+    border: 1px solid rgb(132, 192, 229);
+    color: rgb(0, 183, 255);
+    background-color: white;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.5s;
+    width: 140px;
+    height: 35px;
+}
+.hl{
+    font-weight: 400;
+    color: rgb(97, 94, 94);
+    font-size: 13px;
+
+}
+.btnTop button:hover{
+    background-color:rgb(0, 183, 255);
+    color: white;
+}
+.btnTop .bn3{
+   
+    border: 1px solid rgb(216, 148, 148);
+    color: rgb(240, 122, 122);
+    border: none;
+    width: 150px;
+
+}
+.btnTop .bn3:hover{
+    background-color: rgb(253, 238, 238);
+    color: rgb(240, 88, 88);
+}
+.email{
+    color:rgb(104, 104, 104);
+    font-weight: 600;
+    font-size: 12px;
+}
+.emailIcon{
+    margin-bottom: 3px;
+}
+.resumeHead{
+    height: 70px;
+    width: 100%;
+    font-weight: 600;
+    display: flex;
+    column-gap: 5px;
+    text-decoration: none;
+    color: rgb(105, 101, 101);
+}
+.bt{
+    border-radius: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+
+}
+.hd{
+    margin-bottom: 20px;
+    font-family: "inter";
+}
+.content{
+    height: 1000px;
+    width: 60%;
+    border: 1px solid rgb(132, 192, 229);
+    margin-left: 40px;
+    border-radius: 5px;
+    font-family: "inter";
+    
+}
+.content .header{
+    height: 55px;
+    border-bottom:1px solid rgb(132, 192, 229) ;
+    display: flex;
+    column-gap: 30px;
+    padding: 15px;
+    padding-left: 40px;
+    
+
+}
+.header .li1,.header .li2{
+    background-color: white;
+    color: rgb(80, 78, 78);
+    height: 40px;
+    transition: all 0.2s;
+    border: none;
+    border-bottom:1px solid rgb(132, 192, 229) ;
+    
+}
+.header .li1:hover,.header .li2:hover{
+  
+  border-bottom: 1px solid rgb(0, 94, 255);
+  border-width: 5px;
+  color: rgb(0, 157, 255);
+
+}
+.timer{
+    margin-bottom: 5px;
+}

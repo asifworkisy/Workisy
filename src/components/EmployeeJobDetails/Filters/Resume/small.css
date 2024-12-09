@@ -1,0 +1,49 @@
+.x{
+    height: 200px;
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    border-bottom: 1px solid rgb(0, 106, 255);
+    border-radius: 5px;
+}
+.x:hover{
+    background-color: rgb(240, 242, 243);
+}
+.a{
+    display: flex;
+    column-gap: 10px;
+}
+.a img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.a .b{
+    display: flex;
+    flex-direction: column;
+    line-height: 1px;
+    font-size: 11.5px;
+    margin-top: 13px;
+}
+.name{
+    font-weight: bold;
+    font-size: 13px;
+}
+.b{
+    display: flex;
+    font-size: 11px;
+    column-gap: 10px;
+    margin-top: 9px;
+}
+.b .icon,.c .icon{
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+.c{
+    font-size: 12px;
+}
+.d p{
+    font-size: 12px;
+}
