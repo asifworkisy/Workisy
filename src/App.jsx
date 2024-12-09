@@ -16,6 +16,7 @@ import SearchForm from "./components/EmployeeJobDetails/Searchcandi";
 import Profile from "./components/EmployeeJobDetails/Filters/Resume/profile";
 import Resume from "./components/EmployeeJobDetails/Filters/Resume/resume";
 import CV from "./components/EmployeeJobDetails/Filters/Resume/cv";
+import SuperDashboard from "./components/SuperAdminDashboard/SuperDashboard";
 
 export default function App() {
   return (
@@ -33,6 +34,8 @@ export default function App() {
         <Route exact path="/login" element={<LoginPage />} />
         <Route exact path="/resodx" element={<ResdoxReport />} />
         <Route exact path="/job-report" element={<Jobreport />} />
+        <Route exact path="/super-admin" element={<SuperDashboard />} />
+
 
         <Route path="/resume" element={<Resume />}>
           <Route path="profile" element={<Profile />} />

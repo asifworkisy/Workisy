@@ -1,0 +1,31 @@
+.header-toolbar {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  color: #096EB6;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure the header is above the layout */
+  background-color: white; /* Ensure visibility */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: shadow for separation */
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+
+.icon {
+  margin-left: 16px; 
+  cursor: pointer;
+  font-size: 24px;
+  color: #096EB6;
+}
+
+.icon:hover {
+  color: #007bff;
+}
